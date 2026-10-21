@@ -546,8 +546,7 @@ async function check(auto = true) {
   } finally { go.disabled = false; }
 }
 $("#f").onsubmit = e => { e.preventDefault(); check(); };
-// Pasting a serial checks it right away; Escape clears.
-input.addEventListener("paste", () => setTimeout(() => { if (input.value.trim().length >= 7) check(); }));
+// Escape clears. Checks only start from the Check button (or Enter), never while typing or pasting.
 input.addEventListener("keydown", e => { if (e.key === "Escape") { input.value = ""; out.innerHTML = ""; } });
 
 $("#where").onclick = () => {
