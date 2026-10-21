@@ -43,4 +43,4 @@ Logos from [Simple Icons](https://simpleicons.org) (CC0). Brand names and logos 
 
 ## License
 
-MIT
+MIT. Made by [eNamia](https://www.enamia.eu).

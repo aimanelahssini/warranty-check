@@ -54,9 +54,9 @@
            transition: border-color .15s, transform .15s; }
   .brand:hover { transform: translateY(-2px); }
   .brand[aria-pressed="true"] { border-color: var(--c); box-shadow: 0 0 0 3px color-mix(in srgb, var(--c) 22%, transparent); }
-  .logo { width: 44px; height: 44px; background: var(--c); -webkit-mask: var(--m) center/contain no-repeat; mask: var(--m) center/contain no-repeat; }
-  .brand[data-b="lenovo"] .logo { width: 84px; }
-  .brand small { color: var(--muted); font-size: 12px; }
+  .logo { width: 56px; height: 56px; background: var(--c); -webkit-mask: var(--m) center/contain no-repeat; mask: var(--m) center/contain no-repeat; }
+  .brand[data-b="lenovo"] .logo { width: 110px; }
+  .brand { padding: 22px 8px 14px; gap: 14px; }
   .tag { font-size: 11px; font-weight: 600; padding: 1px 8px; border-radius: 999px; }
   .tag.ok { color: var(--ok); background: var(--ok-bg); }
   .tag.warn { color: var(--warn); background: var(--warn-bg); }
@@ -84,10 +84,12 @@
   .recent:empty { display: none; }
   .chip { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; padding: 4px 12px; border-radius: 999px;
           border: 1px solid var(--line); background: var(--card); cursor: pointer; }
+  .chip .logo { width: 16px; height: 16px; }
+  .chip .logo.wide { width: 46px; height: 18px; margin: 0 -6px; }
   .chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
   .chip i.ok { background: var(--ok); } .chip i.bad { background: var(--bad); }
 
-  .result { --s: var(--line); margin-top: 24px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px;
+  .result { --s: var(--line); margin: 0 0 28px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px;
             position: relative; overflow: hidden; animation: rise .35s ease; }
   .result:empty { display: none; }
   .result.s-ok { --s: var(--ok); } .result.s-soon { --s: var(--soon); } .result.s-bad { --s: var(--bad); }
@@ -126,7 +128,10 @@
           border-radius: 50%; animation: s .7s linear infinite; vertical-align: -3px; margin-right: 8px; }
   @keyframes s { to { transform: rotate(360deg); } }
   footer { margin-top: 40px; font-size: 12px; color: var(--muted); text-align: center; }
-  footer a { color: inherit; }
+  footer p { margin: 0 0 10px; }
+  footer .by { font-size: 13px; }
+  footer .by a { color: var(--text); font-weight: 700; text-decoration: none; letter-spacing: .01em; }
+  footer .by a:hover { color: var(--focus); }
   @media (max-width: 560px) {
     .brands { grid-template-columns: repeat(2, 1fr); }
     .head { flex-direction: column; align-items: flex-start; }
@@ -139,6 +144,7 @@
 <main>
   <header><img src="icon.svg" alt=""><h1>Warranty Check</h1></header>
   <p class="sub">See if a laptop is still under warranty, in a second.</p>
+  <div class="result" id="out" aria-live="polite"></div>
 
   <button class="mine" id="me" hidden>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg>
@@ -147,10 +153,10 @@
   <p class="or" id="or" hidden>Or check another device:</p>
 
   <div class="brands" role="group" aria-label="Brand">
-    <button class="brand" data-b="lenovo" style="--c:#E2231A;--m:url(logos/lenovo.svg)"><span class="logo"></span>Lenovo<small>ThinkPad · IdeaPad</small><span class="tag ok">Instant</span></button>
-    <button class="brand" data-b="hp" style="--c:#0096D6;--m:url(logos/hp.svg)"><span class="logo"></span>HP<small>EliteBook · ProBook</small><span class="tag warn">Model only</span></button>
-    <button class="brand" data-b="dell" style="--c:#007DB8;--m:url(logos/dell.svg)"><span class="logo"></span>Dell<small>Latitude · XPS</small><span class="tag warn">Opens Dell</span></button>
-    <button class="brand" data-b="apple" style="--c:var(--apple);--m:url(logos/apple.svg)"><span class="logo"></span>Apple<small>MacBook · iPhone</small><span class="tag warn">Opens Apple</span></button>
+    <button class="brand" data-b="lenovo" aria-label="Lenovo / ThinkPad" title="Lenovo / ThinkPad" style="--c:#E2231A;--m:url(logos/lenovo.svg)"><span class="logo"></span><span class="tag ok">Instant</span></button>
+    <button class="brand" data-b="hp" aria-label="HP" title="HP" style="--c:#0096D6;--m:url(logos/hp.svg)"><span class="logo"></span><span class="tag warn">Model only</span></button>
+    <button class="brand" data-b="dell" aria-label="Dell" title="Dell" style="--c:#007DB8;--m:url(logos/dell.svg)"><span class="logo"></span><span class="tag warn">Opens their site</span></button>
+    <button class="brand" data-b="apple" aria-label="Apple" title="Apple" style="--c:var(--apple);--m:url(logos/apple.svg)"><span class="logo"></span><span class="tag warn">Opens their site</span></button>
   </div>
 
   <form class="row" id="f">
@@ -174,15 +180,19 @@
   </div>
 
   <div class="recent" id="recent"></div>
-  <div class="result" id="out" aria-live="polite"></div>
 
-  <footer>Lenovo results come straight from Lenovo. HP, Dell and Apple hide their warranty dates behind a captcha, so you finish on their site.</footer>
+  <footer>
+    <p>Lenovo results come straight from Lenovo. HP, Dell and Apple hide their warranty dates behind a captcha, so you finish on their site.</p>
+    <p class="by">Made by <a href="https://www.enamia.eu" target="_blank" rel="noopener">eNamia</a></p>
+  </footer>
 </main>
 
 <script>
 const $ = s => document.querySelector(s);
 const out = $("#out"), input = $("#serial"), go = $("#go");
 const NAMES = { lenovo: "Lenovo", hp: "HP", dell: "Dell", apple: "Apple" };
+const COLORS = { lenovo: "#E2231A", hp: "#0096D6", dell: "#007DB8", apple: "var(--apple)" };
+const mini = b => `<span class="logo${b === "lenovo" ? " wide" : ""}" role="img" aria-label="${NAMES[b]}" style="--c:${COLORS[b]};--m:url(logos/${b}.svg)"></span>`;
 const HINTS = {
   lenovo: "Lenovo serials are 8 characters, like PF1AB2CD.",
   hp: "HP serials are 10 characters, like 5CD1234ABC. Fn+Esc on the laptop shows it.",
@@ -237,7 +247,7 @@ function remember(entry) {
 function drawRecent() {
   const list = store.get("recent", []);
   $("#recent").innerHTML = list.length ? `<span class="muted" style="font-size:13px">Recent:</span>` + list.map((r, i) =>
-    `<button class="chip" data-i="${i}" title="${esc(r.model || "")}"><i class="${r.state || ""}"></i>${esc(NAMES[r.brand])} ${esc(r.serial)}</button>`).join("")
+    `<button class="chip" data-i="${i}" title="${esc(r.model || "")}"><i class="${r.state || ""}"></i>${mini(r.brand)}${esc(r.serial)}</button>`).join("")
     + `<button class="link" id="clear" style="font-size:13px">Clear</button>` : "";
 }
 $("#recent").onclick = e => {
@@ -322,9 +332,10 @@ async function check(auto = true) {
     pick(g);
   }
   history.replaceState(null, "", `?brand=${brand}&serial=${encodeURIComponent(serial)}`);
-  if (brand === "dell" || brand === "apple") return handOff(brand, serial, auto);
+  if (brand === "dell" || brand === "apple") { handOff(brand, serial, auto); out.scrollIntoView({ behavior: "smooth", block: "nearest" }); return; }
   go.disabled = true;
   out.innerHTML = `<p class="big" style="margin:0"><span class="spin"></span>Asking ${NAMES[brand]}…</p>`;
+  out.scrollIntoView({ behavior: "smooth", block: "nearest" });
   const b = brand;
   try {
     const r = await (await fetch(`api/${b}?serial=${encodeURIComponent(serial)}`)).json();
