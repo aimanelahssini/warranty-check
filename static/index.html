@@ -48,6 +48,9 @@
   .badge.ok { color: var(--ok); background: var(--ok-bg); }
   .badge.bad { color: var(--bad); background: var(--bad-bg); }
   .badge.warn { color: var(--warn); background: var(--warn-bg); }
+  .head { display: flex; gap: 20px; align-items: center; }
+  .photo { width: 140px; height: 105px; object-fit: contain; flex: none; background: #fff; border-radius: 10px; padding: 6px; }
+  @media (max-width: 560px) { .head { flex-direction: column; align-items: flex-start; } }
   .model { font-size: 20px; font-weight: 650; margin: 10px 0 2px; }
   .muted { color: var(--muted); }
   .big { font-size: 15px; margin: 6px 0 0; }
@@ -119,9 +122,11 @@ function showFull(r) {
   const rows = r.items.map(w => `<tr class="${w.end < today ? "past" : ""}">
       <td>${esc(w.name)}</td><td>${esc(w.type)}</td><td class="d">${fmt(w.start)}</td><td class="d">${fmt(w.end)}</td></tr>`).join("");
   const facts = Object.entries(r.facts).filter(([, v]) => v).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(/^\d{4}-\d\d-\d\d$/.test(v) ? fmt(v) : v)}</dd>`).join("");
-  out.innerHTML = `<span class="badge ${ok ? "ok" : "bad"}">${ok ? "In warranty" : "Out of warranty"}</span>
+  const img = /^https:\/\//.test(r.image || "") ? `<img class="photo" src="${esc(r.image)}" alt="" onerror="this.remove()">` : "";
+  out.innerHTML = `<div class="head">${img}<div>
+    <span class="badge ${ok ? "ok" : "bad"}">${ok ? "In warranty" : "Out of warranty"}</span>
     <div class="model">${esc(r.model)}</div>
-    <div class="muted">Serial ${esc(r.serial)} · ${esc(r.product)}</div>
+    <div class="muted">Serial ${esc(r.serial)} · ${esc(r.product)}</div></div></div>
     ${r.end ? `<p class="big">${ok ? "Covered until" : "Ended on"} <b>${fmt(r.end)}</b> (${left(r.end)})</p>` : ""}
     <table><tr><th>Coverage</th><th>Service</th><th>Start</th><th>End</th></tr>${rows}</table>
     <dl>${facts}</dl>

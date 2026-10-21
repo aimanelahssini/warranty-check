@@ -39,6 +39,7 @@ def lenovo(serial):
     return {
         "ok": True, "full": True,
         "model": m.get("productName"), "product": m.get("product"), "serial": m.get("serial"),
+        "image": m.get("productImage"),
         "inWarranty": status.lower() == "in warranty", "status": status,
         "end": (data.get("currentWarranty") or {}).get("endDate"),
         "facts": {"Built": m.get("buildDate"), "Shipped": m.get("shipDate"), "Ship country": m.get("shipToCountry"),
