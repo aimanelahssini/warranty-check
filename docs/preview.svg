@@ -2,7 +2,7 @@
   <rect width="720" height="420" rx="20" fill="#f5f5f7"/>
   <text x="40" y="58" font-size="26" font-weight="700" fill="#1d1d1f">Warranty Check</text>
   <g font-size="14" text-anchor="middle" fill="#1d1d1f">
-    <rect x="40" y="84" width="150" height="70" rx="12" fill="#fff" stroke="#E2231A" stroke-width="2.5"/><text x="115" y="125">Lenovo</text>
+    <rect x="40" y="84" width="150" height="70" rx="12" fill="#111113" stroke="#111113" stroke-width="2"/><text x="115" y="125" fill="#fff">Lenovo</text>
     <rect x="200" y="84" width="150" height="70" rx="12" fill="#fff" stroke="#e3e3e8" stroke-width="2"/><text x="275" y="125">HP</text>
     <rect x="360" y="84" width="150" height="70" rx="12" fill="#fff" stroke="#e3e3e8" stroke-width="2"/><text x="435" y="125">Dell</text>
     <rect x="520" y="84" width="160" height="70" rx="12" fill="#fff" stroke="#e3e3e8" stroke-width="2"/><text x="600" y="125">Apple</text>

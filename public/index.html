@@ -6,184 +6,236 @@
 <title>Warranty Check</title>
 <meta name="description" content="Check a laptop's warranty from its serial number in a second.">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f5f5f7; --card: #ffffff; --text: #1d1d1f; --muted: #6e6e73; --line: #e3e3e8; --soft: #f0f0f3;
-    --ok: #1a7f37; --ok-bg: #e7f5ec; --bad: #c62828; --bad-bg: #fdecec; --warn: #9a6700; --warn-bg: #fff6dd;
-    --soon: #d9640b; --soon-bg: #fff0e3;
-    --focus: #0a66d8; --apple: #1d1d1f; --glow: transparent;
+    --bg: #f6f6f4; --card: #ffffff; --ink: #111113; --text: #232326; --muted: #74747c; --faint: #a3a3ab;
+    --line: #e7e7e4; --soft: #f1f1ee; --hover: #ececea;
+    --ok: #16a34a; --soon: #f97316; --bad: #e11d48; --neutral: #94a3b8;
+    --ok-t: #15803d; --soon-t: #c2410c; --bad-t: #be123c;
+    --focus: #2563eb;
+    --r-lg: 20px; --r-md: 14px; --r-sm: 10px;
+    --shadow: 0 1px 2px rgb(0 0 0 / .04), 0 4px 16px -6px rgb(0 0 0 / .08);
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #141416; --card: #1f1f23; --text: #f2f2f5; --muted: #a0a0a8; --line: #33333a; --soft: #2a2a30;
-      --ok: #5fd07e; --ok-bg: #16301f; --bad: #ff7a7a; --bad-bg: #3a1a1a; --warn: #f0c14b; --warn-bg: #3a2f12;
-      --soon: #ff9d4d; --soon-bg: #3a2413;
-      --focus: #5aa2ff; --apple: #f2f2f5;
+      --bg: #0e0e10; --card: #18181b; --ink: #fafafa; --text: #e7e7ea; --muted: #9b9ba3; --faint: #6b6b73;
+      --line: #2a2a2f; --soft: #212125; --hover: #27272c;
+      --ok-t: #4ade80; --soon-t: #fdba74; --bad-t: #fb7185;
+      --focus: #60a5fa;
+      --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 8px 24px -10px rgb(0 0 0 / .6);
     }
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text);
-         font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Cantarell, sans-serif; }
-  /* Soft page glow in the colour of the last result. */
-  body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1; opacity: 0;
-                 background: radial-gradient(120% 70% at 50% 100%, color-mix(in srgb, var(--glow) 22%, transparent), transparent 70%);
-                 transition: opacity .6s ease; }
-  body[data-state]::before { opacity: 1; }
-  body[data-state="ok"] { --glow: var(--ok); }
-  body[data-state="soon"] { --glow: var(--soon); }
-  body[data-state="bad"] { --glow: var(--bad); }
-  main { position: relative; max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
-  header { display: flex; align-items: center; gap: 12px; margin-bottom: 4px; }
-  header img { width: 36px; height: 36px; }
-  h1 { font-size: 28px; margin: 0; letter-spacing: -0.02em; }
-  .sub { color: var(--muted); margin: 0 0 28px; }
-  button { font: inherit; color: inherit; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; min-height: 100vh; background: var(--bg); color: var(--text);
+         font: 15px/1.55 "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+         font-feature-settings: "cv11", "ss01"; -webkit-font-smoothing: antialiased; }
+  button, input { font: inherit; color: inherit; }
+  button { cursor: pointer; }
   :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  [hidden] { display: none !important; }
 
-  .mine { display: flex; align-items: center; gap: 14px; width: 100%; margin: 0 0 24px; padding: 14px 18px; text-align: left;
-          background: var(--card); border: 2px solid var(--line); border-radius: 14px; cursor: pointer; }
-  .mine:hover { border-color: var(--focus); }
-  .mine svg { flex: none; width: 30px; height: 30px; color: var(--focus); }
-  .mine b { display: block; }
-  .mine span { color: var(--muted); font-size: 14px; }
-  .or { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: clamp(28px, 7vw, 72px) 16px 40px; }
 
-  .brands { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-  .brand { background: var(--card); border: 2px solid var(--line); border-radius: 14px; padding: 18px 8px 12px;
-           cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px;
-           transition: border-color .15s, transform .15s; }
-  .brand:hover { transform: translateY(-2px); }
-  .brand[aria-pressed="true"] { border-color: var(--c); box-shadow: 0 0 0 3px color-mix(in srgb, var(--c) 22%, transparent); }
-  .logo { width: 56px; height: 56px; background: var(--c); -webkit-mask: var(--m) center/contain no-repeat; mask: var(--m) center/contain no-repeat; }
-  .brand[data-b="lenovo"] .logo { width: 110px; }
-  .brand { padding: 22px 8px 14px; gap: 14px; }
-  .tag { font-size: 11px; font-weight: 600; padding: 1px 8px; border-radius: 999px; }
-  .tag.ok { color: var(--ok); background: var(--ok-bg); }
-  .tag.warn { color: var(--warn); background: var(--warn-bg); }
+  /* Top */
+  .top { display: flex; align-items: center; gap: 10px; margin-bottom: clamp(28px, 6vw, 48px); }
+  .top img { width: 28px; height: 28px; }
+  .top b { font-weight: 600; font-size: 15px; color: var(--ink); letter-spacing: -.01em; }
+  h1 { margin: 0; font-size: clamp(28px, 6vw, 40px); line-height: 1.1; letter-spacing: -.035em; font-weight: 700; color: var(--ink); }
+  .lead { margin: 10px 0 28px; color: var(--muted); font-size: clamp(15px, 2.4vw, 17px); }
 
-  .row { display: flex; gap: 10px; margin-top: 20px; }
-  input { flex: 1; min-width: 0; font: inherit; font-size: 18px; letter-spacing: .06em; text-transform: uppercase;
-          padding: 12px 14px; border-radius: 12px; border: 2px solid var(--line); background: var(--card); color: var(--text); }
-  input::placeholder { text-transform: none; letter-spacing: 0; }
-  input:focus { outline: none; border-color: var(--focus); }
-  .go { font-weight: 600; padding: 0 22px; border: 0; border-radius: 12px; cursor: pointer; background: var(--text); color: var(--bg); }
-  .go:disabled { opacity: .5; cursor: default; }
-  .under { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 10px; font-size: 14px; color: var(--muted); }
-  .link { background: none; border: 0; padding: 0; color: var(--focus); cursor: pointer; font-size: 14px; }
+  /* Search panel */
+  .panel { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 18px; box-shadow: var(--shadow); }
+  .panel-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 2px 2px 12px; }
+  .label { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .ghost { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); background: var(--card);
+           border-radius: 999px; padding: 5px 12px 5px 10px; font-size: 13px; font-weight: 500; color: var(--text); }
+  .ghost:hover { background: var(--hover); }
+  .ghost svg { width: 15px; height: 15px; }
 
-  .help { margin-top: 12px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 6px 18px; font-size: 14px; }
-  .help[hidden] { display: none; }
-  .help h3 { font-size: 14px; margin: 12px 0 4px; }
-  .help p { margin: 0 0 8px; color: var(--muted); }
-  .cmd { display: flex; align-items: center; gap: 8px; background: var(--soft); border-radius: 8px; padding: 6px 6px 6px 10px; margin-bottom: 8px; }
-  .cmd code { flex: 1; min-width: 0; overflow-x: auto; white-space: nowrap; font-size: 13px; }
-  .mini { flex: none; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 6px; border: 1px solid var(--line);
-          background: var(--card); cursor: pointer; }
+  .brands { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .brand { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+           height: 92px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--soft); color: var(--ink);
+           transition: background .15s, border-color .15s, color .15s, transform .15s; }
+  .brand:hover { background: var(--hover); }
+  .brand:active { transform: scale(.98); }
+  .brand[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+  .brand small { font-size: 11px; font-weight: 500; color: var(--muted); }
+  .brand[aria-pressed="true"] small { color: color-mix(in srgb, var(--bg) 70%, transparent); }
+  .logo { display: block; width: 30px; height: 30px; background: currentColor;
+          -webkit-mask: var(--m) center/contain no-repeat; mask: var(--m) center/contain no-repeat; }
+  .logo.wide { width: 72px; height: 24px; }
 
-  .recent { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; align-items: center; }
+  .field { display: flex; gap: 8px; margin-top: 14px; }
+  .field input { flex: 1; min-width: 0; height: 52px; padding: 0 16px; border-radius: var(--r-md);
+                 border: 1px solid var(--line); background: var(--card); color: var(--ink);
+                 font-size: 17px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+                 transition: border-color .15s, box-shadow .15s; }
+  .field input::placeholder { color: var(--faint); letter-spacing: 0; text-transform: none; font-weight: 400; }
+  .field input:focus { outline: none; border-color: var(--focus); box-shadow: 0 0 0 4px color-mix(in srgb, var(--focus) 18%, transparent); }
+  .go { height: 52px; padding: 0 24px; border: 0; border-radius: var(--r-md); background: var(--ink); color: var(--bg);
+        font-weight: 600; transition: opacity .15s; }
+  .go:hover { opacity: .88; }
+  .go:disabled { opacity: .45; cursor: default; }
+  .under { display: flex; justify-content: space-between; align-items: baseline; gap: 6px 16px; flex-wrap: wrap;
+           margin: 10px 2px 0; font-size: 13px; color: var(--muted); }
+  .link { border: 0; background: none; padding: 0; color: var(--text); font-size: 13px; font-weight: 500;
+          text-decoration: underline; text-decoration-color: var(--faint); text-underline-offset: 3px; }
+  .link:hover { text-decoration-color: currentColor; }
+
+  .help { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); display: grid; gap: 12px; font-size: 13px; }
+  .help h3 { margin: 0 0 4px; font-size: 13px; font-weight: 600; color: var(--ink); }
+  .help p { margin: 0; color: var(--muted); }
+  .cmd { display: flex; align-items: center; gap: 8px; background: var(--soft); border: 1px solid var(--line);
+         border-radius: var(--r-sm); padding: 5px 5px 5px 12px; }
+  .cmd code { flex: 1; min-width: 0; overflow-x: auto; white-space: nowrap; font: 12.5px/1.6 ui-monospace, "SF Mono", Menlo, monospace; color: var(--ink); }
+  .mini { flex: none; border: 1px solid var(--line); background: var(--card); border-radius: 7px; padding: 3px 10px;
+          font-size: 12px; font-weight: 600; }
+  .mini:hover { background: var(--hover); }
+
+  /* Recent */
+  .recent { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 18px; }
   .recent:empty { display: none; }
-  .chip { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; padding: 4px 12px; border-radius: 999px;
-          border: 1px solid var(--line); background: var(--card); cursor: pointer; }
-  .chip .logo { width: 16px; height: 16px; }
-  .chip .logo.wide { width: 46px; height: 18px; margin: 0 -6px; }
-  .chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
-  .chip i.ok { background: var(--ok); } .chip i.bad { background: var(--bad); }
+  .recent .label { margin-right: 4px; }
+  .chip { display: inline-flex; align-items: center; gap: 7px; height: 30px; padding: 0 12px 0 10px; border-radius: 999px;
+          border: 1px solid var(--line); background: var(--card); font-size: 12.5px; font-weight: 500;
+          font-variant-numeric: tabular-nums; letter-spacing: .03em; color: var(--text); }
+  .chip:hover { background: var(--hover); }
+  .chip .logo { width: 14px; height: 14px; color: var(--muted); }
+  .chip .logo.wide { width: 40px; height: 13px; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--neutral); flex: none; }
+  .dot.ok { background: var(--ok); } .dot.soon { background: var(--soon); } .dot.bad { background: var(--bad); }
 
-  .result { --s: var(--line); margin: 0 0 28px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px;
-            position: relative; overflow: hidden; animation: rise .35s ease; }
-  .result:empty { display: none; }
-  .result.s-ok { --s: var(--ok); } .result.s-soon { --s: var(--soon); } .result.s-bad { --s: var(--bad); }
-  .result[class*="s-"] { border-color: color-mix(in srgb, var(--s) 45%, var(--line));
-    background: linear-gradient(150deg, color-mix(in srgb, var(--s) 20%, var(--card)) 0%, color-mix(in srgb, var(--s) 6%, var(--card)) 45%, var(--card) 80%);
-    box-shadow: 0 12px 40px -18px color-mix(in srgb, var(--s) 60%, transparent); }
-  .result[class*="s-"]::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px;
-    background: linear-gradient(90deg, var(--s), color-mix(in srgb, var(--s) 30%, transparent)); }
-  @keyframes rise { from { opacity: 0; transform: translateY(8px); } }
-  .badge.soon { color: var(--soon); background: var(--soon-bg); }
-  .bar { position: relative; height: 8px; border-radius: 999px; margin: 14px 0 4px; background: color-mix(in srgb, var(--s) 18%, var(--soft)); }
-  .bar b { position: absolute; inset: 0 auto 0 0; border-radius: inherit; background: var(--s); }
-  .bar-l { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); }
-  .chip i.soon { background: var(--soon); }
-  .badge { display: inline-block; font-weight: 700; padding: 4px 12px; border-radius: 999px; font-size: 14px; }
-  .badge.ok { color: var(--ok); background: var(--ok-bg); }
-  .badge.bad { color: var(--bad); background: var(--bad-bg); }
-  .badge.warn { color: var(--warn); background: var(--warn-bg); }
-  .head { display: flex; gap: 20px; align-items: center; }
-  .photo { width: 140px; height: 105px; object-fit: contain; flex: none; background: #fff; border-radius: 10px; padding: 6px; }
-  .model { font-size: 20px; font-weight: 650; margin: 10px 0 2px; }
-  .muted { color: var(--muted); }
-  .big { font-size: 15px; margin: 12px 0 0; }
-  table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 14px; }
-  th, td { text-align: left; padding: 8px 6px; border-top: 1px solid var(--line); vertical-align: top; }
-  th { color: var(--muted); font-weight: 500; }
-  td.d { white-space: nowrap; font-variant-numeric: tabular-nums; }
-  .past { color: var(--muted); }
-  dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; margin: 16px 0 0; font-size: 14px; }
-  dt { color: var(--muted); } dd { margin: 0; }
-  .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-  .btn { display: inline-flex; align-items: center; font-size: 14px; font-weight: 600; padding: 8px 14px; border-radius: 10px;
-         border: 1px solid var(--line); background: var(--soft); color: var(--text); text-decoration: none; cursor: pointer; }
-  .btn.primary { background: var(--focus); border-color: var(--focus); color: #fff; }
-  .spin { display: inline-block; width: 16px; height: 16px; border: 2px solid var(--line); border-top-color: var(--text);
-          border-radius: 50%; animation: s .7s linear infinite; vertical-align: -3px; margin-right: 8px; }
+  /* Result */
+  #out { position: relative; margin-bottom: 20px; }
+  #out:empty { display: none; }
+  .halo { position: absolute; inset: 10% 6% -4%; z-index: 0; border-radius: 40px; pointer-events: none;
+          background: radial-gradient(60% 70% at 30% 30%, var(--s), transparent 70%),
+                      radial-gradient(60% 70% at 75% 75%, var(--s), transparent 70%);
+          filter: blur(40px); opacity: .55; animation: glow .6s ease both; }
+  @media (prefers-color-scheme: dark) { .halo { opacity: .38; } }
+  @keyframes glow { from { opacity: 0; transform: scale(.9); } }
+  .card { position: relative; z-index: 1; background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg);
+          padding: clamp(18px, 4vw, 26px); box-shadow: var(--shadow); animation: rise .35s cubic-bezier(.2,.8,.2,1) both; }
+  .card.tinted { background:
+      radial-gradient(120% 90% at 0% 0%, color-mix(in srgb, var(--s) 13%, transparent), transparent 60%), var(--card);
+    border-color: color-mix(in srgb, var(--s) 18%, var(--line)); }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } }
+  .s-ok { --s: var(--ok); --st: var(--ok-t); } .s-soon { --s: var(--soon); --st: var(--soon-t); } .s-bad { --s: var(--bad); --st: var(--bad-t); }
+  .s-none { --s: var(--neutral); --st: var(--muted); }
+
+  .hero { display: flex; gap: 20px; align-items: flex-start; justify-content: space-between; }
+  .pill { display: inline-flex; align-items: center; gap: 7px; padding: 4px 11px 4px 9px; border-radius: 999px;
+          font-size: 12.5px; font-weight: 600; color: var(--st);
+          background: color-mix(in srgb, var(--s) 12%, var(--card)); }
+  .pill .dot { background: var(--s); box-shadow: 0 0 0 3px color-mix(in srgb, var(--s) 25%, transparent); }
+  .big { margin: 12px 0 2px; font-size: clamp(26px, 6vw, 34px); line-height: 1.1; font-weight: 700; letter-spacing: -.03em; color: var(--ink); }
+  .sub { margin: 0; color: var(--muted); }
+  .sub b { color: var(--text); font-weight: 600; }
+  .photo { flex: none; width: clamp(96px, 24vw, 150px); aspect-ratio: 4/3; object-fit: contain; border-radius: var(--r-md);
+           background: #fff; padding: 8px; border: 1px solid var(--line); }
+
+  .bar { height: 6px; border-radius: 999px; margin: 20px 0 6px; overflow: hidden;
+         background: color-mix(in srgb, var(--s) 14%, var(--soft)); }
+  .bar i { display: block; height: 100%; border-radius: inherit; background: var(--s); transform-origin: left;
+           animation: fill .8s .15s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes fill { from { transform: scaleX(0); } }
+  .bar-l { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+  .device { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .device h2 { margin: 0; font-size: 16px; font-weight: 600; color: var(--ink); letter-spacing: -.01em; }
+  .device p { margin: 2px 0 0; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+  .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; margin-top: 16px; }
+  .fact { background: var(--soft); border-radius: var(--r-sm); padding: 10px 12px; }
+  .fact span { display: block; font-size: 11.5px; color: var(--muted); }
+  .fact b { display: block; margin-top: 1px; font-size: 13.5px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+  .cover { list-style: none; margin: 8px 0 0; padding: 0; }
+  .cover li { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 13.5px; }
+  .cover li:first-child { border-top: 0; }
+  .cover b { font-weight: 500; color: var(--ink); }
+  .cover small { display: block; color: var(--muted); font-size: 12px; }
+  .cover .d { flex: none; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; font-size: 12.5px; }
+  .cover li.past b { color: var(--muted); }
+  .cover-h { margin: 22px 0 0; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 40px; padding: 0 16px;
+         border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink);
+         font-size: 13.5px; font-weight: 600; text-decoration: none; }
+  .btn:hover { background: var(--hover); }
+  .btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .btn.primary:hover { opacity: .88; background: var(--ink); }
+
+  .loading { display: flex; align-items: center; gap: 12px; color: var(--muted); }
+  .spin { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--line); border-top-color: var(--ink); animation: s .7s linear infinite; }
   @keyframes s { to { transform: rotate(360deg); } }
-  footer { margin-top: 40px; font-size: 12px; color: var(--muted); text-align: center; }
-  footer p { margin: 0 0 10px; }
-  footer .by { font-size: 13px; }
-  footer .by a { color: var(--text); font-weight: 700; text-decoration: none; letter-spacing: .01em; }
-  footer .by a:hover { color: var(--focus); }
-  @media (max-width: 560px) {
+
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: space-between;
+           align-items: flex-start; gap: 12px 24px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); }
+  footer p { margin: 0; max-width: 420px; }
+  footer a { color: var(--ink); font-weight: 600; text-decoration: none; }
+  footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 520px) {
     .brands { grid-template-columns: repeat(2, 1fr); }
-    .head { flex-direction: column; align-items: flex-start; }
-    table th:nth-child(2), table td:nth-child(2) { display: none; }
-    .go { padding: 0 16px; }
+    .brand { height: 78px; }
+    .field { flex-direction: column; }
+    .field input { flex: none; width: 100%; }
+    .go { width: 100%; }
+    .hero { flex-direction: column-reverse; }
+    .photo { width: 120px; }
   }
+  @media (prefers-reduced-motion: reduce) { *, *::before { animation: none !important; transition: none !important; } }
 </style>
 </head>
 <body>
-<main>
-  <header><img src="icon.svg" alt=""><h1>Warranty Check</h1></header>
-  <p class="sub">See if a laptop is still under warranty, in a second.</p>
-  <div class="result" id="out" aria-live="polite"></div>
+<main class="wrap">
+  <div class="top"><img src="icon.svg" alt=""><b>Warranty Check</b></div>
+  <h1>Is it still under warranty?</h1>
+  <p class="lead">Paste a serial number and get the answer in a second.</p>
 
-  <button class="mine" id="me" hidden>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg>
-    <div><b>Check my computer</b><span>Finds this laptop's brand and serial for you (asks for your password)</span></div>
-  </button>
-  <p class="or" id="or" hidden>Or check another device:</p>
+  <div id="out" aria-live="polite"></div>
 
-  <div class="brands" role="group" aria-label="Brand">
-    <button class="brand" data-b="lenovo" aria-label="Lenovo / ThinkPad" title="Lenovo / ThinkPad" style="--c:#E2231A;--m:url(logos/lenovo.svg)"><span class="logo"></span><span class="tag ok">Instant</span></button>
-    <button class="brand" data-b="hp" aria-label="HP" title="HP" style="--c:#0096D6;--m:url(logos/hp.svg)"><span class="logo"></span><span class="tag warn">Model only</span></button>
-    <button class="brand" data-b="dell" aria-label="Dell" title="Dell" style="--c:#007DB8;--m:url(logos/dell.svg)"><span class="logo"></span><span class="tag warn">Opens their site</span></button>
-    <button class="brand" data-b="apple" aria-label="Apple" title="Apple" style="--c:var(--apple);--m:url(logos/apple.svg)"><span class="logo"></span><span class="tag warn">Opens their site</span></button>
-  </div>
-
-  <form class="row" id="f">
-    <input id="serial" placeholder="Serial number" autocomplete="off" spellcheck="false" aria-label="Serial number">
-    <button class="go" id="go">Check</button>
-  </form>
-  <div class="under">
-    <span id="hint">Pick a brand, or just paste the serial and press Enter.</span>
-    <button class="link" id="where" aria-expanded="false" aria-controls="help">Where do I find the serial?</button>
-  </div>
-
-  <div class="help" id="help" hidden>
-    <h3>On the laptop's sticker</h3>
-    <p>Underneath the laptop, labelled S/N, Serial or Service Tag (Dell). Lenovo serials are 8 characters, Dell service tags 7.</p>
-    <h3>Windows: paste this in PowerShell</h3>
-    <div class="cmd"><code>(Get-CimInstance Win32_BIOS).SerialNumber</code><button class="mini" data-copy>Copy</button></div>
-    <h3>Linux: paste this in a terminal</h3>
-    <div class="cmd"><code>sudo cat /sys/class/dmi/id/product_serial</code><button class="mini" data-copy>Copy</button></div>
-    <h3>Mac</h3>
-    <p>Apple menu → About This Mac. The serial is on the first screen.</p>
-  </div>
+  <section class="panel" aria-label="Check a serial number">
+    <div class="panel-head">
+      <span class="label">Brand</span>
+      <button class="ghost" id="me" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg>
+        Detect this computer
+      </button>
+    </div>
+    <div class="brands" role="group" aria-label="Brand">
+      <button class="brand" data-b="lenovo" aria-label="Lenovo / ThinkPad" title="Lenovo / ThinkPad"><span class="logo wide" style="--m:url(logos/lenovo.svg)"></span><small>Instant</small></button>
+      <button class="brand" data-b="hp" aria-label="HP" title="HP"><span class="logo" style="--m:url(logos/hp.svg)"></span><small>Model only</small></button>
+      <button class="brand" data-b="dell" aria-label="Dell" title="Dell"><span class="logo" style="--m:url(logos/dell.svg)"></span><small>Opens their site</small></button>
+      <button class="brand" data-b="apple" aria-label="Apple" title="Apple"><span class="logo" style="--m:url(logos/apple.svg)"></span><small>Opens their site</small></button>
+    </div>
+    <form class="field" id="f">
+      <input id="serial" placeholder="Serial number" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Serial number">
+      <button class="go" id="go">Check</button>
+    </form>
+    <div class="under">
+      <span id="hint">Pick a brand, or just paste the serial.</span>
+      <button class="link" id="where" aria-expanded="false" aria-controls="help">Where's the serial?</button>
+    </div>
+    <div class="help" id="help" hidden>
+      <div><h3>On the sticker</h3><p>Underneath the laptop, labelled S/N, Serial or Service Tag (Dell).</p></div>
+      <div><h3>Windows · PowerShell</h3><div class="cmd"><code>(Get-CimInstance Win32_BIOS).SerialNumber</code><button class="mini" data-copy>Copy</button></div></div>
+      <div><h3>Linux · Terminal</h3><div class="cmd"><code>sudo cat /sys/class/dmi/id/product_serial</code><button class="mini" data-copy>Copy</button></div></div>
+      <div><h3>Mac</h3><p>Apple menu → About This Mac.</p></div>
+    </div>
+  </section>
 
   <div class="recent" id="recent"></div>
 
   <footer>
-    <p>Lenovo results come straight from Lenovo. HP, Dell and Apple hide their warranty dates behind a captcha, so you finish on their site.</p>
-    <p class="by">Made by <a href="https://www.enamia.eu" target="_blank" rel="noopener">eNamia</a></p>
+    <p>Lenovo answers instantly. HP, Dell and Apple keep their dates behind a captcha, so you finish on their site.</p>
+    <span>Made by <a href="https://www.enamia.eu" target="_blank" rel="noopener">eNamia</a></span>
   </footer>
 </main>
 
@@ -191,11 +243,9 @@
 const $ = s => document.querySelector(s);
 const out = $("#out"), input = $("#serial"), go = $("#go");
 const NAMES = { lenovo: "Lenovo", hp: "HP", dell: "Dell", apple: "Apple" };
-const COLORS = { lenovo: "#E2231A", hp: "#0096D6", dell: "#007DB8", apple: "var(--apple)" };
-const mini = b => `<span class="logo${b === "lenovo" ? " wide" : ""}" role="img" aria-label="${NAMES[b]}" style="--c:${COLORS[b]};--m:url(logos/${b}.svg)"></span>`;
 const HINTS = {
   lenovo: "Lenovo serials are 8 characters, like PF1AB2CD.",
-  hp: "HP serials are 10 characters, like 5CD1234ABC. Fn+Esc on the laptop shows it.",
+  hp: "HP serials are 10 characters, like 5CD1234ABC. Fn+Esc shows it.",
   dell: "Dell uses a 7-character Service Tag, like 7XJ8YZ2.",
   apple: "Apple serials are 10 to 12 characters.",
 };
@@ -222,12 +272,15 @@ function guess(s) {
 }
 
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const mini = b => `<span class="logo${b === "lenovo" ? " wide" : ""}" role="img" aria-label="${NAMES[b]}" style="--m:url(logos/${b}.svg)"></span>`;
 const today = new Date().toISOString().slice(0, 10);
 const fmt = d => d ? new Date(d + "T00:00").toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" }) : "—";
-function left(end) {
-  const days = Math.round((new Date(end + "T00:00") - new Date(today + "T00:00")) / 864e5);
-  if (days < 0) return -days < 62 ? `ended ${-days} day${days === -1 ? "" : "s"} ago` : `ended ${Math.round(-days / 30.4)} months ago`;
-  return days < 62 ? `${days} days left` : `${Math.round(days / 30.4)} months left`;
+const daysUntil = d => Math.round((new Date(d + "T00:00") - new Date(today + "T00:00")) / 864e5);
+function span(days) {
+  const n = Math.abs(days);
+  if (n < 62) return `${n} day${n === 1 ? "" : "s"}`;
+  const m = Math.round(n / 30.4);
+  return m < 24 ? `${m} months` : `${(n / 365).toFixed(1).replace(/\.0$/, "")} years`;
 }
 async function copy(text, btn) {
   try { await navigator.clipboard.writeText(text); } catch { return; }
@@ -238,6 +291,15 @@ document.addEventListener("click", e => {
   if (b) copy(b.dataset.copy || b.previousElementSibling.textContent, b);
 });
 
+// Render a result card. `state` (ok / soon / bad) adds the coloured glow coming out of the card.
+function render(state, html) {
+  const s = state || "none";
+  out.innerHTML = `${state ? '<div class="halo s-' + s + '"></div>' : ""}<div class="card s-${s}${state ? " tinted" : ""}">${html}</div>`;
+  out.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+const loading = text => render(null, `<div class="loading"><span class="spin"></span>${esc(text)}</div>`);
+const message = (title, text) => render(null, `<span class="pill"><span class="dot"></span>${esc(title)}</span><p class="sub" style="margin-top:12px">${esc(text)}</p>`);
+
 // Recent checks, newest first.
 function remember(entry) {
   const list = store.get("recent", []).filter(r => !(r.brand === entry.brand && r.serial === entry.serial));
@@ -246,9 +308,9 @@ function remember(entry) {
 }
 function drawRecent() {
   const list = store.get("recent", []);
-  $("#recent").innerHTML = list.length ? `<span class="muted" style="font-size:13px">Recent:</span>` + list.map((r, i) =>
-    `<button class="chip" data-i="${i}" title="${esc(r.model || "")}"><i class="${r.state || ""}"></i>${mini(r.brand)}${esc(r.serial)}</button>`).join("")
-    + `<button class="link" id="clear" style="font-size:13px">Clear</button>` : "";
+  $("#recent").innerHTML = list.length ? `<span class="label">Recent</span>` + list.map((r, i) =>
+    `<button class="chip" data-i="${i}" title="${esc(r.model || NAMES[r.brand])}"><span class="dot ${r.state || ""}"></span>${mini(r.brand)}${esc(r.serial)}</button>`).join("")
+    + `<button class="link" id="clear">Clear</button>` : "";
 }
 $("#recent").onclick = e => {
   if (e.target.id === "clear") { store.set("recent", []); drawRecent(); return; }
@@ -258,51 +320,50 @@ $("#recent").onclick = e => {
   pick(r.brand); input.value = r.serial; check();
 };
 
-const daysUntil = d => Math.round((new Date(d + "T00:00") - new Date(today + "T00:00")) / 864e5);
-// Colour the card and the page: green, orange (under 3 months left), red, or neutral (null).
-function setState(state) {
-  out.className = "result" + (state ? " s-" + state : "");
-  if (state) document.body.dataset.state = state; else delete document.body.dataset.state;
-}
-function timeline(items, end) {
-  const start = items.filter(w => w.end === end).map(w => w.start).sort()[0];
-  if (!start || !end) return "";
-  const used = -daysUntil(start), total = daysUntil(end) - daysUntil(start);
-  const pct = total > 0 ? Math.min(100, Math.max(0, 100 * used / total)) : 100;
-  return `<div class="bar" role="img" aria-label="${Math.round(pct)}% of the warranty used"><b style="width:${pct}%"></b></div>
-    <div class="bar-l"><span>${fmt(start)}</span><span>${pct >= 100 ? "Ended" : Math.round(pct) + "% used"}</span><span>${fmt(end)}</span></div>`;
-}
-
 function showFull(r) {
-  const ok = r.inWarranty;
-  const soon = ok && r.end && daysUntil(r.end) <= 92;
-  const state = soon ? "soon" : ok ? "ok" : "bad";
+  const ok = r.inWarranty, d = r.end ? daysUntil(r.end) : null;
+  const state = ok && d !== null && d <= 92 ? "soon" : ok ? "ok" : "bad";
+  const label = { ok: "In warranty", soon: "Ends soon", bad: "Out of warranty" }[state];
+  const big = d === null ? label : d >= 0 ? `${span(d)} left` : `Ended ${span(d)} ago`;
   const img = /^https:\/\//.test(r.image || "") ? `<img class="photo" src="${esc(r.image)}" alt="" onerror="this.remove()">` : "";
-  const rows = r.items.map(w => `<tr class="${w.end < today ? "past" : ""}">
-      <td>${esc(w.name)}</td><td>${esc(w.type)}</td><td class="d">${fmt(w.start)}</td><td class="d">${fmt(w.end)}</td></tr>`).join("");
-  const facts = Object.entries(r.facts).filter(([, v]) => v).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(/^\d{4}-\d\d-\d\d$/.test(v) ? fmt(v) : v)}</dd>`).join("");
+  const start = r.items.filter(w => w.end === r.end).map(w => w.start).sort()[0];
+  let bar = "";
+  if (start && r.end) {
+    const total = daysUntil(r.end) - daysUntil(start);
+    const pct = total > 0 ? Math.min(100, Math.max(0, 100 * -daysUntil(start) / total)) : 100;
+    bar = `<div class="bar" role="img" aria-label="${Math.round(pct)}% of the warranty used"><i style="width:${pct}%"></i></div>
+      <div class="bar-l"><span>${fmt(start)}</span><span>${fmt(r.end)}</span></div>`;
+  }
+  const facts = Object.entries(r.facts).filter(([, v]) => v)
+    .map(([k, v]) => `<div class="fact"><span>${esc(k)}</span><b>${esc(/^\d{4}-\d\d-\d\d$/.test(v) ? fmt(v) : v)}</b></div>`).join("");
+  const cover = r.items.map(w => `<li class="${w.end < today ? "past" : ""}"><div><b>${esc(w.name)}</b><small>${esc(w.type)}</small></div>
+      <div class="d">${fmt(w.start)}<br>→ ${fmt(w.end)}</div></li>`).join("");
   const summary = `${r.model} (S/N ${r.serial}): ${ok ? "in warranty until" : "out of warranty since"} ${fmt(r.end)}`;
-  out.innerHTML = `<div class="head">${img}<div>
-      <span class="badge ${state}">${soon ? "Ends soon" : ok ? "In warranty" : "Out of warranty"}</span>
-      <div class="model">${esc(r.model)}</div>
-      <div class="muted">Serial ${esc(r.serial)} · ${esc(r.product)}</div></div></div>
-    ${r.end ? `<p class="big">${ok ? "Covered until" : "Ended on"} <b>${fmt(r.end)}</b> (${left(r.end)})</p>` : ""}
-    ${timeline(r.items, r.end)}
-    <table><tr><th>Coverage</th><th>Service</th><th>Start</th><th>End</th></tr>${rows}</table>
-    <dl>${facts}</dl>
-    <div class="actions"><button class="btn" data-copy="${esc(summary)}">Copy summary</button>
-      <a class="btn" href="${esc(r.link)}" target="_blank" rel="noopener">Open on Lenovo →</a></div>`;
-  setState(state);
+  render(state, `
+    <div class="hero">
+      <div>
+        <span class="pill"><span class="dot"></span>${label}</span>
+        <p class="big">${big}</p>
+        <p class="sub">${ok ? "Covered until" : "Ended on"} <b>${fmt(r.end)}</b></p>
+      </div>${img}
+    </div>
+    ${bar}
+    <div class="device"><h2>${esc(r.model)}</h2><p>S/N ${esc(r.serial)} · ${esc(r.product)}</p></div>
+    <div class="facts">${facts}</div>
+    <p class="cover-h">Coverage</p><ul class="cover">${cover}</ul>
+    <div class="actions"><button class="btn primary" data-copy="${esc(summary)}">Copy summary</button>
+      <a class="btn" href="${esc(r.link)}" target="_blank" rel="noopener">Open on Lenovo ↗</a></div>`);
   return state;
 }
 
 function showPartial(r) {
-  const facts = Object.entries(r.facts).filter(([, v]) => v).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
-  out.innerHTML = `<span class="badge warn">Model found</span>
-    <div class="model">${esc(r.model)}</div>
-    <div class="muted">Serial ${esc(r.serial)}</div>
-    <p class="big">${esc(r.note)}</p><dl>${facts}</dl>
-    <div class="actions"><a class="btn primary" href="${esc(r.link)}" target="_blank" rel="noopener">See warranty dates on HP →</a></div>`;
+  const facts = Object.entries(r.facts).filter(([, v]) => v).map(([k, v]) => `<div class="fact"><span>${esc(k)}</span><b>${esc(v)}</b></div>`).join("");
+  render(null, `<span class="pill"><span class="dot"></span>Model found</span>
+    <p class="big" style="font-size:clamp(20px,4.5vw,26px)">${esc(r.model)}</p>
+    <p class="sub">S/N ${esc(r.serial)}</p>
+    <div class="facts">${facts}</div>
+    <p class="sub" style="margin-top:16px">${esc(r.note)}</p>
+    <div class="actions"><a class="btn primary" href="${esc(r.link)}" target="_blank" rel="noopener">See warranty dates on HP ↗</a></div>`);
 }
 
 // Dell and Apple: hand off to their page. `auto` is false when the check didn't come from a click (popup blockers).
@@ -315,67 +376,62 @@ function handOff(b, serial, auto) {
     : "Apple asks for a captcha on every lookup. The serial is copied: paste it with Ctrl+V, then solve the captcha.";
   if (auto) window.open(url, "_blank", "noopener");
   if (b === "apple") navigator.clipboard?.writeText(serial).catch(() => {});
-  out.innerHTML = `<span class="badge warn">${auto ? "Opened" : "Open"} ${NAMES[b]}</span>
-    <div class="model">Serial ${esc(serial)}</div><p class="big">${msg}</p>
-    <div class="actions"><a class="btn primary" href="${esc(url)}" target="_blank" rel="noopener">${auto ? "Open again" : "Open " + NAMES[b]} →</a>
-      <button class="btn" data-copy="${esc(serial)}">Copy serial</button></div>`;
+  render(null, `<span class="pill"><span class="dot"></span>${auto ? "Opened" : "Open"} ${NAMES[b]}</span>
+    <p class="big" style="font-size:clamp(20px,4.5vw,26px)">S/N ${esc(serial)}</p>
+    <p class="sub">${msg}</p>
+    <div class="actions"><a class="btn primary" href="${esc(url)}" target="_blank" rel="noopener">${auto ? "Open again" : "Open " + NAMES[b]} ↗</a>
+      <button class="btn" data-copy="${esc(serial)}">Copy serial</button></div>`);
   remember({ brand: b, serial });
 }
 
 async function check(auto = true) {
   const serial = input.value.trim().toUpperCase().replace(/[\s-]+/g, "");
   if (!serial) { input.focus(); return; }
-  setState(null);
   if (!brand) {
     const g = guess(serial);
-    if (!g) { out.innerHTML = `<p class="big" style="margin:0">Which brand is it? Pick a logo above.</p>`; return; }
+    if (!g) return message("Which brand?", "Pick the laptop's logo above the serial field.");
     pick(g);
   }
   history.replaceState(null, "", `?brand=${brand}&serial=${encodeURIComponent(serial)}`);
-  if (brand === "dell" || brand === "apple") { handOff(brand, serial, auto); out.scrollIntoView({ behavior: "smooth", block: "nearest" }); return; }
-  go.disabled = true;
-  out.innerHTML = `<p class="big" style="margin:0"><span class="spin"></span>Asking ${NAMES[brand]}…</p>`;
-  out.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  if (brand === "dell" || brand === "apple") return handOff(brand, serial, auto);
   const b = brand;
+  go.disabled = true;
+  loading(`Asking ${NAMES[b]}…`);
   try {
     const r = await (await fetch(`api/${b}?serial=${encodeURIComponent(serial)}`)).json();
-    if (!r.ok) {
-      out.innerHTML = `<span class="badge bad">Not found</span><p class="big">${esc(r.error)}</p>`;
-      return;
-    }
-    const state = r.full ? showFull(r) : showPartial(r);
+    if (!r.ok) return message("Not found", r.error);
+    const state = r.full ? showFull(r) : (showPartial(r), null);
     remember({ brand: b, serial, model: r.model, state });
   } catch {
-    out.innerHTML = `<span class="badge bad">Error</span><p class="big">Couldn't reach the lookup server. Check your connection and try again.</p>`;
+    message("Connection problem", "Couldn't reach the lookup server. Check your connection and try again.");
   } finally { go.disabled = false; }
 }
 $("#f").onsubmit = e => { e.preventDefault(); check(); };
-// Pasting a serial checks it right away; Escape clears the field.
+// Pasting a serial checks it right away; Escape clears.
 input.addEventListener("paste", () => setTimeout(() => { if (input.value.trim().length >= 7) check(); }));
-input.addEventListener("keydown", e => { if (e.key === "Escape") { input.value = ""; out.innerHTML = ""; setState(null); } });
+input.addEventListener("keydown", e => { if (e.key === "Escape") { input.value = ""; out.innerHTML = ""; } });
 
 $("#where").onclick = () => {
   const help = $("#help"), open = help.hidden;
   help.hidden = !open; $("#where").setAttribute("aria-expanded", open);
 };
 
-// "Check my computer" only exists when running locally (the server can read this machine's firmware).
+// "Detect this computer" only exists when running locally (the server can read this machine's firmware).
 fetch("api/this").then(r => r.ok ? r.json() : null).then(info => {
-  if (!info || !("vendor" in info)) return;
-  $("#me").hidden = false; $("#or").hidden = false;
+  if (info && "vendor" in info) $("#me").hidden = false;
 }).catch(() => {});
 $("#me").onclick = async () => {
-  setState(null);
-  out.innerHTML = `<p class="big" style="margin:0"><span class="spin"></span>Reading this computer's serial (it may ask for your password)…</p>`;
+  loading("Reading this computer's serial (it may ask for your password)…");
   try {
     const r = await (await fetch("api/this?root=1")).json();
     const v = r.vendor.toLowerCase();
     const b = v.includes("lenovo") ? "lenovo" : /\bhp\b|hewlett/.test(v) ? "hp" : v.includes("dell") ? "dell" : v.includes("apple") ? "apple" : null;
     if (b) pick(b);
-    if (r.serial && b) { input.value = r.serial; check(); }
-    else if (r.serial) { input.value = r.serial; out.innerHTML = `<p class="big" style="margin:0">This is a ${esc(r.vendor)} ${esc(r.model)}. That brand isn't supported yet.</p>`; }
-    else out.innerHTML = `<p class="big" style="margin:0">This is a ${esc(r.vendor)} ${esc(r.model)}, but the serial couldn't be read. Type it from the sticker underneath.</p>`;
-  } catch { out.innerHTML = `<p class="big" style="margin:0">Couldn't read this computer's details.</p>`; }
+    if (r.serial) input.value = r.serial;
+    if (r.serial && b) check();
+    else if (r.serial) message(`${r.vendor} ${r.model}`, "This brand isn't supported yet.");
+    else message(`${r.vendor} ${r.model}`, "The serial couldn't be read. Type it from the sticker underneath.");
+  } catch { message("Couldn't detect", "This computer's details couldn't be read."); }
 };
 
 drawRecent();
