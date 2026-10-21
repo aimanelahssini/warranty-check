@@ -1,7 +1,7 @@
 {
   "_name": "Bahasa Indonesia",
   "title": "Cek Garansi: cek garansi laptop gratis lewat nomor seri (Lenovo, ThinkPad, HP, Dell, Apple)",
-  "description": "Cek garansi laptop apa pun dari nomor serinya dalam sedetik. Cek garansi Lenovo dan ThinkPad gratis dengan tanggal pasti, plus tautan cepat untuk HP, Service Tag Dell, dan cakupan Apple. Cocok sebelum membeli laptop bekas.",
+  "description": "Deskripsi",
   "keywords": "cek garansi, cek garansi laptop, cek garansi dengan nomor seri, cek nomor seri laptop, cek status garansi, cek garansi Lenovo, cek garansi ThinkPad, cek serial number Lenovo, cek garansi HP, cek serial number HP, cek garansi Dell, cek service tag Dell, cek garansi Apple, cek garansi MacBook, cek garansi laptop bekas, cek laptop second, garansi laptop refurbished, masa garansi laptop, tanggal habis garansi, apakah laptop saya masih bergaransi",
   "ogTitle": "Cek Garansi: apakah laptop ini masih bergaransi?",
   "appName": "Cek Garansi",
@@ -51,7 +51,6 @@
   "purchased": "Dibeli",
   "supportEnds": "Dukungan berakhir",
   "productNumber": "Nomor produk",
-  "description": "Deskripsi",
   "modelFound": "Model ditemukan",
   "hpNote": "HP menyimpan tanggal garansi di balik captcha. Modelnya sudah dipastikan; halaman HP menampilkan tanggalnya.",
   "seeHp": "Lihat tanggal garansi di HP",
@@ -84,5 +83,16 @@
   "q4": "Apakah gratis? Apakah nomor seri saya disimpan?",
   "a4": "Gratis, tanpa akun. Nomor seri hanya dikirim ke produsen untuk mencari garansi. Riwayat pengecekan Anda disimpan di browser Anda sendiri, tidak pernah di server.",
   "q5": "Apakah berguna saat membeli laptop bekas?",
-  "a5": "Ya. Sebelum membeli laptop bekas atau refurbished, cek nomor serinya untuk mengetahui apakah garansi masih berlaku, kapan berakhir, dan model persisnya, sehingga Anda tahu apa yang Anda bayar."
+  "a5": "Ya. Sebelum membeli laptop bekas atau refurbished, cek nomor serinya untuk mengetahui apakah garansi masih berlaku, kapan berakhir, dan model persisnya, sehingga Anda tahu apa yang Anda bayar.",
+  "tagInfo": "Info dasar",
+  "deviceInfo": "Info perangkat",
+  "made": "Dibuat",
+  "serviceTag": "Service Tag",
+  "expressCode": "Kode Layanan Ekspres",
+  "dellNote": "Dell hanya menampilkan tanggal garansi di situsnya sendiri. Kode Layanan Ekspres adalah kode yang diminta dukungan Dell lewat telepon.",
+  "appleNote": "Apple menampilkan cakupan setelah captcha. Nomor seri disalin saat dibuka: tempel dengan Ctrl+V.",
+  "appleRandom": "Sejak 2021 nomor seri Apple acak, jadi modelnya tidak bisa dibaca dari situ.",
+  "checkOn": "Cek garansi di {brand}",
+  "unknownModel": "Perangkat {brand}",
+  "checkSerial": "Periksa nomor seri"
 }

@@ -1,7 +1,7 @@
 {
   "_name": "Română",
   "title": "Verificare garanție: verifică gratuit garanția laptopului după numărul de serie (Lenovo, ThinkPad, HP, Dell, Apple)",
-  "description": "Verifică garanția oricărui laptop după numărul de serie într-o secundă. Verificare gratuită a garanției Lenovo și ThinkPad cu date exacte, plus linkuri rapide pentru HP, Dell Service Tag și Apple. Ideal înainte să cumperi un laptop second-hand.",
+  "description": "Descriere",
   "keywords": "verificare garanție, verificare garanție laptop, verifică garanția după numărul de serie, verificare garanție online, număr de serie laptop, Lenovo verificare garanție, ThinkPad verificare garanție, garanție Lenovo verifică, HP verificare garanție, HP număr de serie garanție, Dell verificare garanție, Dell service tag garanție, Apple verificare garanție, MacBook verificare garanție, garanție laptop second-hand, verificare laptop second-hand, laptop refurbished garanție, status garanție calculator, data expirării garanției, mai are laptopul meu garanție",
   "ogTitle": "Verificare garanție: mai are acest laptop garanție?",
   "appName": "Verificare garanție",
@@ -51,7 +51,6 @@
   "purchased": "Cumpărat",
   "supportEnds": "Suport până la",
   "productNumber": "Cod produs",
-  "description": "Descriere",
   "modelFound": "Model găsit",
   "hpNote": "HP ascunde datele garanției după un captcha. Modelul e confirmat; pagina HP arată datele.",
   "seeHp": "Vezi datele garanției pe HP",
@@ -84,5 +83,16 @@
   "q4": "Este gratuit? Se salvează numărul meu de serie?",
   "a4": "Este gratuit, fără cont. Numărul de serie este trimis doar producătorului pentru a verifica garanția. Verificările recente sunt salvate în propriul tău browser, niciodată pe un server.",
   "q5": "Este util când cumpăr un laptop second-hand?",
-  "a5": "Da. Înainte să cumperi un laptop second-hand sau refurbished, verifică numărul de serie ca să vezi dacă garanția mai e valabilă, când expiră și modelul exact, ca să știi pentru ce plătești."
+  "a5": "Da. Înainte să cumperi un laptop second-hand sau refurbished, verifică numărul de serie ca să vezi dacă garanția mai e valabilă, când expiră și modelul exact, ca să știi pentru ce plătești.",
+  "tagInfo": "Info de bază",
+  "deviceInfo": "Info dispozitiv",
+  "made": "Fabricat",
+  "serviceTag": "Service Tag",
+  "expressCode": "Cod de service expres",
+  "dellNote": "Dell afișează datele garanției doar pe site-ul propriu. Codul de service expres este cel cerut de suportul Dell la telefon.",
+  "appleNote": "Apple afișează acoperirea după un captcha. Numărul de serie se copiază la deschidere: lipește-l cu Ctrl+V.",
+  "appleRandom": "Din 2021 numerele de serie Apple sunt aleatorii, deci modelul nu poate fi dedus din ele.",
+  "checkOn": "Verifică garanția pe {brand}",
+  "unknownModel": "Dispozitiv {brand}",
+  "checkSerial": "Verifică numărul de serie"
 }

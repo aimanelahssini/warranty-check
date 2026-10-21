@@ -1,7 +1,7 @@
 {
   "_name": "Polski",
   "title": "Sprawdzanie gwarancji: darmowe sprawdzenie gwarancji laptopa po numerze seryjnym (Lenovo, ThinkPad, HP, Dell, Apple)",
-  "description": "Sprawdź gwarancję dowolnego laptopa po numerze seryjnym w sekundę. Darmowe sprawdzanie gwarancji Lenovo i ThinkPad z dokładnymi datami oraz szybkie linki do HP, Dell Service Tag i Apple. Idealne przed zakupem używanego laptopa.",
+  "description": "Opis",
   "keywords": "sprawdzenie gwarancji, sprawdź gwarancję laptopa, gwarancja po numerze seryjnym, sprawdzanie gwarancji online, numer seryjny laptopa, gwarancja Lenovo sprawdź, ThinkPad gwarancja sprawdzenie, Lenovo sprawdzenie gwarancji, HP sprawdzenie gwarancji, HP numer seryjny gwarancja, Dell sprawdzenie gwarancji, Dell service tag gwarancja, Apple sprawdzenie gwarancji, MacBook gwarancja sprawdź, gwarancja używanego laptopa, używany laptop sprawdzenie, laptop poleasingowy gwarancja, status gwarancji komputera, data końca gwarancji, czy mój laptop ma gwarancję",
   "ogTitle": "Sprawdzanie gwarancji: czy ten laptop ma jeszcze gwarancję?",
   "appName": "Sprawdzanie gwarancji",
@@ -51,7 +51,6 @@
   "purchased": "Zakupiono",
   "supportEnds": "Wsparcie do",
   "productNumber": "Numer produktu",
-  "description": "Opis",
   "modelFound": "Znaleziono model",
   "hpNote": "HP chowa daty gwarancji za captchą. Model jest potwierdzony; daty pokazuje strona HP.",
   "seeHp": "Zobacz daty gwarancji w HP",
@@ -84,5 +83,16 @@
   "q4": "Czy to jest darmowe? Czy mój numer seryjny jest zapisywany?",
   "a4": "Jest darmowe i bez konta. Numer seryjny trafia tylko do producenta, żeby sprawdzić gwarancję. Ostatnie sprawdzenia są zapisywane w Twojej przeglądarce, nigdy na serwerze.",
   "q5": "Czy to przydaje się przy zakupie używanego laptopa?",
-  "a5": "Tak. Przed zakupem używanego lub odnowionego laptopa sprawdź numer seryjny: zobaczysz, czy gwarancja jest jeszcze ważna, kiedy się kończy i jaki to dokładnie model, więc wiesz, za co płacisz."
+  "a5": "Tak. Przed zakupem używanego lub odnowionego laptopa sprawdź numer seryjny: zobaczysz, czy gwarancja jest jeszcze ważna, kiedy się kończy i jaki to dokładnie model, więc wiesz, za co płacisz.",
+  "tagInfo": "Podstawowe info",
+  "deviceInfo": "Dane urządzenia",
+  "made": "Wyprodukowano",
+  "serviceTag": "Service Tag",
+  "expressCode": "Kod Express Service",
+  "dellNote": "Dell pokazuje daty gwarancji tylko na własnej stronie. Kodu Express Service wsparcie Dell wymaga przez telefon.",
+  "appleNote": "Apple pokazuje ochronę po rozwiązaniu captcha. Numer seryjny zostanie skopiowany przy otwarciu: wklej go Ctrl+V.",
+  "appleRandom": "Od 2021 roku numery seryjne Apple są losowe, więc nie da się z nich odczytać modelu.",
+  "checkOn": "Sprawdź gwarancję w {brand}",
+  "unknownModel": "Urządzenie {brand}",
+  "checkSerial": "Sprawdź numer seryjny"
 }

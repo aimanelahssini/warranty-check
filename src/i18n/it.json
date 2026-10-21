@@ -1,7 +1,7 @@
 {
   "_name": "Italiano",
   "title": "Verifica garanzia: controlla gratis la garanzia di un portatile dal numero di serie (Lenovo, ThinkPad, HP, Dell, Apple)",
-  "description": "Controlla la garanzia di qualsiasi portatile dal numero di serie in un secondo. Verifica gratuita della garanzia Lenovo e ThinkPad con le date esatte, più link rapidi per HP, il Service Tag Dell e la copertura Apple. Ideale prima di comprare un portatile usato.",
+  "description": "Descrizione",
   "keywords": "verifica garanzia, controllo garanzia portatile, verificare garanzia numero di serie, controllare garanzia, garanzia lenovo, verifica garanzia lenovo, garanzia thinkpad, verifica garanzia hp, numero di serie hp garanzia, garanzia dell, dell service tag garanzia, verifica copertura apple, garanzia macbook, garanzia portatile usato, controllare portatile usato, garanzia portatile ricondizionato, stato garanzia computer, data scadenza garanzia, il mio portatile è in garanzia, ricerca numero di serie, Lenovo, ThinkPad, HP, Dell, Apple",
   "ogTitle": "Verifica garanzia: questo portatile è ancora in garanzia?",
   "appName": "Verifica garanzia",
@@ -51,7 +51,6 @@
   "purchased": "Acquistato",
   "supportEnds": "Fine supporto",
   "productNumber": "Codice prodotto",
-  "description": "Descrizione",
   "modelFound": "Modello trovato",
   "hpNote": "HP protegge le date di garanzia con un captcha. Il modello è confermato; la pagina HP mostra le date.",
   "seeHp": "Vedi le date di garanzia su HP",
@@ -84,5 +83,16 @@
   "q4": "È gratis? Il mio numero di serie viene salvato?",
   "a4": "È gratis, senza account. Il numero di serie viene inviato solo al produttore per verificare la garanzia. Le tue verifiche recenti restano nel tuo browser, mai su un server.",
   "q5": "È utile quando si compra un portatile usato?",
-  "a5": "Sì. Prima di comprare un portatile usato o ricondizionato, controlla il numero di serie per sapere se la garanzia è ancora valida, quando scade e qual è il modello esatto, così sai cosa stai pagando."
+  "a5": "Sì. Prima di comprare un portatile usato o ricondizionato, controlla il numero di serie per sapere se la garanzia è ancora valida, quando scade e qual è il modello esatto, così sai cosa stai pagando.",
+  "tagInfo": "Info di base",
+  "deviceInfo": "Info dispositivo",
+  "made": "Prodotto",
+  "serviceTag": "Service Tag",
+  "expressCode": "Codice di servizio rapido",
+  "dellNote": "Dell mostra le date di garanzia solo sul proprio sito. Il codice di servizio rapido è quello che chiede l'assistenza Dell al telefono.",
+  "appleNote": "Apple mostra la copertura dopo un captcha. Il numero di serie viene copiato all'apertura: incollalo con Ctrl+V.",
+  "appleRandom": "Dal 2021 i numeri di serie Apple sono casuali, quindi non indicano il modello.",
+  "checkOn": "Verifica la garanzia su {brand}",
+  "unknownModel": "Dispositivo {brand}",
+  "checkSerial": "Controlla il numero di serie"
 }

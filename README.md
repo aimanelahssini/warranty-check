@@ -12,8 +12,8 @@
 |---|---|
 | **Lenovo / ThinkPad** | Instant: in or out of warranty, every coverage line with dates, product picture, build, ship and purchase dates |
 | **HP** | Confirms the exact model from the serial, then one click to HP's warranty page (HP hides the dates behind a captcha) |
-| **Dell** | Opens Dell's page for that Service Tag (Dell blocks direct lookups) |
-| **Apple** | Copies the serial and opens Apple's coverage page (Apple requires a captcha) |
+| **Dell** | Shows the Service Tag and its Express Service Code (what Dell support asks for), then one click to Dell's warranty page (Dell blocks direct lookups) |
+| **Apple** | Shows the exact model and the month it was made (12-character serials, 2010-2020), then one click to Apple's coverage page with the serial copied (Apple requires a captcha) |
 
 Extras: it guesses the brand from the serial's shape, keeps your recent checks, has a "Copy summary" button for sending to a seller, and links like `?brand=lenovo&serial=PF1AB2CD` open straight on the result. "Where do I find the serial?" shows the one-line command for Windows and Linux.
 

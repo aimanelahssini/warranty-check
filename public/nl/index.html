@@ -217,7 +217,8 @@
   .device p { margin: 2px 0 0; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
 
   .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 6px; margin-top: 16px; }
-  @media (min-width: 600px) { .facts { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); } }
+  @media (min-width: 600px) { .facts { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
+                              .facts.few { grid-auto-columns: minmax(0, 190px); } }
   .fact { background: var(--soft); border-radius: var(--r-sm); padding: 8px 9px; min-width: 0; }
   .fact span { display: block; font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .fact b { display: block; margin-top: 1px; font-size: 12.5px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -300,8 +301,8 @@
     <div class="brands" role="group" aria-label="Merk">
       <button class="brand" data-b="lenovo" aria-label="Lenovo / ThinkPad" title="Lenovo / ThinkPad"><span class="logo wide" style="--m:url(/logos/lenovo.svg)"></span><small>Direct</small></button>
       <button class="brand" data-b="hp" aria-label="HP" title="HP"><span class="logo" style="--m:url(/logos/hp.svg)"></span><small>Alleen model</small></button>
-      <button class="brand" data-b="dell" aria-label="Dell" title="Dell"><span class="logo" style="--m:url(/logos/dell.svg)"></span><small>Via hun site</small></button>
-      <button class="brand" data-b="apple" aria-label="Apple" title="Apple"><span class="logo" style="--m:url(/logos/apple.svg)"></span><small>Via hun site</small></button>
+      <button class="brand" data-b="dell" aria-label="Dell" title="Dell"><span class="logo" style="--m:url(/logos/dell.svg)"></span><small>Basisinfo</small></button>
+      <button class="brand" data-b="apple" aria-label="Apple" title="Apple"><span class="logo" style="--m:url(/logos/apple.svg)"></span><small>Alleen model</small></button>
     </div>
     <form class="field" id="f">
       <input id="serial" placeholder="Serienummer" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Serienummer">
@@ -363,7 +364,7 @@
 </main>
 
 <script>
-const LANG = "nl", LANGS = ["en", "ar", "cs", "de", "es", "fr", "hi", "id", "it", "ja", "ko", "nl", "pl", "pt", "ro", "ru", "sv", "tr", "uk", "vi", "zh"], T = {"hintDefault": "Kies een merk, of plak gewoon het serienummer.", "hintLenovo": "Lenovo-serienummers hebben 8 tekens, zoals PF1AB2CD.", "hintHp": "HP-serienummers hebben 10 tekens, zoals 5CD1234ABC. Fn+Esc toont het.", "hintDell": "Dell gebruikt een Service Tag van 7 tekens, zoals 7XJ8YZ2.", "hintApple": "Apple-serienummers hebben 10 tot 12 tekens.", "copy": "Kopiëren", "copied": "Gekopieerd", "recent": "Recent", "clear": "Wissen", "inWarranty": "Onder garantie", "endsSoon": "Verloopt binnenkort", "outWarranty": "Garantie verlopen", "left": "Nog {t}", "ago": "{t} geleden verlopen", "coveredUntil": "Gedekt tot", "endedOn": "Verlopen op", "coverage": "Dekking", "used": "{n}% van de garantie verbruikt", "copySummary": "Samenvatting kopiëren", "openOn": "Openen op {brand}", "summaryIn": "onder garantie tot", "summaryOut": "garantie verlopen sinds", "built": "Gebouwd", "shipped": "Verzonden", "shippedTo": "Verzonden naar", "purchased": "Gekocht", "supportEnds": "Support tot", "productNumber": "Productnummer", "description": "Omschrijving", "modelFound": "Model gevonden", "hpNote": "HP zet de garantiedata achter een captcha. Het model is bevestigd; de pagina van HP toont de data.", "seeHp": "Garantiedata bekijken bij HP", "opened": "{brand} geopend", "open": "{brand} openen", "openAgain": "Opnieuw openen", "copySerial": "Serienummer kopiëren", "dellMsg": "Dell blokkeert directe opzoekingen, dus de garantiepagina voor deze Service Tag opent in een nieuw tabblad.", "appleMsg": "Apple vraagt bij elke opzoeking om een captcha. Het serienummer is gekopieerd: plak het met Ctrl+V en los daarna de captcha op.", "asking": "{brand} wordt gevraagd…", "whichBrand": "Welk merk?", "whichBrandText": "Kies het logo van de laptop boven het invoerveld.", "notFound": "Niet gevonden", "notFoundText": "{brand} kent dit serienummer niet. Controleer het op de sticker onder de laptop.", "badSerial": "Dat lijkt geen serienummer.", "netTitle": "Verbindingsprobleem", "netText": "De server kon niet worden bereikt. Controleer je verbinding en probeer het opnieuw.", "reading": "Serienummer van deze computer uitlezen (mogelijk wordt om je wachtwoord gevraagd)…", "unsupported": "Dit merk wordt nog niet ondersteund.", "noSerial": "Het serienummer kon niet worden uitgelezen. Neem het over van de sticker onderaan.", "cantDetect": "Herkennen mislukt", "cantDetectText": "De gegevens van deze computer konden niet worden uitgelezen."};
+const LANG = "nl", LANGS = ["en", "ar", "cs", "de", "es", "fr", "hi", "id", "it", "ja", "ko", "nl", "pl", "pt", "ro", "ru", "sv", "tr", "uk", "vi", "zh"], T = {"hintDefault": "Kies een merk, of plak gewoon het serienummer.", "hintLenovo": "Lenovo-serienummers hebben 8 tekens, zoals PF1AB2CD.", "hintHp": "HP-serienummers hebben 10 tekens, zoals 5CD1234ABC. Fn+Esc toont het.", "hintDell": "Dell gebruikt een Service Tag van 7 tekens, zoals 7XJ8YZ2.", "hintApple": "Apple-serienummers hebben 10 tot 12 tekens.", "copy": "Kopiëren", "copied": "Gekopieerd", "recent": "Recent", "clear": "Wissen", "inWarranty": "Onder garantie", "endsSoon": "Verloopt binnenkort", "outWarranty": "Garantie verlopen", "left": "Nog {t}", "ago": "{t} geleden verlopen", "coveredUntil": "Gedekt tot", "endedOn": "Verlopen op", "coverage": "Dekking", "used": "{n}% van de garantie verbruikt", "copySummary": "Samenvatting kopiëren", "openOn": "Openen op {brand}", "summaryIn": "onder garantie tot", "summaryOut": "garantie verlopen sinds", "built": "Gebouwd", "shipped": "Verzonden", "shippedTo": "Verzonden naar", "purchased": "Gekocht", "supportEnds": "Support tot", "productNumber": "Productnummer", "description": "Omschrijving", "modelFound": "Model gevonden", "hpNote": "HP zet de garantiedata achter een captcha. Het model is bevestigd; de pagina van HP toont de data.", "seeHp": "Garantiedata bekijken bij HP", "opened": "{brand} geopend", "open": "{brand} openen", "openAgain": "Opnieuw openen", "copySerial": "Serienummer kopiëren", "dellMsg": "Dell blokkeert directe opzoekingen, dus de garantiepagina voor deze Service Tag opent in een nieuw tabblad.", "appleMsg": "Apple vraagt bij elke opzoeking om een captcha. Het serienummer is gekopieerd: plak het met Ctrl+V en los daarna de captcha op.", "asking": "{brand} wordt gevraagd…", "whichBrand": "Welk merk?", "whichBrandText": "Kies het logo van de laptop boven het invoerveld.", "notFound": "Niet gevonden", "notFoundText": "{brand} kent dit serienummer niet. Controleer het op de sticker onder de laptop.", "badSerial": "Dat lijkt geen serienummer.", "netTitle": "Verbindingsprobleem", "netText": "De server kon niet worden bereikt. Controleer je verbinding en probeer het opnieuw.", "reading": "Serienummer van deze computer uitlezen (mogelijk wordt om je wachtwoord gevraagd)…", "unsupported": "Dit merk wordt nog niet ondersteund.", "noSerial": "Het serienummer kon niet worden uitgelezen. Neem het over van de sticker onderaan.", "cantDetect": "Herkennen mislukt", "cantDetectText": "De gegevens van deze computer konden niet worden uitgelezen.", "deviceInfo": "Apparaatinfo", "made": "Gemaakt", "serviceTag": "Service Tag", "expressCode": "Express-servicecode", "dellNote": "Dell toont garantiedata alleen op de eigen website. De express-servicecode is wat Dell-support aan de telefoon vraagt.", "appleNote": "Apple toont de dekking na een captcha. Het serienummer wordt gekopieerd bij openen: plak het met Ctrl+V.", "appleRandom": "Sinds 2021 zijn Apple-serienummers willekeurig, dus het model valt er niet uit af te lezen.", "checkOn": "Garantie controleren bij {brand}", "unknownModel": "{brand}-apparaat", "checkSerial": "Controleer het serienummer"};
 const tr = (k, v = {}) => (T[k] || k).replace(/\{(\w+)\}/g, (_, x) => v[x] ?? "");
 const store = {
   get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
@@ -455,10 +456,13 @@ $("#recent").onclick = e => {
 };
 
 function factTiles(facts) {
-  return Object.entries(facts).filter(([, v]) => v).map(([k, v]) => {
-    const shown = /^\d{4}-\d\d-\d\d$/.test(v) ? fmt(v) : k === "shippedTo" ? country(v) : v;
+  const list = Object.entries(facts).filter(([, v]) => v);
+  if (!list.length) return "";
+  return `<div class="facts${list.length < 4 ? " few" : ""}">` + list.map(([k, v]) => {
+    const shown = k === "made" ? new Date(v + "T00:00").toLocaleDateString(LANG, { month: "long", year: "numeric" })
+      : /^\d{4}-\d\d-\d\d$/.test(v) ? fmt(v) : k === "shippedTo" ? country(v) : v;
     return `<div class="fact"><span>${esc(tr(k))}</span><b title="${esc(shown)}">${esc(shown)}</b></div>`;
-  }).join("");
+  }).join("") + "</div>";
 }
 
 function showFull(r) {
@@ -488,7 +492,7 @@ function showFull(r) {
     </div>
     ${bar}
     <div class="device"><h2>${esc(r.model)}</h2><p dir="ltr">S/N ${esc(r.serial)} · ${esc(r.product)}</p></div>
-    <div class="facts">${factTiles(r.facts)}</div>
+    ${factTiles(r.facts)}
     <p class="cover-h">${esc(tr("coverage"))}</p><ul class="cover">${cover}</ul>
     <div class="actions"><button class="btn primary" data-copy="${esc(summary)}">${esc(tr("copySummary"))}</button>
       <a class="btn" href="${esc(r.link)}" target="_blank" rel="noopener">${esc(tr("openOn", { brand: "Lenovo" }))} ↗</a></div>`);
@@ -496,30 +500,18 @@ function showFull(r) {
 }
 
 function showPartial(r) {
-  render(null, `<span class="pill"><span class="dot"></span>${esc(tr("modelFound"))}</span>
-    <p class="big" style="font-size:clamp(20px,4.5vw,26px)">${esc(r.model)}</p>
+  const b = r.brand, name = NAMES[b];
+  const note = b === "hp" ? tr("hpNote") : b === "dell" ? tr("dellNote") : (r.random ? tr("appleRandom") + " " : "") + tr("appleNote");
+  const copySerial = b === "hp" ? "" : `<button class="btn" data-copy="${esc(r.serial)}">${esc(tr("copySerial"))}</button>`;
+  render(null, `<span class="pill"><span class="dot"></span>${esc(tr(r.model ? "modelFound" : "deviceInfo"))}</span>
+    <p class="big" style="font-size:clamp(20px,4.5vw,26px)">${esc(r.model || tr("unknownModel", { brand: name }))}</p>
     <p class="sub" dir="ltr">S/N ${esc(r.serial)}</p>
-    <div class="facts">${factTiles(r.facts)}</div>
-    <p class="sub" style="margin-top:16px">${esc(tr("hpNote"))}</p>
-    <div class="actions"><a class="btn primary" href="${esc(r.link)}" target="_blank" rel="noopener">${esc(tr("seeHp"))} ↗</a></div>`);
+    ${factTiles(r.facts)}
+    <p class="sub" style="margin-top:16px">${esc(note)}</p>
+    <div class="actions"><a class="btn primary" href="${esc(r.link)}" target="_blank" rel="noopener"${b === "apple" ? ` data-copy="${esc(r.serial)}"` : ""}>${esc(tr("checkOn", { brand: name }))} ↗</a>${copySerial}</div>`);
 }
 
-// Dell and Apple: hand off to their page. `auto` is false when the check didn't come from a click (popup blockers).
-function handOff(b, serial, auto) {
-  const url = b === "dell"
-    ? `https://www.dell.com/support/home/en-us/product-support/servicetag/${encodeURIComponent(serial)}/overview`
-    : "https://checkcoverage.apple.com/";
-  if (auto) window.open(url, "_blank", "noopener");
-  if (b === "apple") navigator.clipboard?.writeText(serial).catch(() => {});
-  render(null, `<span class="pill"><span class="dot"></span>${esc(tr(auto ? "opened" : "open", { brand: NAMES[b] }))}</span>
-    <p class="big" style="font-size:clamp(20px,4.5vw,26px)" dir="ltr">S/N ${esc(serial)}</p>
-    <p class="sub">${esc(tr(b === "dell" ? "dellMsg" : "appleMsg"))}</p>
-    <div class="actions"><a class="btn primary" href="${esc(url)}" target="_blank" rel="noopener">${esc(auto ? tr("openAgain") : tr("open", { brand: NAMES[b] }))} ↗</a>
-      <button class="btn" data-copy="${esc(serial)}">${esc(tr("copySerial"))}</button></div>`);
-  remember({ brand: b, serial });
-}
-
-async function check(auto = true) {
+async function check() {
   const serial = input.value.trim().toUpperCase().replace(/[\s-]+/g, "");
   if (!serial) { input.focus(); return; }
   if (!brand) {
@@ -528,14 +520,14 @@ async function check(auto = true) {
     pick(g);
   }
   history.replaceState(null, "", `?brand=${brand}&serial=${encodeURIComponent(serial)}`);
-  if (brand === "dell" || brand === "apple") return handOff(brand, serial, auto);
   const b = brand;
   go.disabled = true;
   loading(tr("asking", { brand: NAMES[b] }));
   try {
-    const r = await (await fetch(`/api/${b}?serial=${encodeURIComponent(serial)}`)).json();
+    const r = await (await fetch(`/api/${b}?serial=${encodeURIComponent(serial)}&lang=${LANG}`)).json();
     if (!r.ok) {
       if (r.error === "badSerial") return message(tr("notFound"), tr("badSerial"));
+      if (r.error === "badFormat") return message(tr("checkSerial"), tr(HINTS[b]));
       if (r.error === "unreachable") return message(tr("netTitle"), tr("netText"));
       return message(tr("notFound"), tr("notFoundText", { brand: NAMES[b] }));
     }
@@ -576,7 +568,7 @@ drawRecent();
 const params = new URLSearchParams(location.search);
 const startBrand = params.get("brand"), startSerial = params.get("serial");
 if (NAMES[startBrand]) pick(startBrand); else if (store.get("brand", null) in NAMES) pick(store.get("brand"));
-if (startSerial) { input.value = startSerial; check(false); } else if (matchMedia("(min-width: 600px)").matches) input.focus();
+if (startSerial) { input.value = startSerial; check(); } else if (matchMedia("(min-width: 600px)").matches) input.focus();
 </script>
 </body>
 </html>

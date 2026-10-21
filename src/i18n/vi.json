@@ -1,7 +1,7 @@
 {
   "_name": "Tiếng Việt",
   "title": "Kiểm tra bảo hành: tra cứu bảo hành laptop miễn phí bằng số serial (Lenovo, ThinkPad, HP, Dell, Apple)",
-  "description": "Kiểm tra bảo hành của bất kỳ laptop nào từ số serial chỉ trong một giây. Tra cứu bảo hành Lenovo và ThinkPad miễn phí với ngày chính xác, kèm liên kết nhanh cho HP, Service Tag Dell và Apple. Lý tưởng trước khi mua laptop cũ.",
+  "description": "Mô tả",
   "keywords": "kiểm tra bảo hành, kiểm tra bảo hành laptop, tra cứu bảo hành, tra cứu bảo hành bằng số serial, check bảo hành laptop, kiểm tra số serial laptop, kiểm tra bảo hành Lenovo, tra cứu bảo hành ThinkPad, check serial Lenovo, kiểm tra bảo hành HP, check serial HP, kiểm tra bảo hành Dell, tra cứu Service Tag Dell, kiểm tra bảo hành Apple, check bảo hành MacBook, bảo hành laptop cũ, kiểm tra laptop cũ, laptop like new bảo hành, ngày hết hạn bảo hành, laptop của tôi còn bảo hành không",
   "ogTitle": "Kiểm tra bảo hành: laptop này còn bảo hành không?",
   "appName": "Kiểm tra bảo hành",
@@ -51,7 +51,6 @@
   "purchased": "Ngày mua",
   "supportEnds": "Hết hỗ trợ",
   "productNumber": "Mã sản phẩm",
-  "description": "Mô tả",
   "modelFound": "Đã tìm thấy mẫu máy",
   "hpNote": "HP đặt ngày bảo hành sau captcha. Mẫu máy đã được xác nhận; trang của HP sẽ hiển thị ngày.",
   "seeHp": "Xem ngày bảo hành trên HP",
@@ -84,5 +83,16 @@
   "q4": "Có miễn phí không? Số serial của tôi có bị lưu không?",
   "a4": "Hoàn toàn miễn phí, không cần tài khoản. Số serial chỉ được gửi đến nhà sản xuất để tra cứu bảo hành. Lịch sử kiểm tra gần đây được lưu trong trình duyệt của bạn, không bao giờ trên máy chủ.",
   "q5": "Có hữu ích khi mua laptop cũ không?",
-  "a5": "Có. Trước khi mua laptop cũ hoặc hàng tân trang, hãy kiểm tra số serial để biết bảo hành còn hiệu lực không, khi nào hết hạn và chính xác là mẫu máy nào, để bạn biết mình đang trả tiền cho cái gì."
+  "a5": "Có. Trước khi mua laptop cũ hoặc hàng tân trang, hãy kiểm tra số serial để biết bảo hành còn hiệu lực không, khi nào hết hạn và chính xác là mẫu máy nào, để bạn biết mình đang trả tiền cho cái gì.",
+  "tagInfo": "Thông tin cơ bản",
+  "deviceInfo": "Thông tin thiết bị",
+  "made": "Sản xuất",
+  "serviceTag": "Service Tag",
+  "expressCode": "Mã dịch vụ nhanh",
+  "dellNote": "Dell chỉ hiển thị ngày bảo hành trên trang của họ. Mã dịch vụ nhanh là mã bộ phận hỗ trợ Dell hỏi qua điện thoại.",
+  "appleNote": "Apple hiển thị phạm vi bảo hành sau một captcha. Số serial được sao chép khi mở: dán bằng Ctrl+V.",
+  "appleRandom": "Từ năm 2021 số serial của Apple là ngẫu nhiên nên không đọc được mẫu máy từ đó.",
+  "checkOn": "Kiểm tra bảo hành trên {brand}",
+  "unknownModel": "Thiết bị {brand}",
+  "checkSerial": "Kiểm tra số serial"
 }

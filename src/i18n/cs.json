@@ -1,7 +1,7 @@
 {
   "_name": "Čeština",
   "title": "Kontrola záruky: ověření záruky notebooku zdarma podle sériového čísla (Lenovo, ThinkPad, HP, Dell, Apple)",
-  "description": "Ověřte záruku libovolného notebooku podle sériového čísla během vteřiny. Kontrola záruky Lenovo a ThinkPad zdarma s přesnými daty a rychlé odkazy pro HP, Dell Service Tag a Apple. Ideální před koupí použitého notebooku.",
+  "description": "Popis",
   "keywords": "kontrola záruky, ověření záruky notebooku, záruka podle sériového čísla, ověřit záruku online, sériové číslo notebooku, Lenovo kontrola záruky, ThinkPad ověření záruky, Lenovo záruka ověřit, HP kontrola záruky, HP sériové číslo záruka, Dell kontrola záruky, Dell service tag záruka, Apple ověření záruky, MacBook kontrola záruky, záruka použitého notebooku, použitý notebook kontrola, repasovaný notebook záruka, stav záruky počítače, konec záruky datum, má můj notebook záruku",
   "ogTitle": "Kontrola záruky: má tento notebook ještě záruku?",
   "appName": "Kontrola záruky",
@@ -51,7 +51,6 @@
   "purchased": "Zakoupeno",
   "supportEnds": "Podpora do",
   "productNumber": "Číslo produktu",
-  "description": "Popis",
   "modelFound": "Model nalezen",
   "hpNote": "HP má data záruky za captchou. Model je potvrzený; data ukáže stránka HP.",
   "seeHp": "Zobrazit data záruky u HP",
@@ -84,5 +83,16 @@
   "q4": "Je to zdarma? Ukládá se moje sériové číslo?",
   "a4": "Je to zdarma a bez účtu. Sériové číslo se posílá jen výrobci kvůli ověření záruky. Vaše nedávná ověření se ukládají ve vašem prohlížeči, nikdy na serveru.",
   "q5": "Hodí se to při koupi použitého notebooku?",
-  "a5": "Ano. Před koupí použitého nebo repasovaného notebooku ověřte sériové číslo: uvidíte, jestli záruka ještě platí, kdy končí a o jaký přesně model jde, takže víte, za co platíte."
+  "a5": "Ano. Před koupí použitého nebo repasovaného notebooku ověřte sériové číslo: uvidíte, jestli záruka ještě platí, kdy končí a o jaký přesně model jde, takže víte, za co platíte.",
+  "tagInfo": "Základní info",
+  "deviceInfo": "Info o zařízení",
+  "made": "Vyrobeno",
+  "serviceTag": "Service Tag",
+  "expressCode": "Kód expresní služby",
+  "dellNote": "Dell zobrazuje data záruky jen na svém webu. Kód expresní služby po vás chce podpora Dell po telefonu.",
+  "appleNote": "Apple ukáže pokrytí po vyřešení captchy. Sériové číslo se při otevření zkopíruje: vložte ho pomocí Ctrl+V.",
+  "appleRandom": "Od roku 2021 jsou sériová čísla Apple náhodná, model z nich proto nelze vyčíst.",
+  "checkOn": "Ověřit záruku u {brand}",
+  "unknownModel": "Zařízení {brand}",
+  "checkSerial": "Zkontrolujte sériové číslo"
 }

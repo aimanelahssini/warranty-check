@@ -24,7 +24,8 @@ RUNTIME = ["hintDefault", "hintLenovo", "hintHp", "hintDell", "hintApple", "copy
            "supportEnds", "productNumber", "description", "modelFound", "hpNote", "seeHp", "opened", "open",
            "openAgain", "copySerial", "dellMsg", "appleMsg", "asking", "whichBrand", "whichBrandText", "notFound",
            "notFoundText", "badSerial", "netTitle", "netText", "reading", "unsupported", "noSerial", "cantDetect",
-           "cantDetectText"]
+           "cantDetectText", "deviceInfo", "made", "serviceTag", "expressCode", "dellNote", "appleNote",
+           "appleRandom", "checkOn", "unknownModel", "checkSerial"]
 
 
 def load():

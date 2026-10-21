@@ -1,7 +1,7 @@
 {
   "_name": "Português",
   "title": "Verificar garantia: consulte grátis a garantia de um portátil pelo número de série (Lenovo, ThinkPad, HP, Dell, Apple)",
-  "description": "Verifique a garantia de qualquer portátil a partir do número de série num segundo. Consulta gratuita da garantia Lenovo e ThinkPad com datas exatas, mais atalhos para HP, o Service Tag da Dell e a cobertura da Apple. Ideal antes de comprar um portátil usado.",
+  "description": "Descrição",
   "keywords": "verificar garantia, verificar garantia portátil, verificar garantia notebook, consultar garantia número de série, garantia lenovo, verificar garantia lenovo, garantia thinkpad, verificar garantia hp, número de série hp garantia, garantia dell, dell service tag garantia, verificar cobertura apple, garantia macbook, garantia portátil usado, verificar notebook usado, garantia portátil recondicionado, estado da garantia computador, data fim da garantia, meu portátil tem garantia, pesquisar número de série, Lenovo, ThinkPad, HP, Dell, Apple",
   "ogTitle": "Verificar garantia: este portátil ainda está na garantia?",
   "appName": "Verificar garantia",
@@ -51,7 +51,6 @@
   "purchased": "Comprado",
   "supportEnds": "Fim do suporte",
   "productNumber": "Número do produto",
-  "description": "Descrição",
   "modelFound": "Modelo encontrado",
   "hpNote": "A HP protege as datas da garantia com um captcha. O modelo está confirmado; a página da HP mostra as datas.",
   "seeHp": "Ver datas da garantia na HP",
@@ -84,5 +83,16 @@
   "q4": "É grátis? O meu número de série fica guardado?",
   "a4": "É grátis, sem conta. O número de série só é enviado ao fabricante para consultar a garantia. As suas consultas recentes ficam guardadas no seu próprio navegador, nunca num servidor.",
   "q5": "É útil ao comprar um portátil usado?",
-  "a5": "Sim. Antes de comprar um portátil usado ou recondicionado, verifique o número de série para saber se a garantia ainda é válida, quando termina e qual é o modelo exato, para saber o que está a pagar."
+  "a5": "Sim. Antes de comprar um portátil usado ou recondicionado, verifique o número de série para saber se a garantia ainda é válida, quando termina e qual é o modelo exato, para saber o que está a pagar.",
+  "tagInfo": "Info básica",
+  "deviceInfo": "Info do equipamento",
+  "made": "Fabricado",
+  "serviceTag": "Service Tag",
+  "expressCode": "Código de serviço expresso",
+  "dellNote": "A Dell só mostra as datas de garantia no seu próprio site. O código de serviço expresso é o que o suporte Dell pede ao telefone.",
+  "appleNote": "A Apple mostra a cobertura depois de um captcha. O número de série é copiado ao abrir: cole-o com Ctrl+V.",
+  "appleRandom": "Desde 2021 os números de série da Apple são aleatórios, por isso não revelam o modelo.",
+  "checkOn": "Verificar garantia na {brand}",
+  "unknownModel": "Equipamento {brand}",
+  "checkSerial": "Verifique o número de série"
 }

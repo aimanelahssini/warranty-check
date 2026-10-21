@@ -52,7 +52,7 @@ class Handler(BaseHTTPRequestHandler):
         qs = urllib.parse.parse_qs(url.query)
         brand = url.path.removeprefix("/api/")
         if brand in BRANDS:
-            return self.send(200, lookup(brand, (qs.get("serial") or [""])[0]))
+            return self.send(200, lookup(brand, (qs.get("serial") or [""])[0], (qs.get("lang") or ["en"])[0]))
         if url.path == "/api/this":
             return self.send(200, this_computer("root" in qs))
         path = os.path.realpath(os.path.join(STATIC, url.path.lstrip("/")))

@@ -217,7 +217,8 @@
   .device p { margin: 2px 0 0; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
 
   .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 6px; margin-top: 16px; }
-  @media (min-width: 600px) { .facts { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); } }
+  @media (min-width: 600px) { .facts { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
+                              .facts.few { grid-auto-columns: minmax(0, 190px); } }
   .fact { background: var(--soft); border-radius: var(--r-sm); padding: 8px 9px; min-width: 0; }
   .fact span { display: block; font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .fact b { display: block; margin-top: 1px; font-size: 12.5px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -300,8 +301,8 @@
     <div class="brands" role="group" aria-label="Marcă">
       <button class="brand" data-b="lenovo" aria-label="Lenovo / ThinkPad" title="Lenovo / ThinkPad"><span class="logo wide" style="--m:url(/logos/lenovo.svg)"></span><small>Instant</small></button>
       <button class="brand" data-b="hp" aria-label="HP" title="HP"><span class="logo" style="--m:url(/logos/hp.svg)"></span><small>Doar modelul</small></button>
-      <button class="brand" data-b="dell" aria-label="Dell" title="Dell"><span class="logo" style="--m:url(/logos/dell.svg)"></span><small>Pe site-ul lor</small></button>
-      <button class="brand" data-b="apple" aria-label="Apple" title="Apple"><span class="logo" style="--m:url(/logos/apple.svg)"></span><small>Pe site-ul lor</small></button>
+      <button class="brand" data-b="dell" aria-label="Dell" title="Dell"><span class="logo" style="--m:url(/logos/dell.svg)"></span><small>Info de bază</small></button>
+      <button class="brand" data-b="apple" aria-label="Apple" title="Apple"><span class="logo" style="--m:url(/logos/apple.svg)"></span><small>Doar modelul</small></button>
     </div>
     <form class="field" id="f">
       <input id="serial" placeholder="Număr de serie" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Număr de serie">
@@ -363,7 +364,7 @@
 </main>
 
 <script>
-const LANG = "ro", LANGS = ["en", "ar", "cs", "de", "es", "fr", "hi", "id", "it", "ja", "ko", "nl", "pl", "pt", "ro", "ru", "sv", "tr", "uk", "vi", "zh"], T = {"hintDefault": "Alege o marcă sau lipește direct numărul de serie.", "hintLenovo": "Numerele de serie Lenovo au 8 caractere, de ex. PF1AB2CD.", "hintHp": "Numerele de serie HP au 10 caractere, de ex. 5CD1234ABC. Apare cu Fn+Esc.", "hintDell": "Dell folosește un Service Tag de 7 caractere, de ex. 7XJ8YZ2.", "hintApple": "Numerele de serie Apple au între 10 și 12 caractere.", "copy": "Copiază", "copied": "Copiat", "recent": "Recente", "clear": "Șterge", "inWarranty": "În garanție", "endsSoon": "Expiră curând", "outWarranty": "Fără garanție", "left": "Mai sunt {t}", "ago": "A expirat acum {t}", "coveredUntil": "Valabilă până la", "endedOn": "A expirat pe", "coverage": "Acoperire", "used": "{n}% din garanție consumată", "copySummary": "Copiază rezumatul", "openOn": "Deschide pe {brand}", "summaryIn": "în garanție până la", "summaryOut": "fără garanție din", "built": "Fabricat", "shipped": "Expediat", "shippedTo": "Expediat în", "purchased": "Cumpărat", "supportEnds": "Suport până la", "productNumber": "Cod produs", "description": "Descriere", "modelFound": "Model găsit", "hpNote": "HP ascunde datele garanției după un captcha. Modelul e confirmat; pagina HP arată datele.", "seeHp": "Vezi datele garanției pe HP", "opened": "{brand} deschis", "open": "Deschide {brand}", "openAgain": "Deschide din nou", "copySerial": "Copiază numărul", "dellMsg": "Dell blochează căutările directe, așa că pagina de garanție pentru acest Service Tag se deschide într-o filă nouă.", "appleMsg": "Apple cere un captcha la fiecare căutare. Numărul de serie e copiat: lipește-l cu Ctrl+V, apoi rezolvă captcha.", "asking": "Întreb {brand}…", "whichBrand": "Ce marcă?", "whichBrandText": "Alege logoul laptopului de deasupra câmpului pentru numărul de serie.", "notFound": "Negăsit", "notFoundText": "{brand} nu cunoaște acest număr de serie. Verifică-l pe eticheta de sub laptop.", "badSerial": "Nu pare a fi un număr de serie.", "netTitle": "Problemă de conexiune", "netText": "Serverul nu a putut fi contactat. Verifică conexiunea și încearcă din nou.", "reading": "Citesc numărul de serie al acestui calculator (poate cere parola)…", "unsupported": "Această marcă nu este încă acceptată.", "noSerial": "Numărul de serie nu a putut fi citit. Scrie-l de pe eticheta de dedesubt.", "cantDetect": "Detectare eșuată", "cantDetectText": "Detaliile acestui calculator nu au putut fi citite."};
+const LANG = "ro", LANGS = ["en", "ar", "cs", "de", "es", "fr", "hi", "id", "it", "ja", "ko", "nl", "pl", "pt", "ro", "ru", "sv", "tr", "uk", "vi", "zh"], T = {"hintDefault": "Alege o marcă sau lipește direct numărul de serie.", "hintLenovo": "Numerele de serie Lenovo au 8 caractere, de ex. PF1AB2CD.", "hintHp": "Numerele de serie HP au 10 caractere, de ex. 5CD1234ABC. Apare cu Fn+Esc.", "hintDell": "Dell folosește un Service Tag de 7 caractere, de ex. 7XJ8YZ2.", "hintApple": "Numerele de serie Apple au între 10 și 12 caractere.", "copy": "Copiază", "copied": "Copiat", "recent": "Recente", "clear": "Șterge", "inWarranty": "În garanție", "endsSoon": "Expiră curând", "outWarranty": "Fără garanție", "left": "Mai sunt {t}", "ago": "A expirat acum {t}", "coveredUntil": "Valabilă până la", "endedOn": "A expirat pe", "coverage": "Acoperire", "used": "{n}% din garanție consumată", "copySummary": "Copiază rezumatul", "openOn": "Deschide pe {brand}", "summaryIn": "în garanție până la", "summaryOut": "fără garanție din", "built": "Fabricat", "shipped": "Expediat", "shippedTo": "Expediat în", "purchased": "Cumpărat", "supportEnds": "Suport până la", "productNumber": "Cod produs", "description": "Descriere", "modelFound": "Model găsit", "hpNote": "HP ascunde datele garanției după un captcha. Modelul e confirmat; pagina HP arată datele.", "seeHp": "Vezi datele garanției pe HP", "opened": "{brand} deschis", "open": "Deschide {brand}", "openAgain": "Deschide din nou", "copySerial": "Copiază numărul", "dellMsg": "Dell blochează căutările directe, așa că pagina de garanție pentru acest Service Tag se deschide într-o filă nouă.", "appleMsg": "Apple cere un captcha la fiecare căutare. Numărul de serie e copiat: lipește-l cu Ctrl+V, apoi rezolvă captcha.", "asking": "Întreb {brand}…", "whichBrand": "Ce marcă?", "whichBrandText": "Alege logoul laptopului de deasupra câmpului pentru numărul de serie.", "notFound": "Negăsit", "notFoundText": "{brand} nu cunoaște acest număr de serie. Verifică-l pe eticheta de sub laptop.", "badSerial": "Nu pare a fi un număr de serie.", "netTitle": "Problemă de conexiune", "netText": "Serverul nu a putut fi contactat. Verifică conexiunea și încearcă din nou.", "reading": "Citesc numărul de serie al acestui calculator (poate cere parola)…", "unsupported": "Această marcă nu este încă acceptată.", "noSerial": "Numărul de serie nu a putut fi citit. Scrie-l de pe eticheta de dedesubt.", "cantDetect": "Detectare eșuată", "cantDetectText": "Detaliile acestui calculator nu au putut fi citite.", "deviceInfo": "Info dispozitiv", "made": "Fabricat", "serviceTag": "Service Tag", "expressCode": "Cod de service expres", "dellNote": "Dell afișează datele garanției doar pe site-ul propriu. Codul de service expres este cel cerut de suportul Dell la telefon.", "appleNote": "Apple afișează acoperirea după un captcha. Numărul de serie se copiază la deschidere: lipește-l cu Ctrl+V.", "appleRandom": "Din 2021 numerele de serie Apple sunt aleatorii, deci modelul nu poate fi dedus din ele.", "checkOn": "Verifică garanția pe {brand}", "unknownModel": "Dispozitiv {brand}", "checkSerial": "Verifică numărul de serie"};
 const tr = (k, v = {}) => (T[k] || k).replace(/\{(\w+)\}/g, (_, x) => v[x] ?? "");
 const store = {
   get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
@@ -455,10 +456,13 @@ $("#recent").onclick = e => {
 };
 
 function factTiles(facts) {
-  return Object.entries(facts).filter(([, v]) => v).map(([k, v]) => {
-    const shown = /^\d{4}-\d\d-\d\d$/.test(v) ? fmt(v) : k === "shippedTo" ? country(v) : v;
+  const list = Object.entries(facts).filter(([, v]) => v);
+  if (!list.length) return "";
+  return `<div class="facts${list.length < 4 ? " few" : ""}">` + list.map(([k, v]) => {
+    const shown = k === "made" ? new Date(v + "T00:00").toLocaleDateString(LANG, { month: "long", year: "numeric" })
+      : /^\d{4}-\d\d-\d\d$/.test(v) ? fmt(v) : k === "shippedTo" ? country(v) : v;
     return `<div class="fact"><span>${esc(tr(k))}</span><b title="${esc(shown)}">${esc(shown)}</b></div>`;
-  }).join("");
+  }).join("") + "</div>";
 }
 
 function showFull(r) {
@@ -488,7 +492,7 @@ function showFull(r) {
     </div>
     ${bar}
     <div class="device"><h2>${esc(r.model)}</h2><p dir="ltr">S/N ${esc(r.serial)} · ${esc(r.product)}</p></div>
-    <div class="facts">${factTiles(r.facts)}</div>
+    ${factTiles(r.facts)}
     <p class="cover-h">${esc(tr("coverage"))}</p><ul class="cover">${cover}</ul>
     <div class="actions"><button class="btn primary" data-copy="${esc(summary)}">${esc(tr("copySummary"))}</button>
       <a class="btn" href="${esc(r.link)}" target="_blank" rel="noopener">${esc(tr("openOn", { brand: "Lenovo" }))} ↗</a></div>`);
@@ -496,30 +500,18 @@ function showFull(r) {
 }
 
 function showPartial(r) {
-  render(null, `<span class="pill"><span class="dot"></span>${esc(tr("modelFound"))}</span>
-    <p class="big" style="font-size:clamp(20px,4.5vw,26px)">${esc(r.model)}</p>
+  const b = r.brand, name = NAMES[b];
+  const note = b === "hp" ? tr("hpNote") : b === "dell" ? tr("dellNote") : (r.random ? tr("appleRandom") + " " : "") + tr("appleNote");
+  const copySerial = b === "hp" ? "" : `<button class="btn" data-copy="${esc(r.serial)}">${esc(tr("copySerial"))}</button>`;
+  render(null, `<span class="pill"><span class="dot"></span>${esc(tr(r.model ? "modelFound" : "deviceInfo"))}</span>
+    <p class="big" style="font-size:clamp(20px,4.5vw,26px)">${esc(r.model || tr("unknownModel", { brand: name }))}</p>
     <p class="sub" dir="ltr">S/N ${esc(r.serial)}</p>
-    <div class="facts">${factTiles(r.facts)}</div>
-    <p class="sub" style="margin-top:16px">${esc(tr("hpNote"))}</p>
-    <div class="actions"><a class="btn primary" href="${esc(r.link)}" target="_blank" rel="noopener">${esc(tr("seeHp"))} ↗</a></div>`);
+    ${factTiles(r.facts)}
+    <p class="sub" style="margin-top:16px">${esc(note)}</p>
+    <div class="actions"><a class="btn primary" href="${esc(r.link)}" target="_blank" rel="noopener"${b === "apple" ? ` data-copy="${esc(r.serial)}"` : ""}>${esc(tr("checkOn", { brand: name }))} ↗</a>${copySerial}</div>`);
 }
 
-// Dell and Apple: hand off to their page. `auto` is false when the check didn't come from a click (popup blockers).
-function handOff(b, serial, auto) {
-  const url = b === "dell"
-    ? `https://www.dell.com/support/home/en-us/product-support/servicetag/${encodeURIComponent(serial)}/overview`
-    : "https://checkcoverage.apple.com/";
-  if (auto) window.open(url, "_blank", "noopener");
-  if (b === "apple") navigator.clipboard?.writeText(serial).catch(() => {});
-  render(null, `<span class="pill"><span class="dot"></span>${esc(tr(auto ? "opened" : "open", { brand: NAMES[b] }))}</span>
-    <p class="big" style="font-size:clamp(20px,4.5vw,26px)" dir="ltr">S/N ${esc(serial)}</p>
-    <p class="sub">${esc(tr(b === "dell" ? "dellMsg" : "appleMsg"))}</p>
-    <div class="actions"><a class="btn primary" href="${esc(url)}" target="_blank" rel="noopener">${esc(auto ? tr("openAgain") : tr("open", { brand: NAMES[b] }))} ↗</a>
-      <button class="btn" data-copy="${esc(serial)}">${esc(tr("copySerial"))}</button></div>`);
-  remember({ brand: b, serial });
-}
-
-async function check(auto = true) {
+async function check() {
   const serial = input.value.trim().toUpperCase().replace(/[\s-]+/g, "");
   if (!serial) { input.focus(); return; }
   if (!brand) {
@@ -528,14 +520,14 @@ async function check(auto = true) {
     pick(g);
   }
   history.replaceState(null, "", `?brand=${brand}&serial=${encodeURIComponent(serial)}`);
-  if (brand === "dell" || brand === "apple") return handOff(brand, serial, auto);
   const b = brand;
   go.disabled = true;
   loading(tr("asking", { brand: NAMES[b] }));
   try {
-    const r = await (await fetch(`/api/${b}?serial=${encodeURIComponent(serial)}`)).json();
+    const r = await (await fetch(`/api/${b}?serial=${encodeURIComponent(serial)}&lang=${LANG}`)).json();
     if (!r.ok) {
       if (r.error === "badSerial") return message(tr("notFound"), tr("badSerial"));
+      if (r.error === "badFormat") return message(tr("checkSerial"), tr(HINTS[b]));
       if (r.error === "unreachable") return message(tr("netTitle"), tr("netText"));
       return message(tr("notFound"), tr("notFoundText", { brand: NAMES[b] }));
     }
@@ -576,7 +568,7 @@ drawRecent();
 const params = new URLSearchParams(location.search);
 const startBrand = params.get("brand"), startSerial = params.get("serial");
 if (NAMES[startBrand]) pick(startBrand); else if (store.get("brand", null) in NAMES) pick(store.get("brand"));
-if (startSerial) { input.value = startSerial; check(false); } else if (matchMedia("(min-width: 600px)").matches) input.focus();
+if (startSerial) { input.value = startSerial; check(); } else if (matchMedia("(min-width: 600px)").matches) input.focus();
 </script>
 </body>
 </html>

@@ -217,7 +217,8 @@
   .device p { margin: 2px 0 0; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
 
   .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 6px; margin-top: 16px; }
-  @media (min-width: 600px) { .facts { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); } }
+  @media (min-width: 600px) { .facts { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
+                              .facts.few { grid-auto-columns: minmax(0, 190px); } }
   .fact { background: var(--soft); border-radius: var(--r-sm); padding: 8px 9px; min-width: 0; }
   .fact span { display: block; font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .fact b { display: block; margin-top: 1px; font-size: 12.5px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -300,8 +301,8 @@
     <div class="brands" role="group" aria-label="品牌">
       <button class="brand" data-b="lenovo" aria-label="Lenovo / ThinkPad" title="Lenovo / ThinkPad"><span class="logo wide" style="--m:url(/logos/lenovo.svg)"></span><small>即时</small></button>
       <button class="brand" data-b="hp" aria-label="HP" title="HP"><span class="logo" style="--m:url(/logos/hp.svg)"></span><small>仅型号</small></button>
-      <button class="brand" data-b="dell" aria-label="Dell" title="Dell"><span class="logo" style="--m:url(/logos/dell.svg)"></span><small>跳转官网</small></button>
-      <button class="brand" data-b="apple" aria-label="Apple" title="Apple"><span class="logo" style="--m:url(/logos/apple.svg)"></span><small>跳转官网</small></button>
+      <button class="brand" data-b="dell" aria-label="Dell" title="Dell"><span class="logo" style="--m:url(/logos/dell.svg)"></span><small>基本信息</small></button>
+      <button class="brand" data-b="apple" aria-label="Apple" title="Apple"><span class="logo" style="--m:url(/logos/apple.svg)"></span><small>仅型号</small></button>
     </div>
     <form class="field" id="f">
       <input id="serial" placeholder="序列号" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="序列号">
@@ -363,7 +364,7 @@
 </main>
 
 <script>
-const LANG = "zh", LANGS = ["en", "ar", "cs", "de", "es", "fr", "hi", "id", "it", "ja", "ko", "nl", "pl", "pt", "ro", "ru", "sv", "tr", "uk", "vi", "zh"], T = {"hintDefault": "选择品牌，或直接粘贴序列号。", "hintLenovo": "Lenovo 序列号为 8 位，例如 PF1AB2CD。", "hintHp": "HP 序列号为 10 位，例如 5CD1234ABC。按 Fn+Esc 可查看。", "hintDell": "Dell 使用 7 位服务标签，例如 7XJ8YZ2。", "hintApple": "Apple 序列号为 10 到 12 位。", "copy": "复制", "copied": "已复制", "recent": "最近", "clear": "清除", "inWarranty": "在保修期内", "endsSoon": "即将到期", "outWarranty": "已过保", "left": "剩余 {t}", "ago": "已于 {t}前到期", "coveredUntil": "保修至", "endedOn": "到期于", "coverage": "保修项目", "used": "保修期已用 {n}%", "copySummary": "复制摘要", "openOn": "在 {brand} 官网打开", "summaryIn": "保修至", "summaryOut": "已过保，到期于", "built": "生产日期", "shipped": "发货日期", "shippedTo": "发往", "purchased": "购买日期", "supportEnds": "支持截止", "productNumber": "产品编号", "description": "描述", "modelFound": "已找到型号", "hpNote": "HP 的保修日期需要验证码才能查看。型号已确认，日期请在 HP 官网查看。", "seeHp": "在 HP 官网查看保修日期", "opened": "已打开 {brand}", "open": "打开 {brand}", "openAgain": "再次打开", "copySerial": "复制序列号", "dellMsg": "Dell 禁止直接查询，因此已在新标签页打开该服务标签的保修页面。", "appleMsg": "Apple 每次查询都需要验证码。序列号已复制：按 Ctrl+V 粘贴，然后完成验证码。", "asking": "正在查询 {brand}…", "whichBrand": "哪个品牌？", "whichBrandText": "请在序列号输入框上方选择笔记本的品牌标志。", "notFound": "未找到", "notFoundText": "{brand} 无法识别此序列号。请核对笔记本底部的标签。", "badSerial": "这看起来不像序列号。", "netTitle": "连接问题", "netText": "无法连接查询服务器。请检查网络后重试。", "reading": "正在读取本机序列号（可能需要输入密码）…", "unsupported": "暂不支持该品牌。", "noSerial": "无法读取序列号。请手动输入机身底部标签上的序列号。", "cantDetect": "无法检测", "cantDetectText": "无法读取本机信息。"};
+const LANG = "zh", LANGS = ["en", "ar", "cs", "de", "es", "fr", "hi", "id", "it", "ja", "ko", "nl", "pl", "pt", "ro", "ru", "sv", "tr", "uk", "vi", "zh"], T = {"hintDefault": "选择品牌，或直接粘贴序列号。", "hintLenovo": "Lenovo 序列号为 8 位，例如 PF1AB2CD。", "hintHp": "HP 序列号为 10 位，例如 5CD1234ABC。按 Fn+Esc 可查看。", "hintDell": "Dell 使用 7 位服务标签，例如 7XJ8YZ2。", "hintApple": "Apple 序列号为 10 到 12 位。", "copy": "复制", "copied": "已复制", "recent": "最近", "clear": "清除", "inWarranty": "在保修期内", "endsSoon": "即将到期", "outWarranty": "已过保", "left": "剩余 {t}", "ago": "已于 {t}前到期", "coveredUntil": "保修至", "endedOn": "到期于", "coverage": "保修项目", "used": "保修期已用 {n}%", "copySummary": "复制摘要", "openOn": "在 {brand} 官网打开", "summaryIn": "保修至", "summaryOut": "已过保，到期于", "built": "生产日期", "shipped": "发货日期", "shippedTo": "发往", "purchased": "购买日期", "supportEnds": "支持截止", "productNumber": "产品编号", "description": "描述", "modelFound": "已找到型号", "hpNote": "HP 的保修日期需要验证码才能查看。型号已确认，日期请在 HP 官网查看。", "seeHp": "在 HP 官网查看保修日期", "opened": "已打开 {brand}", "open": "打开 {brand}", "openAgain": "再次打开", "copySerial": "复制序列号", "dellMsg": "Dell 禁止直接查询，因此已在新标签页打开该服务标签的保修页面。", "appleMsg": "Apple 每次查询都需要验证码。序列号已复制：按 Ctrl+V 粘贴，然后完成验证码。", "asking": "正在查询 {brand}…", "whichBrand": "哪个品牌？", "whichBrandText": "请在序列号输入框上方选择笔记本的品牌标志。", "notFound": "未找到", "notFoundText": "{brand} 无法识别此序列号。请核对笔记本底部的标签。", "badSerial": "这看起来不像序列号。", "netTitle": "连接问题", "netText": "无法连接查询服务器。请检查网络后重试。", "reading": "正在读取本机序列号（可能需要输入密码）…", "unsupported": "暂不支持该品牌。", "noSerial": "无法读取序列号。请手动输入机身底部标签上的序列号。", "cantDetect": "无法检测", "cantDetectText": "无法读取本机信息。", "deviceInfo": "设备信息", "made": "生产时间", "serviceTag": "Service Tag", "expressCode": "快速服务代码", "dellNote": "Dell 只在自己的网站上显示保修日期。快速服务代码是 Dell 客服电话中会询问的代码。", "appleNote": "Apple 需要通过验证码才能显示保修状态。打开时会自动复制序列号：用 Ctrl+V 粘贴即可。", "appleRandom": "自 2021 年起 Apple 序列号为随机生成，无法从中读出型号。", "checkOn": "在 {brand} 查询保修", "unknownModel": "{brand} 设备", "checkSerial": "请检查序列号"};
 const tr = (k, v = {}) => (T[k] || k).replace(/\{(\w+)\}/g, (_, x) => v[x] ?? "");
 const store = {
   get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
@@ -455,10 +456,13 @@ $("#recent").onclick = e => {
 };
 
 function factTiles(facts) {
-  return Object.entries(facts).filter(([, v]) => v).map(([k, v]) => {
-    const shown = /^\d{4}-\d\d-\d\d$/.test(v) ? fmt(v) : k === "shippedTo" ? country(v) : v;
+  const list = Object.entries(facts).filter(([, v]) => v);
+  if (!list.length) return "";
+  return `<div class="facts${list.length < 4 ? " few" : ""}">` + list.map(([k, v]) => {
+    const shown = k === "made" ? new Date(v + "T00:00").toLocaleDateString(LANG, { month: "long", year: "numeric" })
+      : /^\d{4}-\d\d-\d\d$/.test(v) ? fmt(v) : k === "shippedTo" ? country(v) : v;
     return `<div class="fact"><span>${esc(tr(k))}</span><b title="${esc(shown)}">${esc(shown)}</b></div>`;
-  }).join("");
+  }).join("") + "</div>";
 }
 
 function showFull(r) {
@@ -488,7 +492,7 @@ function showFull(r) {
     </div>
     ${bar}
     <div class="device"><h2>${esc(r.model)}</h2><p dir="ltr">S/N ${esc(r.serial)} · ${esc(r.product)}</p></div>
-    <div class="facts">${factTiles(r.facts)}</div>
+    ${factTiles(r.facts)}
     <p class="cover-h">${esc(tr("coverage"))}</p><ul class="cover">${cover}</ul>
     <div class="actions"><button class="btn primary" data-copy="${esc(summary)}">${esc(tr("copySummary"))}</button>
       <a class="btn" href="${esc(r.link)}" target="_blank" rel="noopener">${esc(tr("openOn", { brand: "Lenovo" }))} ↗</a></div>`);
@@ -496,30 +500,18 @@ function showFull(r) {
 }
 
 function showPartial(r) {
-  render(null, `<span class="pill"><span class="dot"></span>${esc(tr("modelFound"))}</span>
-    <p class="big" style="font-size:clamp(20px,4.5vw,26px)">${esc(r.model)}</p>
+  const b = r.brand, name = NAMES[b];
+  const note = b === "hp" ? tr("hpNote") : b === "dell" ? tr("dellNote") : (r.random ? tr("appleRandom") + " " : "") + tr("appleNote");
+  const copySerial = b === "hp" ? "" : `<button class="btn" data-copy="${esc(r.serial)}">${esc(tr("copySerial"))}</button>`;
+  render(null, `<span class="pill"><span class="dot"></span>${esc(tr(r.model ? "modelFound" : "deviceInfo"))}</span>
+    <p class="big" style="font-size:clamp(20px,4.5vw,26px)">${esc(r.model || tr("unknownModel", { brand: name }))}</p>
     <p class="sub" dir="ltr">S/N ${esc(r.serial)}</p>
-    <div class="facts">${factTiles(r.facts)}</div>
-    <p class="sub" style="margin-top:16px">${esc(tr("hpNote"))}</p>
-    <div class="actions"><a class="btn primary" href="${esc(r.link)}" target="_blank" rel="noopener">${esc(tr("seeHp"))} ↗</a></div>`);
+    ${factTiles(r.facts)}
+    <p class="sub" style="margin-top:16px">${esc(note)}</p>
+    <div class="actions"><a class="btn primary" href="${esc(r.link)}" target="_blank" rel="noopener"${b === "apple" ? ` data-copy="${esc(r.serial)}"` : ""}>${esc(tr("checkOn", { brand: name }))} ↗</a>${copySerial}</div>`);
 }
 
-// Dell and Apple: hand off to their page. `auto` is false when the check didn't come from a click (popup blockers).
-function handOff(b, serial, auto) {
-  const url = b === "dell"
-    ? `https://www.dell.com/support/home/en-us/product-support/servicetag/${encodeURIComponent(serial)}/overview`
-    : "https://checkcoverage.apple.com/";
-  if (auto) window.open(url, "_blank", "noopener");
-  if (b === "apple") navigator.clipboard?.writeText(serial).catch(() => {});
-  render(null, `<span class="pill"><span class="dot"></span>${esc(tr(auto ? "opened" : "open", { brand: NAMES[b] }))}</span>
-    <p class="big" style="font-size:clamp(20px,4.5vw,26px)" dir="ltr">S/N ${esc(serial)}</p>
-    <p class="sub">${esc(tr(b === "dell" ? "dellMsg" : "appleMsg"))}</p>
-    <div class="actions"><a class="btn primary" href="${esc(url)}" target="_blank" rel="noopener">${esc(auto ? tr("openAgain") : tr("open", { brand: NAMES[b] }))} ↗</a>
-      <button class="btn" data-copy="${esc(serial)}">${esc(tr("copySerial"))}</button></div>`);
-  remember({ brand: b, serial });
-}
-
-async function check(auto = true) {
+async function check() {
   const serial = input.value.trim().toUpperCase().replace(/[\s-]+/g, "");
   if (!serial) { input.focus(); return; }
   if (!brand) {
@@ -528,14 +520,14 @@ async function check(auto = true) {
     pick(g);
   }
   history.replaceState(null, "", `?brand=${brand}&serial=${encodeURIComponent(serial)}`);
-  if (brand === "dell" || brand === "apple") return handOff(brand, serial, auto);
   const b = brand;
   go.disabled = true;
   loading(tr("asking", { brand: NAMES[b] }));
   try {
-    const r = await (await fetch(`/api/${b}?serial=${encodeURIComponent(serial)}`)).json();
+    const r = await (await fetch(`/api/${b}?serial=${encodeURIComponent(serial)}&lang=${LANG}`)).json();
     if (!r.ok) {
       if (r.error === "badSerial") return message(tr("notFound"), tr("badSerial"));
+      if (r.error === "badFormat") return message(tr("checkSerial"), tr(HINTS[b]));
       if (r.error === "unreachable") return message(tr("netTitle"), tr("netText"));
       return message(tr("notFound"), tr("notFoundText", { brand: NAMES[b] }));
     }
@@ -576,7 +568,7 @@ drawRecent();
 const params = new URLSearchParams(location.search);
 const startBrand = params.get("brand"), startSerial = params.get("serial");
 if (NAMES[startBrand]) pick(startBrand); else if (store.get("brand", null) in NAMES) pick(store.get("brand"));
-if (startSerial) { input.value = startSerial; check(false); } else if (matchMedia("(min-width: 600px)").matches) input.focus();
+if (startSerial) { input.value = startSerial; check(); } else if (matchMedia("(min-width: 600px)").matches) input.focus();
 </script>
 </body>
 </html>

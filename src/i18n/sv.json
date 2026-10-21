@@ -1,7 +1,7 @@
 {
   "_name": "Svenska",
   "title": "Garantikoll: kolla laptopgaranti gratis med serienummer (Lenovo, ThinkPad, HP, Dell, Apple)",
-  "description": "Kolla garantin på vilken laptop som helst med serienumret på en sekund. Gratis garantikontroll för Lenovo och ThinkPad med exakta datum, plus snabblänkar för HP, Dell Service Tag och Apple. Perfekt innan du köper en begagnad laptop.",
+  "description": "Beskrivning",
   "keywords": "garantikoll, kolla garanti laptop, kolla garanti serienummer, garantikontroll, söka serienummer, Lenovo garanti kolla, ThinkPad garanti kontroll, Lenovo garantikontroll, HP garanti kolla, HP serienummer kontroll, Dell garanti kolla, Dell service tag sök, Apple kolla täckning, MacBook garanti kolla, garanti begagnad laptop, kolla begagnad dator, renoverad laptop garanti, garantistatus dator, garanti slutdatum, har min laptop garanti",
   "ogTitle": "Garantikoll: har den här laptopen fortfarande garanti?",
   "appName": "Garantikoll",
@@ -51,7 +51,6 @@
   "purchased": "Köpt",
   "supportEnds": "Support till",
   "productNumber": "Produktnummer",
-  "description": "Beskrivning",
   "modelFound": "Modell hittad",
   "hpNote": "HP har garantidatumen bakom en captcha. Modellen är bekräftad; HP:s sida visar datumen.",
   "seeHp": "Se garantidatum hos HP",
@@ -84,5 +83,16 @@
   "q4": "Är det gratis? Sparas mitt serienummer?",
   "a4": "Det är gratis och kräver inget konto. Serienumret skickas bara till tillverkaren för att kolla garantin. Dina senaste sökningar sparas i din egen webbläsare, aldrig på en server.",
   "q5": "Är det användbart när man köper en begagnad laptop?",
-  "a5": "Ja. Innan du köper en begagnad eller renoverad laptop, kolla serienumret för att se om garantin fortfarande gäller, när den går ut och exakt vilken modell det är, så du vet vad du betalar för."
+  "a5": "Ja. Innan du köper en begagnad eller renoverad laptop, kolla serienumret för att se om garantin fortfarande gäller, när den går ut och exakt vilken modell det är, så du vet vad du betalar för.",
+  "tagInfo": "Grundinfo",
+  "deviceInfo": "Enhetsinfo",
+  "made": "Tillverkad",
+  "serviceTag": "Service Tag",
+  "expressCode": "Expresservicekod",
+  "dellNote": "Dell visar garantidatum bara på sin egen webbplats. Expresservicekoden är det Dells support frågar efter i telefon.",
+  "appleNote": "Apple visar skyddet efter en captcha. Serienumret kopieras när du öppnar: klistra in med Ctrl+V.",
+  "appleRandom": "Sedan 2021 är Apples serienummer slumpmässiga, så modellen går inte att läsa ut.",
+  "checkOn": "Kolla garantin hos {brand}",
+  "unknownModel": "{brand}-enhet",
+  "checkSerial": "Kontrollera serienumret"
 }

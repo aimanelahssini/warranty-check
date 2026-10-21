@@ -1,7 +1,7 @@
 {
   "_name": "Deutsch",
   "title": "Garantie-Check: Laptop-Garantie kostenlos per Seriennummer prüfen (Lenovo, ThinkPad, HP, Dell, Apple)",
-  "description": "Prüfen Sie die Garantie jedes Laptops anhand der Seriennummer in einer Sekunde. Kostenlose Lenovo- und ThinkPad-Garantieabfrage mit genauen Daten, dazu schnelle Links für HP, das Dell Service Tag und die Apple-Abdeckung. Ideal vor dem Kauf eines gebrauchten Laptops.",
+  "description": "Beschreibung",
   "keywords": "garantie prüfen, laptop garantie prüfen, garantie seriennummer prüfen, garantieabfrage, seriennummer abfragen, lenovo garantie prüfen, lenovo garantie, thinkpad garantie prüfen, hp garantie prüfen, hp seriennummer garantie, dell garantie prüfen, dell service tag abfragen, apple garantie prüfen, macbook garantie prüfen, gebrauchter laptop garantie, laptop gebraucht prüfen, refurbished laptop garantie, garantiestatus computer, garantie ablaufdatum, hat mein laptop noch garantie, Lenovo, ThinkPad, HP, Dell, Apple",
   "ogTitle": "Garantie-Check: Hat dieser Laptop noch Garantie?",
   "appName": "Garantie-Check",
@@ -51,7 +51,6 @@
   "purchased": "Gekauft",
   "supportEnds": "Support endet",
   "productNumber": "Produktnummer",
-  "description": "Beschreibung",
   "modelFound": "Modell gefunden",
   "hpNote": "HP schützt die Garantiedaten mit einem Captcha. Das Modell ist bestätigt; die HP-Seite zeigt die Daten.",
   "seeHp": "Garantiedaten bei HP ansehen",
@@ -84,5 +83,16 @@
   "q4": "Ist es kostenlos? Wird meine Seriennummer gespeichert?",
   "a4": "Es ist kostenlos, ohne Konto. Die Seriennummer wird nur an den Hersteller gesendet, um die Garantie abzufragen. Ihre letzten Abfragen werden nur in Ihrem eigenen Browser gespeichert, nie auf einem Server.",
   "q5": "Hilft es beim Kauf eines gebrauchten Laptops?",
-  "a5": "Ja. Prüfen Sie vor dem Kauf eines gebrauchten oder generalüberholten Laptops die Seriennummer: So sehen Sie, ob die Garantie noch gilt, wann sie endet und welches Modell es genau ist, und wissen, wofür Sie bezahlen."
+  "a5": "Ja. Prüfen Sie vor dem Kauf eines gebrauchten oder generalüberholten Laptops die Seriennummer: So sehen Sie, ob die Garantie noch gilt, wann sie endet und welches Modell es genau ist, und wissen, wofür Sie bezahlen.",
+  "tagInfo": "Basisinfos",
+  "deviceInfo": "Geräteinfos",
+  "made": "Hergestellt",
+  "serviceTag": "Service-Tag",
+  "expressCode": "Express-Servicecode",
+  "dellNote": "Dell zeigt Garantiedaten nur auf der eigenen Website. Den Express-Servicecode fragt der Dell-Support am Telefon ab.",
+  "appleNote": "Apple zeigt die Abdeckung erst nach einem Captcha. Die Seriennummer wird beim Öffnen kopiert: mit Strg+V einfügen.",
+  "appleRandom": "Seit 2021 sind Apple-Seriennummern zufällig, daher lässt sich das Modell nicht daraus ablesen.",
+  "checkOn": "Garantie bei {brand} prüfen",
+  "unknownModel": "{brand}-Gerät",
+  "checkSerial": "Seriennummer prüfen"
 }

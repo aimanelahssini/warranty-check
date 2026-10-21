@@ -217,7 +217,8 @@
   .device p { margin: 2px 0 0; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
 
   .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 6px; margin-top: 16px; }
-  @media (min-width: 600px) { .facts { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); } }
+  @media (min-width: 600px) { .facts { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
+                              .facts.few { grid-auto-columns: minmax(0, 190px); } }
   .fact { background: var(--soft); border-radius: var(--r-sm); padding: 8px 9px; min-width: 0; }
   .fact span { display: block; font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .fact b { display: block; margin-top: 1px; font-size: 12.5px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -300,8 +301,8 @@
     <div class="brands" role="group" aria-label="Marca">
       <button class="brand" data-b="lenovo" aria-label="Lenovo / ThinkPad" title="Lenovo / ThinkPad"><span class="logo wide" style="--m:url(/logos/lenovo.svg)"></span><small>Imediato</small></button>
       <button class="brand" data-b="hp" aria-label="HP" title="HP"><span class="logo" style="--m:url(/logos/hp.svg)"></span><small>Só modelo</small></button>
-      <button class="brand" data-b="dell" aria-label="Dell" title="Dell"><span class="logo" style="--m:url(/logos/dell.svg)"></span><small>Abre o site deles</small></button>
-      <button class="brand" data-b="apple" aria-label="Apple" title="Apple"><span class="logo" style="--m:url(/logos/apple.svg)"></span><small>Abre o site deles</small></button>
+      <button class="brand" data-b="dell" aria-label="Dell" title="Dell"><span class="logo" style="--m:url(/logos/dell.svg)"></span><small>Info básica</small></button>
+      <button class="brand" data-b="apple" aria-label="Apple" title="Apple"><span class="logo" style="--m:url(/logos/apple.svg)"></span><small>Só modelo</small></button>
     </div>
     <form class="field" id="f">
       <input id="serial" placeholder="Número de série" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Número de série">
@@ -363,7 +364,7 @@
 </main>
 
 <script>
-const LANG = "pt", LANGS = ["en", "ar", "cs", "de", "es", "fr", "hi", "id", "it", "ja", "ko", "nl", "pl", "pt", "ro", "ru", "sv", "tr", "uk", "vi", "zh"], T = {"hintDefault": "Escolha uma marca ou cole simplesmente o número de série.", "hintLenovo": "Os números de série Lenovo têm 8 caracteres, como PF1AB2CD.", "hintHp": "Os números de série HP têm 10 caracteres, como 5CD1234ABC. Fn+Esc mostra-o.", "hintDell": "A Dell usa um Service Tag de 7 caracteres, como 7XJ8YZ2.", "hintApple": "Os números de série Apple têm 10 a 12 caracteres.", "copy": "Copiar", "copied": "Copiado", "recent": "Recentes", "clear": "Limpar", "inWarranty": "Na garantia", "endsSoon": "Termina em breve", "outWarranty": "Fora da garantia", "left": "Faltam {t}", "ago": "Terminou há {t}", "coveredUntil": "Coberto até", "endedOn": "Terminou a", "coverage": "Cobertura", "used": "{n}% da garantia decorrida", "copySummary": "Copiar resumo", "openOn": "Abrir em {brand}", "summaryIn": "na garantia até", "summaryOut": "fora da garantia desde", "built": "Fabricado", "shipped": "Enviado", "shippedTo": "Enviado para", "purchased": "Comprado", "supportEnds": "Fim do suporte", "productNumber": "Número do produto", "description": "Descrição", "modelFound": "Modelo encontrado", "hpNote": "A HP protege as datas da garantia com um captcha. O modelo está confirmado; a página da HP mostra as datas.", "seeHp": "Ver datas da garantia na HP", "opened": "{brand} aberto", "open": "Abrir {brand}", "openAgain": "Abrir novamente", "copySerial": "Copiar número", "dellMsg": "A Dell bloqueia consultas diretas, por isso a página de garantia deste Service Tag abre num novo separador.", "appleMsg": "A Apple pede um captcha em cada consulta. O número foi copiado: cole-o com Ctrl+V e resolva o captcha.", "asking": "A consultar {brand}…", "whichBrand": "Que marca?", "whichBrandText": "Escolha o logótipo do portátil acima do campo do número de série.", "notFound": "Não encontrado", "notFoundText": "A {brand} não reconhece este número de série. Confirme-o na etiqueta por baixo do portátil.", "badSerial": "Isto não parece um número de série.", "netTitle": "Problema de ligação", "netText": "Não foi possível contactar o servidor de consulta. Verifique a ligação e tente novamente.", "reading": "A ler o número de série deste computador (pode pedir a sua palavra-passe)…", "unsupported": "Esta marca ainda não é suportada.", "noSerial": "Não foi possível ler o número de série. Escreva-o a partir da etiqueta por baixo.", "cantDetect": "Não foi possível detetar", "cantDetectText": "Não foi possível ler os dados deste computador."};
+const LANG = "pt", LANGS = ["en", "ar", "cs", "de", "es", "fr", "hi", "id", "it", "ja", "ko", "nl", "pl", "pt", "ro", "ru", "sv", "tr", "uk", "vi", "zh"], T = {"hintDefault": "Escolha uma marca ou cole simplesmente o número de série.", "hintLenovo": "Os números de série Lenovo têm 8 caracteres, como PF1AB2CD.", "hintHp": "Os números de série HP têm 10 caracteres, como 5CD1234ABC. Fn+Esc mostra-o.", "hintDell": "A Dell usa um Service Tag de 7 caracteres, como 7XJ8YZ2.", "hintApple": "Os números de série Apple têm 10 a 12 caracteres.", "copy": "Copiar", "copied": "Copiado", "recent": "Recentes", "clear": "Limpar", "inWarranty": "Na garantia", "endsSoon": "Termina em breve", "outWarranty": "Fora da garantia", "left": "Faltam {t}", "ago": "Terminou há {t}", "coveredUntil": "Coberto até", "endedOn": "Terminou a", "coverage": "Cobertura", "used": "{n}% da garantia decorrida", "copySummary": "Copiar resumo", "openOn": "Abrir em {brand}", "summaryIn": "na garantia até", "summaryOut": "fora da garantia desde", "built": "Fabricado", "shipped": "Enviado", "shippedTo": "Enviado para", "purchased": "Comprado", "supportEnds": "Fim do suporte", "productNumber": "Número do produto", "description": "Descrição", "modelFound": "Modelo encontrado", "hpNote": "A HP protege as datas da garantia com um captcha. O modelo está confirmado; a página da HP mostra as datas.", "seeHp": "Ver datas da garantia na HP", "opened": "{brand} aberto", "open": "Abrir {brand}", "openAgain": "Abrir novamente", "copySerial": "Copiar número", "dellMsg": "A Dell bloqueia consultas diretas, por isso a página de garantia deste Service Tag abre num novo separador.", "appleMsg": "A Apple pede um captcha em cada consulta. O número foi copiado: cole-o com Ctrl+V e resolva o captcha.", "asking": "A consultar {brand}…", "whichBrand": "Que marca?", "whichBrandText": "Escolha o logótipo do portátil acima do campo do número de série.", "notFound": "Não encontrado", "notFoundText": "A {brand} não reconhece este número de série. Confirme-o na etiqueta por baixo do portátil.", "badSerial": "Isto não parece um número de série.", "netTitle": "Problema de ligação", "netText": "Não foi possível contactar o servidor de consulta. Verifique a ligação e tente novamente.", "reading": "A ler o número de série deste computador (pode pedir a sua palavra-passe)…", "unsupported": "Esta marca ainda não é suportada.", "noSerial": "Não foi possível ler o número de série. Escreva-o a partir da etiqueta por baixo.", "cantDetect": "Não foi possível detetar", "cantDetectText": "Não foi possível ler os dados deste computador.", "deviceInfo": "Info do equipamento", "made": "Fabricado", "serviceTag": "Service Tag", "expressCode": "Código de serviço expresso", "dellNote": "A Dell só mostra as datas de garantia no seu próprio site. O código de serviço expresso é o que o suporte Dell pede ao telefone.", "appleNote": "A Apple mostra a cobertura depois de um captcha. O número de série é copiado ao abrir: cole-o com Ctrl+V.", "appleRandom": "Desde 2021 os números de série da Apple são aleatórios, por isso não revelam o modelo.", "checkOn": "Verificar garantia na {brand}", "unknownModel": "Equipamento {brand}", "checkSerial": "Verifique o número de série"};
 const tr = (k, v = {}) => (T[k] || k).replace(/\{(\w+)\}/g, (_, x) => v[x] ?? "");
 const store = {
   get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
@@ -455,10 +456,13 @@ $("#recent").onclick = e => {
 };
 
 function factTiles(facts) {
-  return Object.entries(facts).filter(([, v]) => v).map(([k, v]) => {
-    const shown = /^\d{4}-\d\d-\d\d$/.test(v) ? fmt(v) : k === "shippedTo" ? country(v) : v;
+  const list = Object.entries(facts).filter(([, v]) => v);
+  if (!list.length) return "";
+  return `<div class="facts${list.length < 4 ? " few" : ""}">` + list.map(([k, v]) => {
+    const shown = k === "made" ? new Date(v + "T00:00").toLocaleDateString(LANG, { month: "long", year: "numeric" })
+      : /^\d{4}-\d\d-\d\d$/.test(v) ? fmt(v) : k === "shippedTo" ? country(v) : v;
     return `<div class="fact"><span>${esc(tr(k))}</span><b title="${esc(shown)}">${esc(shown)}</b></div>`;
-  }).join("");
+  }).join("") + "</div>";
 }
 
 function showFull(r) {
@@ -488,7 +492,7 @@ function showFull(r) {
     </div>
     ${bar}
     <div class="device"><h2>${esc(r.model)}</h2><p dir="ltr">S/N ${esc(r.serial)} · ${esc(r.product)}</p></div>
-    <div class="facts">${factTiles(r.facts)}</div>
+    ${factTiles(r.facts)}
     <p class="cover-h">${esc(tr("coverage"))}</p><ul class="cover">${cover}</ul>
     <div class="actions"><button class="btn primary" data-copy="${esc(summary)}">${esc(tr("copySummary"))}</button>
       <a class="btn" href="${esc(r.link)}" target="_blank" rel="noopener">${esc(tr("openOn", { brand: "Lenovo" }))} ↗</a></div>`);
@@ -496,30 +500,18 @@ function showFull(r) {
 }
 
 function showPartial(r) {
-  render(null, `<span class="pill"><span class="dot"></span>${esc(tr("modelFound"))}</span>
-    <p class="big" style="font-size:clamp(20px,4.5vw,26px)">${esc(r.model)}</p>
+  const b = r.brand, name = NAMES[b];
+  const note = b === "hp" ? tr("hpNote") : b === "dell" ? tr("dellNote") : (r.random ? tr("appleRandom") + " " : "") + tr("appleNote");
+  const copySerial = b === "hp" ? "" : `<button class="btn" data-copy="${esc(r.serial)}">${esc(tr("copySerial"))}</button>`;
+  render(null, `<span class="pill"><span class="dot"></span>${esc(tr(r.model ? "modelFound" : "deviceInfo"))}</span>
+    <p class="big" style="font-size:clamp(20px,4.5vw,26px)">${esc(r.model || tr("unknownModel", { brand: name }))}</p>
     <p class="sub" dir="ltr">S/N ${esc(r.serial)}</p>
-    <div class="facts">${factTiles(r.facts)}</div>
-    <p class="sub" style="margin-top:16px">${esc(tr("hpNote"))}</p>
-    <div class="actions"><a class="btn primary" href="${esc(r.link)}" target="_blank" rel="noopener">${esc(tr("seeHp"))} ↗</a></div>`);
+    ${factTiles(r.facts)}
+    <p class="sub" style="margin-top:16px">${esc(note)}</p>
+    <div class="actions"><a class="btn primary" href="${esc(r.link)}" target="_blank" rel="noopener"${b === "apple" ? ` data-copy="${esc(r.serial)}"` : ""}>${esc(tr("checkOn", { brand: name }))} ↗</a>${copySerial}</div>`);
 }
 
-// Dell and Apple: hand off to their page. `auto` is false when the check didn't come from a click (popup blockers).
-function handOff(b, serial, auto) {
-  const url = b === "dell"
-    ? `https://www.dell.com/support/home/en-us/product-support/servicetag/${encodeURIComponent(serial)}/overview`
-    : "https://checkcoverage.apple.com/";
-  if (auto) window.open(url, "_blank", "noopener");
-  if (b === "apple") navigator.clipboard?.writeText(serial).catch(() => {});
-  render(null, `<span class="pill"><span class="dot"></span>${esc(tr(auto ? "opened" : "open", { brand: NAMES[b] }))}</span>
-    <p class="big" style="font-size:clamp(20px,4.5vw,26px)" dir="ltr">S/N ${esc(serial)}</p>
-    <p class="sub">${esc(tr(b === "dell" ? "dellMsg" : "appleMsg"))}</p>
-    <div class="actions"><a class="btn primary" href="${esc(url)}" target="_blank" rel="noopener">${esc(auto ? tr("openAgain") : tr("open", { brand: NAMES[b] }))} ↗</a>
-      <button class="btn" data-copy="${esc(serial)}">${esc(tr("copySerial"))}</button></div>`);
-  remember({ brand: b, serial });
-}
-
-async function check(auto = true) {
+async function check() {
   const serial = input.value.trim().toUpperCase().replace(/[\s-]+/g, "");
   if (!serial) { input.focus(); return; }
   if (!brand) {
@@ -528,14 +520,14 @@ async function check(auto = true) {
     pick(g);
   }
   history.replaceState(null, "", `?brand=${brand}&serial=${encodeURIComponent(serial)}`);
-  if (brand === "dell" || brand === "apple") return handOff(brand, serial, auto);
   const b = brand;
   go.disabled = true;
   loading(tr("asking", { brand: NAMES[b] }));
   try {
-    const r = await (await fetch(`/api/${b}?serial=${encodeURIComponent(serial)}`)).json();
+    const r = await (await fetch(`/api/${b}?serial=${encodeURIComponent(serial)}&lang=${LANG}`)).json();
     if (!r.ok) {
       if (r.error === "badSerial") return message(tr("notFound"), tr("badSerial"));
+      if (r.error === "badFormat") return message(tr("checkSerial"), tr(HINTS[b]));
       if (r.error === "unreachable") return message(tr("netTitle"), tr("netText"));
       return message(tr("notFound"), tr("notFoundText", { brand: NAMES[b] }));
     }
@@ -576,7 +568,7 @@ drawRecent();
 const params = new URLSearchParams(location.search);
 const startBrand = params.get("brand"), startSerial = params.get("serial");
 if (NAMES[startBrand]) pick(startBrand); else if (store.get("brand", null) in NAMES) pick(store.get("brand"));
-if (startSerial) { input.value = startSerial; check(false); } else if (matchMedia("(min-width: 600px)").matches) input.focus();
+if (startSerial) { input.value = startSerial; check(); } else if (matchMedia("(min-width: 600px)").matches) input.focus();
 </script>
 </body>
 </html>

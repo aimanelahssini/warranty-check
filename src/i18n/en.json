@@ -1,7 +1,7 @@
 {
   "_name": "English",
   "title": "Warranty Check: free laptop warranty lookup by serial number (Lenovo, ThinkPad, HP, Dell, Apple)",
-  "description": "Check any laptop's warranty from its serial number in a second. Free Lenovo and ThinkPad warranty lookup with exact dates, plus quick links for HP, Dell Service Tag and Apple coverage. Ideal before buying a used laptop.",
+  "description": "Description",
   "keywords": "warranty check, laptop warranty check, check warranty by serial number, warranty lookup, serial number lookup, Lenovo warranty check, ThinkPad warranty check, Lenovo warranty lookup, HP warranty check, HP serial number check, Dell warranty check, Dell service tag lookup, Apple check coverage, MacBook warranty check, used laptop warranty, second-hand laptop check, refurbished laptop warranty, computer warranty status, warranty expiration date, is my laptop under warranty",
   "ogTitle": "Warranty Check: is this laptop still under warranty?",
   "appName": "Warranty Check",
@@ -51,7 +51,6 @@
   "purchased": "Purchased",
   "supportEnds": "Support ends",
   "productNumber": "Product number",
-  "description": "Description",
   "modelFound": "Model found",
   "hpNote": "HP keeps the warranty dates behind a captcha. The model is confirmed; HP's page shows the dates.",
   "seeHp": "See warranty dates on HP",
@@ -84,5 +83,16 @@
   "q4": "Is it free? Is my serial number stored?",
   "a4": "It is free, with no account. The serial is only sent to the manufacturer to look up the warranty. Your recent checks are saved in your own browser, never on a server.",
   "q5": "Is it useful when buying a used laptop?",
-  "a5": "Yes. Before buying a second-hand or refurbished laptop, check the serial to see if the warranty is still valid, when it ends, and the exact model, so you know what you are paying for."
+  "a5": "Yes. Before buying a second-hand or refurbished laptop, check the serial to see if the warranty is still valid, when it ends, and the exact model, so you know what you are paying for.",
+  "tagInfo": "Basic info",
+  "deviceInfo": "Device info",
+  "made": "Made",
+  "serviceTag": "Service Tag",
+  "expressCode": "Express Service Code",
+  "dellNote": "Dell only shows warranty dates on its own site. The Express Service Code is what Dell support asks for on the phone.",
+  "appleNote": "Apple shows coverage after a captcha. The serial is copied when you open it: paste it with Ctrl+V.",
+  "appleRandom": "Since 2021 Apple serials are random, so the model can't be read from them.",
+  "checkOn": "Check warranty on {brand}",
+  "unknownModel": "{brand} device",
+  "checkSerial": "Check the serial"
 }

@@ -1,7 +1,7 @@
 {
   "_name": "Français",
   "title": "Vérification de garantie : vérifier la garantie d'un ordinateur portable par numéro de série (Lenovo, ThinkPad, HP, Dell, Apple)",
-  "description": "Vérifiez la garantie de n'importe quel ordinateur portable à partir de son numéro de série en une seconde. Vérification gratuite de la garantie Lenovo et ThinkPad avec les dates exactes, plus des liens rapides pour HP, le Service Tag Dell et la couverture Apple. Idéal avant d'acheter un portable d'occasion.",
+  "description": "Description",
   "keywords": "vérifier garantie, vérification garantie ordinateur portable, vérifier garantie numéro de série, garantie lenovo, vérifier garantie lenovo, garantie thinkpad, vérifier garantie hp, numéro de série hp garantie, garantie dell, dell service tag garantie, vérifier couverture apple, garantie macbook, garantie ordinateur portable occasion, vérifier portable d'occasion, garantie ordinateur reconditionné, statut garantie ordinateur, date fin de garantie, mon ordinateur est-il sous garantie, recherche numéro de série, Lenovo, ThinkPad, HP, Dell, Apple",
   "ogTitle": "Vérification de garantie : ce portable est-il encore sous garantie ?",
   "appName": "Vérification de garantie",
@@ -51,7 +51,6 @@
   "purchased": "Acheté",
   "supportEnds": "Fin du support",
   "productNumber": "Référence produit",
-  "description": "Description",
   "modelFound": "Modèle trouvé",
   "hpNote": "HP protège les dates de garantie par un captcha. Le modèle est confirmé ; la page HP affiche les dates.",
   "seeHp": "Voir les dates de garantie sur HP",
@@ -84,5 +83,16 @@
   "q4": "Est-ce gratuit ? Mon numéro de série est-il enregistré ?",
   "a4": "C'est gratuit, sans compte. Le numéro de série est uniquement envoyé au fabricant pour consulter la garantie. Vos vérifications récentes sont enregistrées dans votre propre navigateur, jamais sur un serveur.",
   "q5": "Est-ce utile pour acheter un ordinateur portable d'occasion ?",
-  "a5": "Oui. Avant d'acheter un portable d'occasion ou reconditionné, vérifiez le numéro de série pour savoir si la garantie est toujours valable, quand elle se termine et quel est le modèle exact, afin de savoir ce que vous payez."
+  "a5": "Oui. Avant d'acheter un portable d'occasion ou reconditionné, vérifiez le numéro de série pour savoir si la garantie est toujours valable, quand elle se termine et quel est le modèle exact, afin de savoir ce que vous payez.",
+  "tagInfo": "Infos de base",
+  "deviceInfo": "Infos appareil",
+  "made": "Fabriqué",
+  "serviceTag": "Service Tag",
+  "expressCode": "Code de service express",
+  "dellNote": "Dell n'affiche les dates de garantie que sur son propre site. Le code de service express est celui que le support Dell demande au téléphone.",
+  "appleNote": "Apple affiche la couverture après un captcha. Le numéro de série est copié à l'ouverture : collez-le avec Ctrl+V.",
+  "appleRandom": "Depuis 2021, les numéros de série Apple sont aléatoires : le modèle ne peut pas en être déduit.",
+  "checkOn": "Vérifier la garantie sur {brand}",
+  "unknownModel": "Appareil {brand}",
+  "checkSerial": "Vérifiez le numéro de série"
 }

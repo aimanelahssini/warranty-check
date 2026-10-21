@@ -1,7 +1,7 @@
 {
   "_name": "Türkçe",
   "title": "Garanti Sorgulama: seri numarasıyla ücretsiz laptop garanti sorgulama (Lenovo, ThinkPad, HP, Dell, Apple)",
-  "description": "Herhangi bir dizüstü bilgisayarın garantisini seri numarasıyla saniyeler içinde sorgulayın. Kesin tarihlerle ücretsiz Lenovo ve ThinkPad garanti sorgulama, ayrıca HP, Dell Service Tag ve Apple kapsam kontrolü için hızlı bağlantılar. İkinci el laptop almadan önce ideal.",
+  "description": "Açıklama",
   "keywords": "garanti sorgulama, laptop garanti sorgulama, seri numarası ile garanti sorgulama, garanti kontrolü, seri numarası sorgulama, Lenovo garanti sorgulama, ThinkPad garanti sorgulama, Lenovo garanti kontrolü, HP garanti sorgulama, HP seri numarası sorgulama, Dell garanti sorgulama, Dell service tag sorgulama, Apple garanti sorgulama, MacBook garanti sorgulama, ikinci el laptop garanti, ikinci el bilgisayar kontrol, yenilenmiş laptop garanti, bilgisayar garanti durumu, garanti bitiş tarihi, laptopum garantili mi",
   "ogTitle": "Garanti Sorgulama: bu laptopun garantisi devam ediyor mu?",
   "appName": "Garanti Sorgulama",
@@ -51,7 +51,6 @@
   "purchased": "Satın alma",
   "supportEnds": "Destek bitişi",
   "productNumber": "Ürün numarası",
-  "description": "Açıklama",
   "modelFound": "Model bulundu",
   "hpNote": "HP garanti tarihlerini captcha arkasında tutuyor. Model doğrulandı; tarihleri HP'nin sayfasında görebilirsiniz.",
   "seeHp": "Garanti tarihlerini HP'de gör",
@@ -84,5 +83,16 @@
   "q4": "Ücretsiz mi? Seri numaram saklanıyor mu?",
   "a4": "Ücretsizdir, hesap gerekmez. Seri numarası yalnızca garantiyi sorgulamak için üreticiye gönderilir. Son sorgularınız sunucuda değil, yalnızca kendi tarayıcınızda saklanır.",
   "q5": "İkinci el laptop alırken işe yarar mı?",
-  "a5": "Evet. İkinci el veya yenilenmiş bir laptop almadan önce seri numarasını sorgulayarak garantinin hâlâ geçerli olup olmadığını, ne zaman bittiğini ve tam modeli görün; böylece neye para ödediğinizi bilirsiniz."
+  "a5": "Evet. İkinci el veya yenilenmiş bir laptop almadan önce seri numarasını sorgulayarak garantinin hâlâ geçerli olup olmadığını, ne zaman bittiğini ve tam modeli görün; böylece neye para ödediğinizi bilirsiniz.",
+  "tagInfo": "Temel bilgi",
+  "deviceInfo": "Cihaz bilgisi",
+  "made": "Üretim",
+  "serviceTag": "Service Tag",
+  "expressCode": "Express Servis Kodu",
+  "dellNote": "Dell garanti tarihlerini yalnızca kendi sitesinde gösterir. Express Servis Kodu, Dell desteğinin telefonda istediği koddur.",
+  "appleNote": "Apple kapsamı bir captcha'dan sonra gösterir. Seri numarası açılırken kopyalanır: Ctrl+V ile yapıştırın.",
+  "appleRandom": "2021'den beri Apple seri numaraları rastgeledir, bu yüzden model bunlardan okunamaz.",
+  "checkOn": "Garantiyi {brand} sitesinde kontrol et",
+  "unknownModel": "{brand} cihazı",
+  "checkSerial": "Seri numarasını kontrol edin"
 }

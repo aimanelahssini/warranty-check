@@ -1,7 +1,7 @@
 {
   "_name": "Nederlands",
   "title": "Garantiecheck: gratis laptopgarantie opzoeken met serienummer (Lenovo, ThinkPad, HP, Dell, Apple)",
-  "description": "Controleer de garantie van elke laptop in een seconde met het serienummer. Gratis Lenovo- en ThinkPad-garantiecheck met exacte data, plus snelle links voor HP, Dell Service Tag en Apple-dekking. Ideaal voordat je een tweedehands laptop koopt.",
+  "description": "Omschrijving",
   "keywords": "garantie check, garantiecheck laptop, garantie controleren serienummer, garantie opzoeken, serienummer opzoeken, Lenovo garantie check, ThinkPad garantie controleren, Lenovo garantie opzoeken, HP garantie check, HP serienummer controleren, Dell garantie check, Dell service tag opzoeken, Apple dekking controleren, MacBook garantie check, garantie tweedehands laptop, tweedehands laptop controleren, refurbished laptop garantie, garantiestatus computer, einddatum garantie, valt mijn laptop nog onder garantie",
   "ogTitle": "Garantiecheck: valt deze laptop nog onder garantie?",
   "appName": "Garantiecheck",
@@ -51,7 +51,6 @@
   "purchased": "Gekocht",
   "supportEnds": "Support tot",
   "productNumber": "Productnummer",
-  "description": "Omschrijving",
   "modelFound": "Model gevonden",
   "hpNote": "HP zet de garantiedata achter een captcha. Het model is bevestigd; de pagina van HP toont de data.",
   "seeHp": "Garantiedata bekijken bij HP",
@@ -84,5 +83,16 @@
   "q4": "Is het gratis? Wordt mijn serienummer opgeslagen?",
   "a4": "Het is gratis, zonder account. Het serienummer wordt alleen naar de fabrikant gestuurd om de garantie op te zoeken. Je recente controles worden in je eigen browser bewaard, nooit op een server.",
   "q5": "Is het handig bij het kopen van een tweedehands laptop?",
-  "a5": "Ja. Controleer voor je een tweedehands of refurbished laptop koopt het serienummer: je ziet of de garantie nog geldig is, wanneer die afloopt en het exacte model, zodat je weet waarvoor je betaalt."
+  "a5": "Ja. Controleer voor je een tweedehands of refurbished laptop koopt het serienummer: je ziet of de garantie nog geldig is, wanneer die afloopt en het exacte model, zodat je weet waarvoor je betaalt.",
+  "tagInfo": "Basisinfo",
+  "deviceInfo": "Apparaatinfo",
+  "made": "Gemaakt",
+  "serviceTag": "Service Tag",
+  "expressCode": "Express-servicecode",
+  "dellNote": "Dell toont garantiedata alleen op de eigen website. De express-servicecode is wat Dell-support aan de telefoon vraagt.",
+  "appleNote": "Apple toont de dekking na een captcha. Het serienummer wordt gekopieerd bij openen: plak het met Ctrl+V.",
+  "appleRandom": "Sinds 2021 zijn Apple-serienummers willekeurig, dus het model valt er niet uit af te lezen.",
+  "checkOn": "Garantie controleren bij {brand}",
+  "unknownModel": "{brand}-apparaat",
+  "checkSerial": "Controleer het serienummer"
 }
