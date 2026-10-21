@@ -40,8 +40,17 @@
   button.go { font: inherit; font-weight: 600; padding: 0 22px; border: 0; border-radius: 12px; cursor: pointer;
               background: var(--text); color: var(--bg); }
   button.go:disabled { opacity: .5; cursor: default; }
-  .links { margin-top: 10px; font-size: 14px; color: var(--muted); }
-  .links button { font: inherit; background: none; border: 0; color: var(--focus); cursor: pointer; padding: 0; }
+  .mine { display: flex; align-items: center; gap: 14px; width: 100%; margin: 0 0 24px; padding: 14px 18px; text-align: left;
+          font: inherit; color: var(--text); background: var(--card); border: 2px solid var(--line); border-radius: 14px; cursor: pointer; }
+  .mine:hover { border-color: var(--focus); }
+  .mine:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .mine svg { flex: none; width: 30px; height: 30px; color: var(--focus); }
+  .mine b { display: block; }
+  .mine span { color: var(--muted); font-size: 14px; }
+  .or { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tag { font-size: 11px; font-weight: 600; padding: 1px 8px; border-radius: 999px; }
+  .tag.ok { color: var(--ok); background: var(--ok-bg); }
+  .tag.warn { color: var(--warn); background: var(--warn-bg); }
   .result { margin-top: 24px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
   .result:empty { display: none; }
   .badge { display: inline-block; font-weight: 700; padding: 4px 12px; border-radius: 999px; font-size: 14px; }
@@ -76,18 +85,23 @@
   <h1>Warranty Check</h1>
   <p class="sub">Pick the brand, paste the serial, press Enter.</p>
 
+  <button class="mine" id="me">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg>
+    <div><b>Check my computer</b><span>Finds this laptop's brand and serial for you (asks for your password)</span></div>
+  </button>
+  <p class="or">Or check another device:</p>
+
   <div class="brands" role="group" aria-label="Brand">
-    <button class="brand" data-b="lenovo" style="--c:#E2231A;--m:url(logos/lenovo.svg)"><span class="logo"></span>Lenovo<small>ThinkPad · IdeaPad</small></button>
-    <button class="brand" data-b="hp" style="--c:#0096D6;--m:url(logos/hp.svg)"><span class="logo"></span>HP<small>EliteBook · ProBook</small></button>
-    <button class="brand" data-b="dell" style="--c:#007DB8;--m:url(logos/dell.svg)"><span class="logo"></span>Dell<small>Latitude · XPS</small></button>
-    <button class="brand" data-b="apple" style="--c:var(--apple);--m:url(logos/apple.svg)"><span class="logo"></span>Apple<small>MacBook · iPhone</small></button>
+    <button class="brand" data-b="lenovo" style="--c:#E2231A;--m:url(logos/lenovo.svg)"><span class="logo"></span>Lenovo<small>ThinkPad · IdeaPad</small><span class="tag ok">Instant</span></button>
+    <button class="brand" data-b="hp" style="--c:#0096D6;--m:url(logos/hp.svg)"><span class="logo"></span>HP<small>EliteBook · ProBook</small><span class="tag warn">Model only</span></button>
+    <button class="brand" data-b="dell" style="--c:#007DB8;--m:url(logos/dell.svg)"><span class="logo"></span>Dell<small>Latitude · XPS</small><span class="tag warn">Opens Dell</span></button>
+    <button class="brand" data-b="apple" style="--c:var(--apple);--m:url(logos/apple.svg)"><span class="logo"></span>Apple<small>MacBook · iPhone</small><span class="tag warn">Opens Apple</span></button>
   </div>
 
   <form class="row" id="f">
     <input id="serial" placeholder="Serial number" autocomplete="off" spellcheck="false" aria-label="Serial number">
     <button class="go" id="go">Check</button>
   </form>
-  <div class="links">This computer: <button id="me">fill in brand and serial</button></div>
 
   <div class="result" id="out" aria-live="polite"></div>
 </main>
