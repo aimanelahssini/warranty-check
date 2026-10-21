@@ -1,0 +1,14 @@
+{
+  "name": "Warranty Check",
+  "short_name": "Warranty",
+  "description": "Check a laptop's warranty from its serial number in a second: Lenovo, ThinkPad, HP, Dell, Apple.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f6f4",
+  "theme_color": "#0a66d8",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ],
+  "categories": ["utilities", "productivity", "shopping"]
+}

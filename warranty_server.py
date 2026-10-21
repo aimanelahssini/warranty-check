@@ -13,7 +13,8 @@ from _core import BRANDS, lookup  # noqa: E402
 
 STATIC = os.path.join(HERE, "public")
 PORT = int(os.environ.get("WARRANTY_PORT", "8765"))
-TYPES = {".html": "text/html; charset=utf-8", ".svg": "image/svg+xml", ".css": "text/css", ".js": "text/javascript"}
+TYPES = {".html": "text/html; charset=utf-8", ".svg": "image/svg+xml", ".css": "text/css", ".js": "text/javascript",
+         ".png": "image/png", ".xml": "application/xml", ".txt": "text/plain; charset=utf-8", ".json": "application/json"}
 
 
 def this_computer(ask_root):
@@ -54,9 +55,17 @@ class Handler(BaseHTTPRequestHandler):
             return self.send(200, lookup(brand, (qs.get("serial") or [""])[0]))
         if url.path == "/api/this":
             return self.send(200, this_computer("root" in qs))
-        name = "index.html" if url.path == "/" else url.path.lstrip("/")
-        path = os.path.realpath(os.path.join(STATIC, name))
-        if not path.startswith(STATIC + os.sep) or not os.path.isfile(path):
+        path = os.path.realpath(os.path.join(STATIC, url.path.lstrip("/")))
+        if not (path + os.sep).startswith(STATIC + os.sep):
+            return self.send(404, b"not found", "text/plain")
+        if os.path.isdir(path):
+            if not url.path.endswith("/"):
+                self.send_response(301)
+                self.send_header("Location", url.path + "/" + (f"?{url.query}" if url.query else ""))
+                self.end_headers()
+                return
+            path = os.path.join(path, "index.html")
+        if not os.path.isfile(path):
             return self.send(404, b"not found", "text/plain")
         with open(path, "rb") as f:
             self.send(200, f.read(), TYPES.get(os.path.splitext(path)[1], "application/octet-stream"))

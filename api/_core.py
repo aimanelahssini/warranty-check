@@ -18,7 +18,7 @@ def lenovo(serial):
     d = fetch("https://pcsupport.lenovo.com/us/en/api/v4/upsell/redport/getIbaseInfo",
               {"serialNumber": serial, "country": "us", "language": "en"})
     if d.get("code") != 0 or not d.get("data"):
-        return {"ok": False, "error": "Lenovo doesn't know this serial. Check it on the sticker under the laptop."}
+        return {"ok": False, "error": "notFound"}
     data, m = d["data"], d["data"]["machineInfo"]
     items = []
     for kind in ("baseWarranties", "upgradeWarranties", "contractWarranties"):
@@ -33,8 +33,8 @@ def lenovo(serial):
         "image": m.get("productImage"),
         "inWarranty": status.lower() == "in warranty", "status": status,
         "end": (data.get("currentWarranty") or {}).get("endDate"),
-        "facts": {"Built": m.get("buildDate"), "Shipped": m.get("shipDate"), "Ship country": m.get("shipToCountry"),
-                  "Purchase date": m.get("popDate"), "Lenovo support until": m.get("eosDate")},
+        "facts": {"built": m.get("buildDate"), "shipped": m.get("shipDate"), "shippedTo": m.get("shipToCountry"),
+                  "purchased": m.get("popDate"), "supportEnds": m.get("eosDate")},
         "items": items,
         "link": f"https://pcsupport.lenovo.com/products/{urllib.parse.quote(serial)}/warranty",
     }
@@ -46,12 +46,11 @@ def hp(serial):
     d = fetch(f"https://support.hp.com/wcc-services/searchresult/us-en?{q}")
     v = ((d.get("data") or {}).get("verifyResponse") or {}).get("data")
     if not v or not v.get("productName"):
-        return {"ok": False, "error": "HP doesn't know this serial. Check it on the sticker or with Fn+Esc."}
+        return {"ok": False, "error": "notFound"}
     return {
         "ok": True, "full": False,
         "model": v["productName"], "product": v.get("productNumber"), "serial": v.get("serialNumber"),
-        "facts": {"Product number": v.get("productNumber"), "Description": v.get("description")},
-        "note": "HP keeps the warranty dates behind a captcha. The model is confirmed; HP's page shows the dates.",
+        "facts": {"productNumber": v.get("productNumber"), "description": v.get("description")},
         "link": "https://support.hp.com/us-en" + v["targetUrl"] if v.get("targetUrl") else "https://support.hp.com/us-en/check-warranty",
     }
 
@@ -63,8 +62,8 @@ def lookup(brand, serial):
     """Return the JSON-ready result for a brand and a raw serial from the query string."""
     serial = (serial or "").strip().upper().replace(" ", "")
     if not serial.isalnum() or len(serial) > 20:
-        return {"ok": False, "error": "That doesn't look like a serial number."}
+        return {"ok": False, "error": "badSerial"}
     try:
         return BRANDS[brand](serial)
     except (urllib.error.URLError, TimeoutError, ValueError, KeyError) as e:
-        return {"ok": False, "error": f"Couldn't reach the brand's server ({e})."}
+        return {"ok": False, "error": "unreachable", "detail": str(e)}

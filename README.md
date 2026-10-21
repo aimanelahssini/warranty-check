@@ -17,6 +17,26 @@
 
 Extras: it guesses the brand from the serial's shape, keeps your recent checks, has a "Copy summary" button for sending to a seller, and links like `?brand=lenovo&serial=PF1AB2CD` open straight on the result. "Where do I find the serial?" shows the one-line command for Windows and Linux.
 
+## Languages
+
+The page speaks 21 languages: English, French, Spanish, German, Italian, Portuguese, Dutch, Polish, Swedish, Czech, Romanian, Turkish, Russian, Ukrainian, Arabic (right to left), Hindi, Chinese, Japanese, Korean, Indonesian and Vietnamese. First-time visitors are sent to their browser's language; the globe menu in the footer switches it. Dates, durations ("13 months left") and countries are formatted by the browser for that language.
+
+Each language is a real page (`/fr/`, `/de/`, ...) with its own title, description, keywords and FAQ, linked with `hreflang` so search engines show the right one.
+
+## Search engines and AI assistants
+
+Every page has a canonical link, Open Graph and Twitter cards with a share image, and schema.org `WebApplication` + `FAQPage` data. `sitemap.xml` lists every language, `robots.txt` welcomes search and AI crawlers, and `llms.txt` describes the tool for AI assistants.
+
+## Editing
+
+The pages are generated. Change `src/page.html` (layout) or `src/i18n/<lang>.json` (text), then run:
+
+```bash
+SITE_URL=https://your-domain.example python3 build.py
+```
+
+Adding a language is one new JSON file with the same keys as `en.json`; the build refuses missing keys.
+
 ## Run it on the web (Vercel)
 
 The repo deploys to Vercel as is: `public/` is the page, `api/` holds the Python functions that call the brands. Import the repo on [vercel.com/new](https://vercel.com/new) or run `npx vercel --prod`.
