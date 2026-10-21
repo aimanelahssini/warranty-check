@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+  <rect width="720" height="420" rx="20" fill="#f5f5f7"/>
+  <text x="40" y="58" font-size="26" font-weight="700" fill="#1d1d1f">Warranty Check</text>
+  <g font-size="14" text-anchor="middle" fill="#1d1d1f">
+    <rect x="40" y="84" width="150" height="70" rx="12" fill="#fff" stroke="#E2231A" stroke-width="2.5"/><text x="115" y="125">Lenovo</text>
+    <rect x="200" y="84" width="150" height="70" rx="12" fill="#fff" stroke="#e3e3e8" stroke-width="2"/><text x="275" y="125">HP</text>
+    <rect x="360" y="84" width="150" height="70" rx="12" fill="#fff" stroke="#e3e3e8" stroke-width="2"/><text x="435" y="125">Dell</text>
+    <rect x="520" y="84" width="160" height="70" rx="12" fill="#fff" stroke="#e3e3e8" stroke-width="2"/><text x="600" y="125">Apple</text>
+  </g>
+  <rect x="40" y="172" width="540" height="46" rx="10" fill="#fff" stroke="#0a66d8" stroke-width="2"/>
+  <text x="58" y="202" font-size="17" letter-spacing="1.5" fill="#1d1d1f">PF1AB2CD</text>
+  <rect x="592" y="172" width="88" height="46" rx="10" fill="#1d1d1f"/><text x="636" y="201" font-size="15" font-weight="600" fill="#fff" text-anchor="middle">Check</text>
+  <rect x="40" y="236" width="640" height="150" rx="14" fill="#fff" stroke="#e3e3e8"/>
+  <rect x="62" y="258" width="110" height="80" rx="8" fill="#f0f0f3"/>
+  <rect x="80" y="272" width="74" height="44" rx="3" fill="#3a3a40"/><path d="M72 322h90l-6 8H78z" fill="#8a8a92"/>
+  <rect x="192" y="258" width="104" height="26" rx="13" fill="#e7f5ec"/><text x="244" y="276" font-size="13" font-weight="700" fill="#1a7f37" text-anchor="middle">In warranty</text>
+  <text x="192" y="310" font-size="18" font-weight="650" fill="#1d1d1f">ThinkPad T14 Gen 3</text>
+  <text x="192" y="334" font-size="14" fill="#6e6e73">Covered until 12 Mar 2027 · 5 months left</text>
+  <g font-size="13" fill="#6e6e73"><path d="M62 354h596" stroke="#e3e3e8"/>
+    <text x="62" y="374">3Y On-site, 9X5</text><text x="420" y="374">Onsite Support</text><text x="580" y="374">12 Mar 2027</text></g>
+</svg>

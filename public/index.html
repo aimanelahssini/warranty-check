@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Warranty Check</title>
+<meta name="description" content="Check a laptop's warranty from its serial number in a second.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<style>
+  :root {
+    --bg: #f5f5f7; --card: #ffffff; --text: #1d1d1f; --muted: #6e6e73; --line: #e3e3e8; --soft: #f0f0f3;
+    --ok: #1a7f37; --ok-bg: #e7f5ec; --bad: #c62828; --bad-bg: #fdecec; --warn: #9a6700; --warn-bg: #fff6dd;
+    --focus: #0a66d8; --apple: #1d1d1f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141416; --card: #1f1f23; --text: #f2f2f5; --muted: #a0a0a8; --line: #33333a; --soft: #2a2a30;
+      --ok: #5fd07e; --ok-bg: #16301f; --bad: #ff7a7a; --bad-bg: #3a1a1a; --warn: #f0c14b; --warn-bg: #3a2f12;
+      --focus: #5aa2ff; --apple: #f2f2f5;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Cantarell, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
+  header { display: flex; align-items: center; gap: 12px; margin-bottom: 4px; }
+  header img { width: 36px; height: 36px; }
+  h1 { font-size: 28px; margin: 0; letter-spacing: -0.02em; }
+  .sub { color: var(--muted); margin: 0 0 28px; }
+  button { font: inherit; color: inherit; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+  .mine { display: flex; align-items: center; gap: 14px; width: 100%; margin: 0 0 24px; padding: 14px 18px; text-align: left;
+          background: var(--card); border: 2px solid var(--line); border-radius: 14px; cursor: pointer; }
+  .mine:hover { border-color: var(--focus); }
+  .mine svg { flex: none; width: 30px; height: 30px; color: var(--focus); }
+  .mine b { display: block; }
+  .mine span { color: var(--muted); font-size: 14px; }
+  .or { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+
+  .brands { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .brand { background: var(--card); border: 2px solid var(--line); border-radius: 14px; padding: 18px 8px 12px;
+           cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px;
+           transition: border-color .15s, transform .15s; }
+  .brand:hover { transform: translateY(-2px); }
+  .brand[aria-pressed="true"] { border-color: var(--c); box-shadow: 0 0 0 3px color-mix(in srgb, var(--c) 22%, transparent); }
+  .logo { width: 44px; height: 44px; background: var(--c); -webkit-mask: var(--m) center/contain no-repeat; mask: var(--m) center/contain no-repeat; }
+  .brand[data-b="lenovo"] .logo { width: 84px; }
+  .brand small { color: var(--muted); font-size: 12px; }
+  .tag { font-size: 11px; font-weight: 600; padding: 1px 8px; border-radius: 999px; }
+  .tag.ok { color: var(--ok); background: var(--ok-bg); }
+  .tag.warn { color: var(--warn); background: var(--warn-bg); }
+
+  .row { display: flex; gap: 10px; margin-top: 20px; }
+  input { flex: 1; min-width: 0; font: inherit; font-size: 18px; letter-spacing: .06em; text-transform: uppercase;
+          padding: 12px 14px; border-radius: 12px; border: 2px solid var(--line); background: var(--card); color: var(--text); }
+  input::placeholder { text-transform: none; letter-spacing: 0; }
+  input:focus { outline: none; border-color: var(--focus); }
+  .go { font-weight: 600; padding: 0 22px; border: 0; border-radius: 12px; cursor: pointer; background: var(--text); color: var(--bg); }
+  .go:disabled { opacity: .5; cursor: default; }
+  .under { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 10px; font-size: 14px; color: var(--muted); }
+  .link { background: none; border: 0; padding: 0; color: var(--focus); cursor: pointer; font-size: 14px; }
+
+  .help { margin-top: 12px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 6px 18px; font-size: 14px; }
+  .help[hidden] { display: none; }
+  .help h3 { font-size: 14px; margin: 12px 0 4px; }
+  .help p { margin: 0 0 8px; color: var(--muted); }
+  .cmd { display: flex; align-items: center; gap: 8px; background: var(--soft); border-radius: 8px; padding: 6px 6px 6px 10px; margin-bottom: 8px; }
+  .cmd code { flex: 1; min-width: 0; overflow-x: auto; white-space: nowrap; font-size: 13px; }
+  .mini { flex: none; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 6px; border: 1px solid var(--line);
+          background: var(--card); cursor: pointer; }
+
+  .recent { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; align-items: center; }
+  .recent:empty { display: none; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; padding: 4px 12px; border-radius: 999px;
+          border: 1px solid var(--line); background: var(--card); cursor: pointer; }
+  .chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
+  .chip i.ok { background: var(--ok); } .chip i.bad { background: var(--bad); }
+
+  .result { margin-top: 24px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
+  .result:empty { display: none; }
+  .badge { display: inline-block; font-weight: 700; padding: 4px 12px; border-radius: 999px; font-size: 14px; }
+  .badge.ok { color: var(--ok); background: var(--ok-bg); }
+  .badge.bad { color: var(--bad); background: var(--bad-bg); }
+  .badge.warn { color: var(--warn); background: var(--warn-bg); }
+  .head { display: flex; gap: 20px; align-items: center; }
+  .photo { width: 140px; height: 105px; object-fit: contain; flex: none; background: #fff; border-radius: 10px; padding: 6px; }
+  .model { font-size: 20px; font-weight: 650; margin: 10px 0 2px; }
+  .muted { color: var(--muted); }
+  .big { font-size: 15px; margin: 12px 0 0; }
+  table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 6px; border-top: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 500; }
+  td.d { white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .past { color: var(--muted); }
+  dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; margin: 16px 0 0; font-size: 14px; }
+  dt { color: var(--muted); } dd { margin: 0; }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  .btn { display: inline-flex; align-items: center; font-size: 14px; font-weight: 600; padding: 8px 14px; border-radius: 10px;
+         border: 1px solid var(--line); background: var(--soft); color: var(--text); text-decoration: none; cursor: pointer; }
+  .btn.primary { background: var(--focus); border-color: var(--focus); color: #fff; }
+  .spin { display: inline-block; width: 16px; height: 16px; border: 2px solid var(--line); border-top-color: var(--text);
+          border-radius: 50%; animation: s .7s linear infinite; vertical-align: -3px; margin-right: 8px; }
+  @keyframes s { to { transform: rotate(360deg); } }
+  footer { margin-top: 40px; font-size: 12px; color: var(--muted); text-align: center; }
+  footer a { color: inherit; }
+  @media (max-width: 560px) {
+    .brands { grid-template-columns: repeat(2, 1fr); }
+    .head { flex-direction: column; align-items: flex-start; }
+    table th:nth-child(2), table td:nth-child(2) { display: none; }
+    .go { padding: 0 16px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header><img src="icon.svg" alt=""><h1>Warranty Check</h1></header>
+  <p class="sub">See if a laptop is still under warranty, in a second.</p>
+
+  <button class="mine" id="me" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg>
+    <div><b>Check my computer</b><span>Finds this laptop's brand and serial for you (asks for your password)</span></div>
+  </button>
+  <p class="or" id="or" hidden>Or check another device:</p>
+
+  <div class="brands" role="group" aria-label="Brand">
+    <button class="brand" data-b="lenovo" style="--c:#E2231A;--m:url(logos/lenovo.svg)"><span class="logo"></span>Lenovo<small>ThinkPad · IdeaPad</small><span class="tag ok">Instant</span></button>
+    <button class="brand" data-b="hp" style="--c:#0096D6;--m:url(logos/hp.svg)"><span class="logo"></span>HP<small>EliteBook · ProBook</small><span class="tag warn">Model only</span></button>
+    <button class="brand" data-b="dell" style="--c:#007DB8;--m:url(logos/dell.svg)"><span class="logo"></span>Dell<small>Latitude · XPS</small><span class="tag warn">Opens Dell</span></button>
+    <button class="brand" data-b="apple" style="--c:var(--apple);--m:url(logos/apple.svg)"><span class="logo"></span>Apple<small>MacBook · iPhone</small><span class="tag warn">Opens Apple</span></button>
+  </div>
+
+  <form class="row" id="f">
+    <input id="serial" placeholder="Serial number" autocomplete="off" spellcheck="false" aria-label="Serial number">
+    <button class="go" id="go">Check</button>
+  </form>
+  <div class="under">
+    <span id="hint">Pick a brand, or just paste the serial and press Enter.</span>
+    <button class="link" id="where" aria-expanded="false" aria-controls="help">Where do I find the serial?</button>
+  </div>
+
+  <div class="help" id="help" hidden>
+    <h3>On the laptop's sticker</h3>
+    <p>Underneath the laptop, labelled S/N, Serial or Service Tag (Dell). Lenovo serials are 8 characters, Dell service tags 7.</p>
+    <h3>Windows: paste this in PowerShell</h3>
+    <div class="cmd"><code>(Get-CimInstance Win32_BIOS).SerialNumber</code><button class="mini" data-copy>Copy</button></div>
+    <h3>Linux: paste this in a terminal</h3>
+    <div class="cmd"><code>sudo cat /sys/class/dmi/id/product_serial</code><button class="mini" data-copy>Copy</button></div>
+    <h3>Mac</h3>
+    <p>Apple menu → About This Mac. The serial is on the first screen.</p>
+  </div>
+
+  <div class="recent" id="recent"></div>
+  <div class="result" id="out" aria-live="polite"></div>
+
+  <footer>Lenovo results come straight from Lenovo. HP, Dell and Apple hide their warranty dates behind a captcha, so you finish on their site.</footer>
+</main>
+
+<script>
+const $ = s => document.querySelector(s);
+const out = $("#out"), input = $("#serial"), go = $("#go");
+const NAMES = { lenovo: "Lenovo", hp: "HP", dell: "Dell", apple: "Apple" };
+const HINTS = {
+  lenovo: "Lenovo serials are 8 characters, like PF1AB2CD.",
+  hp: "HP serials are 10 characters, like 5CD1234ABC. Fn+Esc on the laptop shows it.",
+  dell: "Dell uses a 7-character Service Tag, like 7XJ8YZ2.",
+  apple: "Apple serials are 10 to 12 characters.",
+};
+const store = {
+  get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+};
+let brand = null;
+
+function pick(b) {
+  brand = b;
+  document.querySelectorAll(".brand").forEach(el => el.setAttribute("aria-pressed", el.dataset.b === b));
+  $("#hint").textContent = HINTS[b];
+  store.set("brand", b);
+}
+document.querySelectorAll(".brand").forEach(el => el.onclick = () => { pick(el.dataset.b); input.focus(); });
+
+// Guess the brand from the serial's shape when none is picked.
+function guess(s) {
+  if (/^[A-Z0-9]{7}$/.test(s)) return "dell";
+  if (/^[A-Z0-9]{8}$/.test(s)) return "lenovo";
+  if (/^\d[A-Z]{2}[A-Z0-9]{7}$/.test(s)) return "hp";
+  return null;
+}
+
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const today = new Date().toISOString().slice(0, 10);
+const fmt = d => d ? new Date(d + "T00:00").toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" }) : "—";
+function left(end) {
+  const days = Math.round((new Date(end + "T00:00") - new Date(today + "T00:00")) / 864e5);
+  if (days < 0) return -days < 62 ? `ended ${-days} day${days === -1 ? "" : "s"} ago` : `ended ${Math.round(-days / 30.4)} months ago`;
+  return days < 62 ? `${days} days left` : `${Math.round(days / 30.4)} months left`;
+}
+async function copy(text, btn) {
+  try { await navigator.clipboard.writeText(text); } catch { return; }
+  const was = btn.textContent; btn.textContent = "Copied"; setTimeout(() => btn.textContent = was, 1500);
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-copy]");
+  if (b) copy(b.dataset.copy || b.previousElementSibling.textContent, b);
+});
+
+// Recent checks, newest first.
+function remember(entry) {
+  const list = store.get("recent", []).filter(r => !(r.brand === entry.brand && r.serial === entry.serial));
+  store.set("recent", [entry, ...list].slice(0, 8));
+  drawRecent();
+}
+function drawRecent() {
+  const list = store.get("recent", []);
+  $("#recent").innerHTML = list.length ? `<span class="muted" style="font-size:13px">Recent:</span>` + list.map((r, i) =>
+    `<button class="chip" data-i="${i}" title="${esc(r.model || "")}"><i class="${r.state || ""}"></i>${esc(NAMES[r.brand])} ${esc(r.serial)}</button>`).join("")
+    + `<button class="link" id="clear" style="font-size:13px">Clear</button>` : "";
+}
+$("#recent").onclick = e => {
+  if (e.target.id === "clear") { store.set("recent", []); drawRecent(); return; }
+  const c = e.target.closest(".chip");
+  if (!c) return;
+  const r = store.get("recent", [])[c.dataset.i];
+  pick(r.brand); input.value = r.serial; check();
+};
+
+function showFull(r) {
+  const ok = r.inWarranty;
+  const img = /^https:\/\//.test(r.image || "") ? `<img class="photo" src="${esc(r.image)}" alt="" onerror="this.remove()">` : "";
+  const rows = r.items.map(w => `<tr class="${w.end < today ? "past" : ""}">
+      <td>${esc(w.name)}</td><td>${esc(w.type)}</td><td class="d">${fmt(w.start)}</td><td class="d">${fmt(w.end)}</td></tr>`).join("");
+  const facts = Object.entries(r.facts).filter(([, v]) => v).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(/^\d{4}-\d\d-\d\d$/.test(v) ? fmt(v) : v)}</dd>`).join("");
+  const summary = `${r.model} (S/N ${r.serial}): ${ok ? "in warranty until" : "out of warranty since"} ${fmt(r.end)}`;
+  out.innerHTML = `<div class="head">${img}<div>
+      <span class="badge ${ok ? "ok" : "bad"}">${ok ? "In warranty" : "Out of warranty"}</span>
+      <div class="model">${esc(r.model)}</div>
+      <div class="muted">Serial ${esc(r.serial)} · ${esc(r.product)}</div></div></div>
+    ${r.end ? `<p class="big">${ok ? "Covered until" : "Ended on"} <b>${fmt(r.end)}</b> (${left(r.end)})</p>` : ""}
+    <table><tr><th>Coverage</th><th>Service</th><th>Start</th><th>End</th></tr>${rows}</table>
+    <dl>${facts}</dl>
+    <div class="actions"><button class="btn" data-copy="${esc(summary)}">Copy summary</button>
+      <a class="btn" href="${esc(r.link)}" target="_blank" rel="noopener">Open on Lenovo →</a></div>`;
+  return ok ? "ok" : "bad";
+}
+
+function showPartial(r) {
+  const facts = Object.entries(r.facts).filter(([, v]) => v).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
+  out.innerHTML = `<span class="badge warn">Model found</span>
+    <div class="model">${esc(r.model)}</div>
+    <div class="muted">Serial ${esc(r.serial)}</div>
+    <p class="big">${esc(r.note)}</p><dl>${facts}</dl>
+    <div class="actions"><a class="btn primary" href="${esc(r.link)}" target="_blank" rel="noopener">See warranty dates on HP →</a></div>`;
+}
+
+// Dell and Apple: hand off to their page. `auto` is false when the check didn't come from a click (popup blockers).
+function handOff(b, serial, auto) {
+  const url = b === "dell"
+    ? `https://www.dell.com/support/home/en-us/product-support/servicetag/${encodeURIComponent(serial)}/overview`
+    : "https://checkcoverage.apple.com/";
+  const msg = b === "dell"
+    ? "Dell blocks direct lookups, so its warranty page for this Service Tag opens in a new tab."
+    : "Apple asks for a captcha on every lookup. The serial is copied: paste it with Ctrl+V, then solve the captcha.";
+  if (auto) window.open(url, "_blank", "noopener");
+  if (b === "apple") navigator.clipboard?.writeText(serial).catch(() => {});
+  out.innerHTML = `<span class="badge warn">${auto ? "Opened" : "Open"} ${NAMES[b]}</span>
+    <div class="model">Serial ${esc(serial)}</div><p class="big">${msg}</p>
+    <div class="actions"><a class="btn primary" href="${esc(url)}" target="_blank" rel="noopener">${auto ? "Open again" : "Open " + NAMES[b]} →</a>
+      <button class="btn" data-copy="${esc(serial)}">Copy serial</button></div>`;
+  remember({ brand: b, serial });
+}
+
+async function check(auto = true) {
+  const serial = input.value.trim().toUpperCase().replace(/[\s-]+/g, "");
+  if (!serial) { input.focus(); return; }
+  if (!brand) {
+    const g = guess(serial);
+    if (!g) { out.innerHTML = `<p class="big" style="margin:0">Which brand is it? Pick a logo above.</p>`; return; }
+    pick(g);
+  }
+  history.replaceState(null, "", `?brand=${brand}&serial=${encodeURIComponent(serial)}`);
+  if (brand === "dell" || brand === "apple") return handOff(brand, serial, auto);
+  go.disabled = true;
+  out.innerHTML = `<p class="big" style="margin:0"><span class="spin"></span>Asking ${NAMES[brand]}…</p>`;
+  const b = brand;
+  try {
+    const r = await (await fetch(`api/${b}?serial=${encodeURIComponent(serial)}`)).json();
+    if (!r.ok) {
+      out.innerHTML = `<span class="badge bad">Not found</span><p class="big">${esc(r.error)}</p>`;
+      return;
+    }
+    const state = r.full ? showFull(r) : showPartial(r);
+    remember({ brand: b, serial, model: r.model, state });
+  } catch {
+    out.innerHTML = `<span class="badge bad">Error</span><p class="big">Couldn't reach the lookup server. Check your connection and try again.</p>`;
+  } finally { go.disabled = false; }
+}
+$("#f").onsubmit = e => { e.preventDefault(); check(); };
+
+$("#where").onclick = () => {
+  const help = $("#help"), open = help.hidden;
+  help.hidden = !open; $("#where").setAttribute("aria-expanded", open);
+};
+
+// "Check my computer" only exists when running locally (the server can read this machine's firmware).
+fetch("api/this").then(r => r.ok ? r.json() : null).then(info => {
+  if (!info || !("vendor" in info)) return;
+  $("#me").hidden = false; $("#or").hidden = false;
+}).catch(() => {});
+$("#me").onclick = async () => {
+  out.innerHTML = `<p class="big" style="margin:0"><span class="spin"></span>Reading this computer's serial (it may ask for your password)…</p>`;
+  try {
+    const r = await (await fetch("api/this?root=1")).json();
+    const v = r.vendor.toLowerCase();
+    const b = v.includes("lenovo") ? "lenovo" : /\bhp\b|hewlett/.test(v) ? "hp" : v.includes("dell") ? "dell" : v.includes("apple") ? "apple" : null;
+    if (b) pick(b);
+    if (r.serial && b) { input.value = r.serial; check(); }
+    else if (r.serial) { input.value = r.serial; out.innerHTML = `<p class="big" style="margin:0">This is a ${esc(r.vendor)} ${esc(r.model)}. That brand isn't supported yet.</p>`; }
+    else out.innerHTML = `<p class="big" style="margin:0">This is a ${esc(r.vendor)} ${esc(r.model)}, but the serial couldn't be read. Type it from the sticker underneath.</p>`;
+  } catch { out.innerHTML = `<p class="big" style="margin:0">Couldn't read this computer's details.</p>`; }
+};
+
+drawRecent();
+const params = new URLSearchParams(location.search);
+const startBrand = params.get("brand"), startSerial = params.get("serial");
+if (NAMES[startBrand]) pick(startBrand); else if (store.get("brand", null) in NAMES) pick(store.get("brand"));
+if (startSerial) { input.value = startSerial; check(false); } else input.focus();
+</script>
+</body>
+</html>
