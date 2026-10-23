@@ -73,6 +73,8 @@
   "noSerial": "Die Seriennummer konnte nicht gelesen werden. Geben Sie sie vom Aufkleber an der Unterseite ein.",
   "cantDetect": "Erkennung fehlgeschlagen",
   "cantDetectText": "Die Daten dieses Computers konnten nicht gelesen werden.",
+  "dlTitle": "Heruntergeladene Datei öffnen",
+  "dlText": "Öffnen Sie „Warranty Check.cmd“ in Ihren Downloads. Sie liest die Seriennummer dieses PCs aus und bringt Sie mit dem Ergebnis hierher zurück. Es wird nichts installiert. Falls Windows warnt, klicken Sie auf Weitere Informationen → Trotzdem ausführen.",
   "faqTitle": "Fragen",
   "q1": "Wie prüfe ich die Garantie eines Laptops per Seriennummer?",
   "a1": "Marke wählen, Seriennummer einfügen und auf Prüfen klicken. Bei Lenovo- und ThinkPad-Laptops sehen Sie sofort, ob die Garantie aktiv ist, das genaue Enddatum, jede Garantieleistung sowie Bau-, Versand- und Kaufdatum.",

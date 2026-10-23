@@ -73,6 +73,8 @@
   "noSerial": "Le numéro de série n'a pas pu être lu. Saisissez-le depuis l'étiquette sous l'ordinateur.",
   "cantDetect": "Détection impossible",
   "cantDetectText": "Les informations de cet ordinateur n'ont pas pu être lues.",
+  "dlTitle": "Ouvrez le fichier téléchargé",
+  "dlText": "Ouvrez « Warranty Check.cmd » dans vos téléchargements. Il lit le numéro de série de ce PC et vous ramène ici avec le résultat. Rien n'est installé. Si Windows vous avertit, cliquez sur Informations complémentaires → Exécuter quand même.",
   "faqTitle": "Questions",
   "q1": "Comment vérifier la garantie d'un ordinateur portable avec son numéro de série ?",
   "a1": "Choisissez la marque, collez le numéro de série et appuyez sur Vérifier. Pour les portables Lenovo et ThinkPad, vous voyez instantanément si la garantie est active, la date de fin exacte, chaque ligne de couverture, ainsi que les dates de fabrication, d'expédition et d'achat.",

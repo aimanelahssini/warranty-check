@@ -73,6 +73,8 @@
   "noSerial": "The serial couldn't be read. Type it from the sticker underneath.",
   "cantDetect": "Couldn't detect",
   "cantDetectText": "This computer's details couldn't be read.",
+  "dlTitle": "Open the downloaded file",
+  "dlText": "Open “Warranty Check.cmd” from your downloads. It reads this PC's serial and brings you straight back here with the result. Nothing gets installed. If Windows warns you, click More info → Run anyway.",
   "faqTitle": "Questions",
   "q1": "How do I check a laptop's warranty by serial number?",
   "a1": "Pick the brand, paste the serial number and press Check. For Lenovo and ThinkPad laptops you instantly see whether the warranty is active, the exact end date, every coverage line, and the build, ship and purchase dates.",

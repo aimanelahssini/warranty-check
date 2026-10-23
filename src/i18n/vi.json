@@ -73,6 +73,8 @@
   "noSerial": "Không đọc được số serial. Hãy nhập từ nhãn dán ở mặt dưới.",
   "cantDetect": "Không nhận diện được",
   "cantDetectText": "Không đọc được thông tin của máy này.",
+  "dlTitle": "Mở tệp vừa tải xuống",
+  "dlText": "Mở “Warranty Check.cmd” trong thư mục tải xuống. Tệp sẽ đọc số sê-ri của máy này và đưa bạn quay lại đây cùng kết quả. Không cài đặt gì cả. Nếu Windows cảnh báo, hãy bấm Thêm thông tin → Vẫn chạy.",
   "faqTitle": "Câu hỏi thường gặp",
   "q1": "Làm sao kiểm tra bảo hành laptop bằng số serial?",
   "a1": "Chọn hãng, dán số serial và nhấn Kiểm tra. Với laptop Lenovo và ThinkPad, bạn sẽ thấy ngay bảo hành còn hiệu lực hay không, ngày hết hạn chính xác, từng hạng mục bảo hành, cùng ngày sản xuất, xuất xưởng và ngày mua.",

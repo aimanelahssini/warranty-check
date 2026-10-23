@@ -43,4 +43,4 @@ User-agent: Bingbot
 Allow: /
 Disallow: /api/
 
-Sitemap: https://warranty-check.vercel.app/sitemap.xml
+Sitemap: https://warranty-check-alpha.vercel.app/sitemap.xml

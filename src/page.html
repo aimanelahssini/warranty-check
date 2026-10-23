@@ -470,29 +470,61 @@ $("#where").onclick = () => {
   help.hidden = !open; $("#where").setAttribute("aria-expanded", open);
 };
 
-// "Detect this computer" only exists when running locally (the server can read this machine's firmware).
+// "Detect this computer": locally the server reads this machine's firmware. A website can't, so online
+// Windows gets a small file that reads the serial and reopens this page; Mac and Linux get where to look.
+const ua = navigator.userAgent;
+const OS = /iPhone|iPad|Android/.test(ua) || (/Mac/.test(ua) && navigator.maxTouchPoints > 1) ? "phone"
+  : /Windows/.test(ua) ? "win" : /Mac/.test(ua) ? "mac" : /Linux/.test(ua) && !/CrOS/.test(ua) ? "linux" : "other";
+let local = false;
+if (OS === "win" || OS === "mac" || OS === "linux") $("#me").hidden = false;
+if (OS === "mac" && !store.get("brand", null)) pick("apple");
 fetch("/api/this").then(r => r.ok ? r.json() : null).then(info => {
-  if (info && "vendor" in info) $("#me").hidden = false;
+  if (info && "vendor" in info) { local = true; $("#me").hidden = false; }
 }).catch(() => {});
+
+function detected(vendor, model, serial) {
+  const v = vendor.toLowerCase();
+  const b = v.includes("lenovo") ? "lenovo" : /\bhp\b|hewlett/.test(v) ? "hp" : v.includes("dell") ? "dell" : v.includes("apple") ? "apple" : null;
+  // Cheap boards report placeholders instead of a serial.
+  if (/o\.?e\.?m|default|not specified|^none$|^0+$|^\W*$/i.test(serial)) serial = "";
+  if (b) pick(b);
+  if (serial) input.value = serial;
+  if (serial && b) check();
+  else if (serial) message(`${vendor} ${model}`.trim(), tr("unsupported"));
+  else message(`${vendor} ${model}`.trim() || tr("cantDetect"), tr("noSerial"));
+}
+
 $("#me").onclick = async () => {
-  loading(tr("reading"));
-  try {
-    const r = await (await fetch("/api/this?root=1")).json();
-    const v = r.vendor.toLowerCase();
-    const b = v.includes("lenovo") ? "lenovo" : /\bhp\b|hewlett/.test(v) ? "hp" : v.includes("dell") ? "dell" : v.includes("apple") ? "apple" : null;
-    if (b) pick(b);
-    if (r.serial) input.value = r.serial;
-    if (r.serial && b) check();
-    else if (r.serial) message(`${r.vendor} ${r.model}`, tr("unsupported"));
-    else message(`${r.vendor} ${r.model}`, tr("noSerial"));
-  } catch { message(tr("cantDetect"), tr("cantDetectText")); }
+  if (local) {
+    loading(tr("reading"));
+    try {
+      const r = await (await fetch("/api/this?root=1")).json();
+      detected(r.vendor, r.model, r.serial);
+    } catch { message(tr("cantDetect"), tr("cantDetectText")); }
+  } else if (OS === "win") {
+    const a = document.createElement("a");
+    a.href = `/detect/${LANG}.cmd`;
+    a.download = "Warranty Check.cmd";
+    a.click();
+    message(tr("dlTitle"), tr("dlText"));
+  } else if (OS === "mac") {
+    pick("apple");
+    message(tr("helpMac"), tr("helpMacText"));
+    input.focus();
+  } else {
+    $("#help").hidden = false;
+    $("#where").setAttribute("aria-expanded", true);
+    $("#help").scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
 };
 
 drawRecent();
 const params = new URLSearchParams(location.search);
-const startBrand = params.get("brand"), startSerial = params.get("serial");
+const startBrand = params.get("brand"), startSerial = params.get("serial"), startVendor = params.get("vendor");
 if (NAMES[startBrand]) pick(startBrand); else if (store.get("brand", null) in NAMES) pick(store.get("brand"));
-if (startSerial) { input.value = startSerial; check(); } else if (matchMedia("(min-width: 600px)").matches) input.focus();
+// The Windows detector comes back with ?vendor=…&model=…&serial=…
+if (startVendor !== null) { history.replaceState(null, "", location.pathname); detected(startVendor, params.get("model") || "", startSerial || ""); }
+else if (startSerial) { input.value = startSerial; check(); } else if (matchMedia("(min-width: 600px)").matches) input.focus();
 </script>
 </body>
 </html>

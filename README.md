@@ -48,7 +48,16 @@ The repo deploys to Vercel as is: `public/` is the page, `api/` holds the Python
 warranty         # starts the local server on 127.0.0.1:8765 and opens the page
 ```
 
-Locally you also get **Check my computer**, which reads this machine's brand and serial (through `pkexec`) and checks it.
+Locally, **Detect this computer** reads this machine's brand and serial (through `pkexec`) and checks it.
+
+## Detect this computer, online
+
+Browsers never let a website read a computer's serial number, so the online button does the closest thing:
+
+- **Windows:** it downloads `Warranty Check.cmd` (built per language into `public/detect/`). Opening it reads the brand, model and serial with PowerShell and reopens the site with `?vendor=…&model=…&serial=…`, which checks it straight away. Nothing is installed. Windows SmartScreen may ask for *More info → Run anyway* the first time.
+- **Mac:** Apple is picked automatically and the page says where the serial is (Apple menu → About This Mac).
+- **Linux:** it opens the "Where's the serial?" panel.
+- **Phones and tablets:** the button is hidden, since you're usually checking another computer.
 Only Python's standard library is needed.
 
 ## Why a server?

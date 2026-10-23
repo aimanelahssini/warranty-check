@@ -73,6 +73,8 @@
   "noSerial": "Serienumret kunde inte läsas. Skriv in det från etiketten under datorn.",
   "cantDetect": "Kunde inte identifiera",
   "cantDetectText": "Datorns uppgifter kunde inte läsas.",
+  "dlTitle": "Öppna den nedladdade filen",
+  "dlText": "Öppna ”Warranty Check.cmd” från dina hämtade filer. Den läser datorns serienummer och tar dig direkt tillbaka hit med resultatet. Inget installeras. Om Windows varnar klickar du på Mer information → Kör ändå.",
   "faqTitle": "Frågor",
   "q1": "Hur kollar jag garantin på en laptop med serienumret?",
   "a1": "Välj märke, klistra in serienumret och tryck på Kolla. För Lenovo- och ThinkPad-laptops ser du direkt om garantin gäller, exakt slutdatum, varje täckningsrad samt tillverknings-, leverans- och inköpsdatum.",

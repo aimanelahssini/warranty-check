@@ -73,6 +73,8 @@
   "noSerial": "Nie udało się odczytać numeru seryjnego. Przepisz go z naklejki pod spodem.",
   "cantDetect": "Nie wykryto",
   "cantDetectText": "Nie udało się odczytać danych tego komputera.",
+  "dlTitle": "Otwórz pobrany plik",
+  "dlText": "Otwórz „Warranty Check.cmd” z pobranych plików. Odczyta numer seryjny tego komputera i wróci tutaj z wynikiem. Nic nie jest instalowane. Jeśli Windows wyświetli ostrzeżenie, kliknij Więcej informacji → Uruchom mimo to.",
   "faqTitle": "Pytania",
   "q1": "Jak sprawdzić gwarancję laptopa po numerze seryjnym?",
   "a1": "Wybierz markę, wklej numer seryjny i kliknij Sprawdź. Dla laptopów Lenovo i ThinkPad od razu widzisz, czy gwarancja jest aktywna, dokładną datę jej końca, każdą pozycję zakresu oraz daty produkcji, wysyłki i zakupu.",

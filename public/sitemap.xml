@@ -1,591 +1,591 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://warranty-check.vercel.app/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/ar/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/ar/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/cs/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/cs/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/de/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/de/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/es/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/es/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/fr/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/fr/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/hi/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/hi/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/id/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/id/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/it/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/it/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/ja/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/ja/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/ko/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/ko/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/nl/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/nl/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/pl/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/pl/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/pt/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/pt/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/ro/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/ro/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/ru/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/ru/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/sv/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/sv/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/tr/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/tr/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/uk/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/uk/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/vi/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/vi/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
   <url>
-    <loc>https://warranty-check.vercel.app/zh/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://warranty-check-alpha.vercel.app/zh/</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check.vercel.app/ar/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check.vercel.app/cs/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check.vercel.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check.vercel.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check.vercel.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check.vercel.app/hi/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check.vercel.app/id/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check.vercel.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check.vercel.app/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check.vercel.app/ko/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check.vercel.app/nl/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check.vercel.app/pl/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check.vercel.app/pt/"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check.vercel.app/ro/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check.vercel.app/ru/"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check.vercel.app/sv/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check.vercel.app/tr/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check.vercel.app/uk/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check.vercel.app/vi/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check.vercel.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warranty-check-alpha.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://warranty-check-alpha.vercel.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://warranty-check-alpha.vercel.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://warranty-check-alpha.vercel.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://warranty-check-alpha.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://warranty-check-alpha.vercel.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://warranty-check-alpha.vercel.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://warranty-check-alpha.vercel.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://warranty-check-alpha.vercel.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warranty-check-alpha.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://warranty-check-alpha.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://warranty-check-alpha.vercel.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://warranty-check-alpha.vercel.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://warranty-check-alpha.vercel.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://warranty-check-alpha.vercel.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://warranty-check-alpha.vercel.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://warranty-check-alpha.vercel.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://warranty-check-alpha.vercel.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://warranty-check-alpha.vercel.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://warranty-check-alpha.vercel.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://warranty-check-alpha.vercel.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warranty-check-alpha.vercel.app/"/>
   </url>
 </urlset>

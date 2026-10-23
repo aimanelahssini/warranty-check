@@ -73,6 +73,8 @@
   "noSerial": "Seri numarası okunamadı. Alttaki etiketten yazın.",
   "cantDetect": "Algılanamadı",
   "cantDetectText": "Bu bilgisayarın bilgileri okunamadı.",
+  "dlTitle": "İndirilen dosyayı açın",
+  "dlText": "İndirilenlerden “Warranty Check.cmd” dosyasını açın. Bu bilgisayarın seri numarasını okur ve sizi sonuçla birlikte buraya geri getirir. Hiçbir şey yüklenmez. Windows uyarı verirse Ek bilgi → Yine de çalıştır'a tıklayın.",
   "faqTitle": "Sorular",
   "q1": "Laptop garantisini seri numarasıyla nasıl sorgularım?",
   "a1": "Markayı seçin, seri numarasını yapıştırın ve Sorgula'ya basın. Lenovo ve ThinkPad laptoplarda garantinin aktif olup olmadığını, kesin bitiş tarihini, tüm kapsam kalemlerini ve üretim, sevkiyat ve satın alma tarihlerini anında görürsünüz.",

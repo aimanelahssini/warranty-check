@@ -73,6 +73,8 @@
   "noSerial": "Impossibile leggere il numero di serie. Inseriscilo dall'etichetta sotto il computer.",
   "cantDetect": "Rilevamento non riuscito",
   "cantDetectText": "Impossibile leggere i dati di questo computer.",
+  "dlTitle": "Apri il file scaricato",
+  "dlText": "Apri «Warranty Check.cmd» dai download. Legge il numero di serie di questo PC e ti riporta qui con il risultato. Non viene installato nulla. Se Windows mostra un avviso, fai clic su Ulteriori informazioni → Esegui comunque.",
   "faqTitle": "Domande",
   "q1": "Come verifico la garanzia di un portatile dal numero di serie?",
   "a1": "Scegli la marca, incolla il numero di serie e premi Verifica. Per i portatili Lenovo e ThinkPad vedi subito se la garanzia è attiva, la data di scadenza esatta, ogni voce di copertura e le date di produzione, spedizione e acquisto.",

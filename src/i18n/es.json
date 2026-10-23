@@ -73,6 +73,8 @@
   "noSerial": "No se pudo leer el número de serie. Escríbelo desde la etiqueta de debajo.",
   "cantDetect": "No se pudo detectar",
   "cantDetectText": "No se pudieron leer los datos de este ordenador.",
+  "dlTitle": "Abre el archivo descargado",
+  "dlText": "Abre «Warranty Check.cmd» desde tus descargas. Lee el número de serie de este PC y te trae de vuelta aquí con el resultado. No se instala nada. Si Windows te avisa, haz clic en Más información → Ejecutar de todas formas.",
   "faqTitle": "Preguntas",
   "q1": "¿Cómo compruebo la garantía de un portátil por su número de serie?",
   "a1": "Elige la marca, pega el número de serie y pulsa Comprobar. En los portátiles Lenovo y ThinkPad ves al instante si la garantía está activa, la fecha exacta de fin, cada línea de cobertura y las fechas de fabricación, envío y compra.",

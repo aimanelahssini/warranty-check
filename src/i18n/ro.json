@@ -73,6 +73,8 @@
   "noSerial": "Numărul de serie nu a putut fi citit. Scrie-l de pe eticheta de dedesubt.",
   "cantDetect": "Detectare eșuată",
   "cantDetectText": "Detaliile acestui calculator nu au putut fi citite.",
+  "dlTitle": "Deschide fișierul descărcat",
+  "dlText": "Deschide „Warranty Check.cmd” din descărcări. Citește numărul de serie al acestui PC și te aduce înapoi aici cu rezultatul. Nu se instalează nimic. Dacă Windows te avertizează, apasă Mai multe informații → Executare oricum.",
   "faqTitle": "Întrebări",
   "q1": "Cum verific garanția unui laptop după numărul de serie?",
   "a1": "Alege marca, lipește numărul de serie și apasă Verifică. Pentru laptopurile Lenovo și ThinkPad vezi instant dacă garanția e activă, data exactă de expirare, fiecare linie de acoperire și datele de fabricație, expediere și cumpărare.",

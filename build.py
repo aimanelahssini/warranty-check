@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Build the static site: one page per language from src/page.html and src/i18n/*.json.
 
-Writes public/index.html (English), public/<lang>/index.html, sitemap.xml, robots.txt and llms.txt.
+Writes public/index.html (English), public/<lang>/index.html, public/detect/<lang>.cmd, sitemap.xml, robots.txt
+and llms.txt.
 Run after changing the template or a translation:  python3 build.py
 Set SITE_URL to the deployed address (default below) so canonical and hreflang links are absolute.
 """
@@ -25,7 +26,7 @@ RUNTIME = ["hintDefault", "hintLenovo", "hintHp", "hintDell", "hintApple", "copy
            "openAgain", "copySerial", "dellMsg", "appleMsg", "asking", "whichBrand", "whichBrandText", "notFound",
            "notFoundText", "badSerial", "netTitle", "netText", "reading", "unsupported", "noSerial", "cantDetect",
            "cantDetectText", "deviceInfo", "made", "serviceTag", "expressCode", "dellNote", "appleNote",
-           "appleRandom", "checkOn", "unknownModel", "checkSerial"]
+           "appleRandom", "checkOn", "unknownModel", "checkSerial", "dlTitle", "dlText", "helpMac", "helpMacText"]
 
 
 def load():
@@ -127,6 +128,14 @@ def page(code, t, langs, template):
     return out
 
 
+# The Windows "Detect this computer" file: reads brand, model and serial, then reopens the page with them.
+# Lenovo keeps the readable model in Version (Name is a machine type like 21AJ...), everyone else in Name.
+DETECT = """@echo off
+rem Warranty Check: reads this PC's brand, model and serial number and opens the result. Nothing is installed.
+powershell -NoProfile -Command "function q($x) {{ [uri]::EscapeDataString(([string]$x).Trim()) }}; $p = Get-CimInstance Win32_ComputerSystemProduct; $m = if ($p.Vendor -match 'lenovo') {{ $p.Version }} else {{ $p.Name }}; $s = (Get-CimInstance Win32_BIOS).SerialNumber; if (-not $s) {{ $s = $p.IdentifyingNumber }}; Start-Process ('{url}?vendor=' + (q $p.Vendor) + '&model=' + (q $m) + '&serial=' + (q $s))"
+"""
+
+
 def main():
     langs = load()
     with open(os.path.join(SRC, "page.html"), encoding="utf-8") as fh:
@@ -136,6 +145,10 @@ def main():
         os.makedirs(folder, exist_ok=True)
         with open(os.path.join(folder, "index.html"), "w", encoding="utf-8") as fh:
             fh.write(page(code, t, langs, template))
+    os.makedirs(os.path.join(PUB, "detect"), exist_ok=True)
+    for code in langs:
+        with open(os.path.join(PUB, "detect", f"{code}.cmd"), "w", encoding="ascii", newline="\r\n") as fh:
+            fh.write(DETECT.format(url=url(code)))
 
     today = date.today().isoformat()
     alts = "".join(f'\n    <xhtml:link rel="alternate" hreflang="{c}" href="{url(c)}"/>' for c in langs)

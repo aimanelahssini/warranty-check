@@ -73,6 +73,8 @@
   "noSerial": "Nomor seri tidak dapat dibaca. Ketik dari stiker di bagian bawah.",
   "cantDetect": "Tidak dapat mendeteksi",
   "cantDetectText": "Detail komputer ini tidak dapat dibaca.",
+  "dlTitle": "Buka file yang diunduh",
+  "dlText": "Buka “Warranty Check.cmd” dari folder unduhan. File ini membaca nomor seri PC ini dan membawa Anda kembali ke sini dengan hasilnya. Tidak ada yang diinstal. Jika Windows memberi peringatan, klik Info selengkapnya → Tetap jalankan.",
   "faqTitle": "Pertanyaan",
   "q1": "Bagaimana cara cek garansi laptop dengan nomor seri?",
   "a1": "Pilih merek, tempel nomor seri, lalu tekan Cek. Untuk laptop Lenovo dan ThinkPad, Anda langsung melihat apakah garansi masih aktif, tanggal berakhirnya, setiap cakupan, serta tanggal produksi, pengiriman, dan pembelian.",

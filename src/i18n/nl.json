@@ -73,6 +73,8 @@
   "noSerial": "Het serienummer kon niet worden uitgelezen. Neem het over van de sticker onderaan.",
   "cantDetect": "Herkennen mislukt",
   "cantDetectText": "De gegevens van deze computer konden niet worden uitgelezen.",
+  "dlTitle": "Open het gedownloade bestand",
+  "dlText": "Open ‘Warranty Check.cmd’ uit je downloads. Het leest het serienummer van deze pc en brengt je meteen terug met het resultaat. Er wordt niets geïnstalleerd. Waarschuwt Windows je, klik dan op Meer informatie → Toch uitvoeren.",
   "faqTitle": "Vragen",
   "q1": "Hoe controleer ik de garantie van een laptop met het serienummer?",
   "a1": "Kies het merk, plak het serienummer en druk op Controleren. Bij Lenovo- en ThinkPad-laptops zie je direct of de garantie actief is, de exacte einddatum, elke dekkingsregel en de bouw-, verzend- en aankoopdatum.",

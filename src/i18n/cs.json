@@ -73,6 +73,8 @@
   "noSerial": "Sériové číslo se nepodařilo načíst. Opište ho ze štítku na spodní straně.",
   "cantDetect": "Nelze rozpoznat",
   "cantDetectText": "Údaje o tomto počítači se nepodařilo načíst.",
+  "dlTitle": "Otevřete stažený soubor",
+  "dlText": "Otevřete „Warranty Check.cmd“ ze stažených souborů. Přečte sériové číslo tohoto PC a vrátí vás sem s výsledkem. Nic se neinstaluje. Pokud Windows zobrazí varování, klikněte na Další informace → Přesto spustit.",
   "faqTitle": "Otázky",
   "q1": "Jak ověřím záruku notebooku podle sériového čísla?",
   "a1": "Vyberte značku, vložte sériové číslo a klikněte na Ověřit. U notebooků Lenovo a ThinkPad okamžitě uvidíte, zda záruka platí, přesné datum konce, každou položku rozsahu a data výroby, odeslání a nákupu.",
