@@ -52,7 +52,8 @@
   .panel-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 2px 2px 12px; }
   .label { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
   .ghost { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); background: var(--card);
-           border-radius: 999px; padding: 5px 12px 5px 10px; font-size: 13px; font-weight: 500; color: var(--text); }
+           border-radius: 999px; padding: 5px 12px 5px 10px; font-size: 13px; font-weight: 500; color: var(--text);
+           white-space: nowrap; }
   .ghost:hover { background: var(--hover); }
   .ghost svg { width: 15px; height: 15px; }
 
@@ -76,6 +77,12 @@
                  transition: border-color .15s, box-shadow .15s; }
   .field input::placeholder { color: var(--faint); letter-spacing: 0; text-transform: none; font-weight: 400; }
   .field input:focus { outline: none; border-color: var(--focus); box-shadow: 0 0 0 4px color-mix(in srgb, var(--focus) 18%, transparent); }
+  .inbox { position: relative; flex: 1; min-width: 0; display: flex; }
+  .inbox input { width: 100%; padding-inline-end: 54px; }
+  .scan { position: absolute; inset-inline-end: 6px; top: 6px; width: 40px; height: 40px; display: grid; place-items: center;
+          border: 0; border-radius: var(--r-sm); background: none; color: var(--muted); }
+  .scan:hover { background: var(--hover); color: var(--ink); }
+  .scan svg { width: 22px; height: 22px; }
   .go { height: 52px; padding: 0 24px; border: 0; border-radius: var(--r-md); background: var(--ink); color: var(--bg);
         font-weight: 600; transition: opacity .15s; }
   .go:hover { opacity: .88; }
@@ -95,6 +102,27 @@
   .mini { flex: none; border: 1px solid var(--line); background: var(--card); border-radius: 7px; padding: 3px 10px;
           font-size: 12px; font-weight: 600; }
   .mini:hover { background: var(--hover); }
+
+  /* Barcode scanner */
+  .scanner { position: fixed; inset: 0; z-index: 50; background: #000; color: #fff; overflow: hidden; }
+  .scanner video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .frame { position: absolute; left: 50%; top: 44%; translate: -50% -50%; width: min(86vw, 540px); height: min(38vw, 220px);
+           border: 2px solid rgb(255 255 255 / .9); border-radius: 18px; box-shadow: 0 0 0 100vmax rgb(0 0 0 / .5); }
+  .frame i { position: absolute; left: 6%; right: 6%; top: 50%; height: 2px; border-radius: 2px; background: #ef4444;
+             box-shadow: 0 0 12px #ef4444; animation: sweep 1.6s ease-in-out infinite alternate; }
+  @keyframes sweep { from { top: 18%; } to { top: 82%; } }
+  .scan-top { position: absolute; top: 0; inset-inline: 0; display: flex; justify-content: flex-end; gap: 10px;
+              padding: max(14px, env(safe-area-inset-top)) 14px 0; }
+  .round { width: 46px; height: 46px; display: grid; place-items: center; border: 0; border-radius: 50%;
+           background: rgb(255 255 255 / .18); color: #fff; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+  .round[aria-pressed="true"] { background: #fff; color: #111; }
+  .round svg { width: 22px; height: 22px; }
+  .scan-bottom { position: absolute; bottom: 0; inset-inline: 0; padding: 0 20px max(28px, env(safe-area-inset-bottom)); text-align: center; }
+  .scan-bottom p { margin: 0 auto; max-width: 420px; font-size: 15px; font-weight: 500; text-shadow: 0 1px 6px rgb(0 0 0 / .6); }
+  .found { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 14px; }
+  .found:empty { display: none; }
+  .found button { height: 42px; padding: 0 16px; border: 0; border-radius: 999px; background: #fff; color: #111;
+                  font: 600 15px/1 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: .04em; }
 
   /* Recent */
   .recent { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 18px; }
@@ -206,7 +234,7 @@
     .brands { grid-template-columns: repeat(2, 1fr); }
     .brand { height: 78px; }
     .field { flex-direction: column; }
-    .field input { flex: none; width: 100%; }
+    .inbox { flex: none; width: 100%; }
     .go { width: 100%; }
     .hero { flex-direction: column-reverse; }
     .photo { width: 120px; }
@@ -236,6 +264,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg>
         {{detect}}
       </button>
+      <button class="ghost" id="scanTop" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 8v8M10.5 8v8M14 8v8M17 8v8"/></svg>
+        {{scan}}
+      </button>
     </div>
     <div class="brands" role="group" aria-label="{{brand}}">
       <button class="brand" data-b="lenovo" aria-label="Lenovo / ThinkPad" title="Lenovo / ThinkPad"><span class="logo wide" style="--m:url(/logos/lenovo.svg)"></span><small>{{tagInstant}}</small></button>
@@ -244,7 +276,12 @@
       <button class="brand" data-b="apple" aria-label="Apple" title="Apple"><span class="logo" style="--m:url(/logos/apple.svg)"></span><small>{{tagModel}}</small></button>
     </div>
     <form class="field" id="f">
-      <input id="serial" placeholder="{{placeholder}}" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="{{placeholder}}">
+      <div class="inbox">
+        <input id="serial" placeholder="{{placeholder}}" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="{{placeholder}}">
+        <button type="button" class="scan" id="scan" aria-label="{{scan}}" title="{{scan}}" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 8v8M10.5 8v8M14 8v8M17 8v8"/></svg>
+        </button>
+      </div>
       <button class="go" id="go">{{check}}</button>
     </form>
     <div class="under">
@@ -258,6 +295,20 @@
       <div><h3>{{helpMac}}</h3><p>{{helpMacText}}</p></div>
     </div>
   </section>
+
+  <div class="scanner" id="scanner" role="dialog" aria-modal="true" aria-label="{{scan}}" hidden>
+    <video id="cam" playsinline muted></video>
+    <div class="frame"><i></i></div>
+    <div class="scan-top">
+      <button class="round" id="torch" aria-label="{{torch}}" title="{{torch}}" aria-pressed="false" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+      </button>
+      <button class="round" id="scanClose" aria-label="{{close}}" title="{{close}}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="scan-bottom"><p id="scanMsg">{{scanHint}}</p><div class="found" id="found"></div></div>
+  </div>
 
   <div class="recent" id="recent"></div>
 
@@ -479,7 +530,7 @@ let local = false;
 if (OS === "win" || OS === "mac" || OS === "linux") $("#me").hidden = false;
 if (OS === "mac" && !store.get("brand", null)) pick("apple");
 fetch("/api/this").then(r => r.ok ? r.json() : null).then(info => {
-  if (info && "vendor" in info) { local = true; $("#me").hidden = false; }
+  if (info && "vendor" in info) { local = true; $("#me").hidden = OS === "phone"; }
 }).catch(() => {});
 
 function detected(vendor, model, serial) {
@@ -517,6 +568,141 @@ $("#me").onclick = async () => {
     $("#help").scrollIntoView({ behavior: "smooth", block: "nearest" });
   }
 };
+
+// Scan the serial's barcode with the camera. Browsers with a built-in barcode reader (Chrome on Android) use it;
+// the rest (Safari on iPhone, desktops) load the ZXing WebAssembly decoder the first time.
+const ZXING = "https://cdn.jsdelivr.net/npm/barcode-detector@3.2.3/dist/iife/ponyfill.js";
+const FORMATS = ["code_128", "code_39", "code_93", "codabar", "qr_code", "data_matrix", "pdf417"];
+const SERIAL_LEN = { lenovo: [8], dell: [7], hp: [10], apple: [10, 12] };
+let detector = null, stream = null, scanning = false;
+const seen = new Set();
+
+if (navigator.mediaDevices?.getUserMedia) {
+  $("#scan").hidden = false;
+  if (OS === "phone") $("#scanTop").hidden = false;
+}
+
+async function getDetector() {
+  if (detector) return detector;
+  if ("BarcodeDetector" in window) {
+    try {
+      const have = await BarcodeDetector.getSupportedFormats();
+      if (have.includes("code_128")) return detector = new BarcodeDetector({ formats: FORMATS.filter(f => have.includes(f)) });
+    } catch {}
+  }
+  if (!window.BarcodeDetectionAPI) await new Promise((ok, fail) => {
+    const s = document.createElement("script");
+    s.src = ZXING; s.onload = ok; s.onerror = fail;
+    document.head.append(s);
+  });
+  return detector = new BarcodeDetectionAPI.BarcodeDetector({ formats: FORMATS });
+}
+
+// Turn what a barcode says into a serial. `sure` means it's clearly the serial, so the check starts by itself;
+// other codes on the sticker (machine type, part numbers) are offered as buttons instead.
+function readCode(raw) {
+  let s = String(raw).trim(), b = null;
+  try { // QR codes often hold a support link with the serial in it
+    const u = new URL(s), q = [...u.searchParams].find(([k]) => /^(serial|serialnumber|sn|servicetag|tag)$/i.test(k));
+    const dell = u.pathname.match(/servicetag\/([a-z0-9]{7})(?:\/|$)/i);
+    if (dell) { s = dell[1]; b = "dell"; } else if (q) s = q[1];
+  } catch {}
+  const label = s.match(/(?:S\/?N|SERIAL(?: ?(?:NO|NUMBER))?|SERVICE ?TAG)\W{0,3}([A-Z0-9]{7,14})\b/i);
+  if (label) s = label[1];
+  s = s.toUpperCase().replace(/[\s-]+/g, "");
+  let m;
+  if ((m = s.match(/^1S[A-Z0-9]{4,10}([A-Z0-9]{8})$/))) return { serial: m[1], brand: "lenovo", sure: true }; // Lenovo: 1S + machine type + serial
+  if (/^S[A-Z0-9]{12}$/.test(s)) return { serial: s.slice(1), brand: "apple", sure: true }; // Apple boxes: (S) + serial
+  if (!/^[A-Z0-9]{7,14}$/.test(s)) return null;
+  if (b) return { serial: s, brand: b, sure: true };
+  if (brand === "apple" && /^S[A-Z0-9]{10}$/.test(s)) s = s.slice(1);
+  if (brand && SERIAL_LEN[brand].includes(s.length)) return { serial: s, brand, sure: true };
+  const g = guess(s);
+  return { serial: s, brand: g, sure: !!g };
+}
+
+async function openScanner() {
+  seen.clear();
+  $("#found").innerHTML = "";
+  $("#scanMsg").textContent = tr("scanHint");
+  $("#torch").hidden = true;
+  $("#torch").setAttribute("aria-pressed", false);
+  $("#scanner").hidden = false;
+  document.body.style.overflow = "hidden";
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({ audio: false,
+      video: { facingMode: { ideal: "environment" }, width: { ideal: 1920 }, height: { ideal: 1080 } } });
+    if ($("#scanner").hidden) return closeScanner();
+    const video = $("#cam");
+    video.srcObject = stream;
+    await video.play();
+    const track = stream.getVideoTracks()[0], caps = track.getCapabilities?.() || {};
+    if (caps.focusMode?.includes("continuous")) track.applyConstraints({ advanced: [{ focusMode: "continuous" }] }).catch(() => {});
+    $("#torch").hidden = !caps.torch;
+    await getDetector();
+    if (!stream) return;
+    scanning = true;
+    scanLoop();
+  } catch {
+    closeScanner();
+    message(tr("noCamera"), tr("noCameraText"));
+  }
+}
+
+function closeScanner() {
+  scanning = false;
+  stream?.getTracks().forEach(t => t.stop());
+  stream = null;
+  $("#cam").srcObject = null;
+  $("#scanner").hidden = true;
+  document.body.style.overflow = "";
+}
+
+async function scanLoop() {
+  const video = $("#cam");
+  while (scanning) {
+    if (video.readyState >= 2) {
+      let codes = [];
+      try { codes = await detector.detect(video); } catch {}
+      if (!scanning) return;
+      const reads = codes.map(c => readCode(c.rawValue)).filter(Boolean);
+      const hit = reads.find(r => r.sure);
+      if (hit) return useCode(hit);
+      reads.forEach(offer);
+    }
+    await new Promise(r => setTimeout(r, 120));
+  }
+}
+
+function offer(r) {
+  if (seen.has(r.serial) || seen.size >= 4) return;
+  seen.add(r.serial);
+  const b = document.createElement("button");
+  b.textContent = r.serial;
+  b.onclick = () => useCode(r);
+  $("#found").append(b);
+  $("#scanMsg").textContent = tr("scanUse");
+}
+
+function useCode(r) {
+  navigator.vibrate?.(60);
+  closeScanner();
+  if (r.brand) pick(r.brand);
+  input.value = r.serial;
+  check();
+}
+
+$("#scan").onclick = $("#scanTop").onclick = openScanner;
+$("#scanClose").onclick = closeScanner;
+$("#torch").onclick = async () => {
+  const on = $("#torch").getAttribute("aria-pressed") !== "true";
+  try {
+    await stream.getVideoTracks()[0].applyConstraints({ advanced: [{ torch: on }] });
+    $("#torch").setAttribute("aria-pressed", on);
+  } catch {}
+};
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("#scanner").hidden) closeScanner(); });
+addEventListener("pagehide", closeScanner);
 
 drawRecent();
 const params = new URLSearchParams(location.search);

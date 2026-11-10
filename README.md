@@ -15,6 +15,8 @@
 | **Dell** | Shows the Service Tag and its Express Service Code (what Dell support asks for), then one click to Dell's warranty page (Dell blocks direct lookups) |
 | **Apple** | Shows the exact model and the month it was made (12-character serials, 2010-2020), then one click to Apple's coverage page with the serial copied (Apple requires a captcha) |
 
+**Scan the barcode with your phone:** tap the barcode button in the serial field and point the camera at the S/N barcode on the sticker. The serial is filled in, the brand picked and the check started. It understands Lenovo's `1S` + machine type + serial codes, Apple's `(S)` box codes, Dell support QR links and plain serial barcodes; other codes on the sticker (machine type, part numbers) are offered as buttons instead of being used. Chrome on Android uses the phone's own barcode reader; Safari on iPhone and desktop browsers load the [ZXing](https://github.com/zxing-cpp/zxing-cpp) WebAssembly decoder (via [barcode-detector](https://github.com/Sec-ant/barcode-detector)) the first time. Where the phone has a flashlight, a light button helps with dark stickers under the laptop.
+
 Extras: it guesses the brand from the serial's shape, keeps your recent checks, has a "Copy summary" button for sending to a seller, and links like `?brand=lenovo&serial=PF1AB2CD` open straight on the result. "Where do I find the serial?" shows the one-line command for Windows and Linux.
 
 ## Languages

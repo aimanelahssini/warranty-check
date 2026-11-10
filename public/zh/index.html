@@ -122,7 +122,8 @@
   .panel-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 2px 2px 12px; }
   .label { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
   .ghost { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); background: var(--card);
-           border-radius: 999px; padding: 5px 12px 5px 10px; font-size: 13px; font-weight: 500; color: var(--text); }
+           border-radius: 999px; padding: 5px 12px 5px 10px; font-size: 13px; font-weight: 500; color: var(--text);
+           white-space: nowrap; }
   .ghost:hover { background: var(--hover); }
   .ghost svg { width: 15px; height: 15px; }
 
@@ -146,6 +147,12 @@
                  transition: border-color .15s, box-shadow .15s; }
   .field input::placeholder { color: var(--faint); letter-spacing: 0; text-transform: none; font-weight: 400; }
   .field input:focus { outline: none; border-color: var(--focus); box-shadow: 0 0 0 4px color-mix(in srgb, var(--focus) 18%, transparent); }
+  .inbox { position: relative; flex: 1; min-width: 0; display: flex; }
+  .inbox input { width: 100%; padding-inline-end: 54px; }
+  .scan { position: absolute; inset-inline-end: 6px; top: 6px; width: 40px; height: 40px; display: grid; place-items: center;
+          border: 0; border-radius: var(--r-sm); background: none; color: var(--muted); }
+  .scan:hover { background: var(--hover); color: var(--ink); }
+  .scan svg { width: 22px; height: 22px; }
   .go { height: 52px; padding: 0 24px; border: 0; border-radius: var(--r-md); background: var(--ink); color: var(--bg);
         font-weight: 600; transition: opacity .15s; }
   .go:hover { opacity: .88; }
@@ -165,6 +172,27 @@
   .mini { flex: none; border: 1px solid var(--line); background: var(--card); border-radius: 7px; padding: 3px 10px;
           font-size: 12px; font-weight: 600; }
   .mini:hover { background: var(--hover); }
+
+  /* Barcode scanner */
+  .scanner { position: fixed; inset: 0; z-index: 50; background: #000; color: #fff; overflow: hidden; }
+  .scanner video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .frame { position: absolute; left: 50%; top: 44%; translate: -50% -50%; width: min(86vw, 540px); height: min(38vw, 220px);
+           border: 2px solid rgb(255 255 255 / .9); border-radius: 18px; box-shadow: 0 0 0 100vmax rgb(0 0 0 / .5); }
+  .frame i { position: absolute; left: 6%; right: 6%; top: 50%; height: 2px; border-radius: 2px; background: #ef4444;
+             box-shadow: 0 0 12px #ef4444; animation: sweep 1.6s ease-in-out infinite alternate; }
+  @keyframes sweep { from { top: 18%; } to { top: 82%; } }
+  .scan-top { position: absolute; top: 0; inset-inline: 0; display: flex; justify-content: flex-end; gap: 10px;
+              padding: max(14px, env(safe-area-inset-top)) 14px 0; }
+  .round { width: 46px; height: 46px; display: grid; place-items: center; border: 0; border-radius: 50%;
+           background: rgb(255 255 255 / .18); color: #fff; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+  .round[aria-pressed="true"] { background: #fff; color: #111; }
+  .round svg { width: 22px; height: 22px; }
+  .scan-bottom { position: absolute; bottom: 0; inset-inline: 0; padding: 0 20px max(28px, env(safe-area-inset-bottom)); text-align: center; }
+  .scan-bottom p { margin: 0 auto; max-width: 420px; font-size: 15px; font-weight: 500; text-shadow: 0 1px 6px rgb(0 0 0 / .6); }
+  .found { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 14px; }
+  .found:empty { display: none; }
+  .found button { height: 42px; padding: 0 16px; border: 0; border-radius: 999px; background: #fff; color: #111;
+                  font: 600 15px/1 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: .04em; }
 
   /* Recent */
   .recent { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 18px; }
@@ -276,7 +304,7 @@
     .brands { grid-template-columns: repeat(2, 1fr); }
     .brand { height: 78px; }
     .field { flex-direction: column; }
-    .field input { flex: none; width: 100%; }
+    .inbox { flex: none; width: 100%; }
     .go { width: 100%; }
     .hero { flex-direction: column-reverse; }
     .photo { width: 120px; }
@@ -306,6 +334,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg>
         检测本机
       </button>
+      <button class="ghost" id="scanTop" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 8v8M10.5 8v8M14 8v8M17 8v8"/></svg>
+        扫描条形码
+      </button>
     </div>
     <div class="brands" role="group" aria-label="品牌">
       <button class="brand" data-b="lenovo" aria-label="Lenovo / ThinkPad" title="Lenovo / ThinkPad"><span class="logo wide" style="--m:url(/logos/lenovo.svg)"></span><small>即时</small></button>
@@ -314,7 +346,12 @@
       <button class="brand" data-b="apple" aria-label="Apple" title="Apple"><span class="logo" style="--m:url(/logos/apple.svg)"></span><small>仅型号</small></button>
     </div>
     <form class="field" id="f">
-      <input id="serial" placeholder="序列号" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="序列号">
+      <div class="inbox">
+        <input id="serial" placeholder="序列号" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="序列号">
+        <button type="button" class="scan" id="scan" aria-label="扫描条形码" title="扫描条形码" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 8v8M10.5 8v8M14 8v8M17 8v8"/></svg>
+        </button>
+      </div>
       <button class="go" id="go">查询</button>
     </form>
     <div class="under">
@@ -328,6 +365,20 @@
       <div><h3>Mac</h3><p>苹果菜单 → 关于本机。</p></div>
     </div>
   </section>
+
+  <div class="scanner" id="scanner" role="dialog" aria-modal="true" aria-label="扫描条形码" hidden>
+    <video id="cam" playsinline muted></video>
+    <div class="frame"><i></i></div>
+    <div class="scan-top">
+      <button class="round" id="torch" aria-label="手电筒" title="手电筒" aria-pressed="false" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+      </button>
+      <button class="round" id="scanClose" aria-label="关闭" title="关闭">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="scan-bottom"><p id="scanMsg">将相机对准标签上的 S/N 条形码</p><div class="found" id="found"></div></div>
+  </div>
 
   <div class="recent" id="recent"></div>
 
@@ -373,7 +424,7 @@
 </main>
 
 <script>
-const LANG = "zh", LANGS = ["en", "ar", "cs", "de", "es", "fr", "hi", "id", "it", "ja", "ko", "nl", "pl", "pt", "ro", "ru", "sv", "tr", "uk", "vi", "zh"], T = {"hintDefault": "选择品牌，或直接粘贴序列号。", "hintLenovo": "Lenovo 序列号为 8 位，例如 PF1AB2CD。", "hintHp": "HP 序列号为 10 位，例如 5CD1234ABC。按 Fn+Esc 可查看。", "hintDell": "Dell 使用 7 位服务标签，例如 7XJ8YZ2。", "hintApple": "Apple 序列号为 10 到 12 位。", "copy": "复制", "copied": "已复制", "recent": "最近", "clear": "清除", "inWarranty": "在保修期内", "endsSoon": "即将到期", "outWarranty": "已过保", "left": "剩余 {t}", "ago": "已于 {t}前到期", "coveredUntil": "保修至", "endedOn": "到期于", "coverage": "保修项目", "used": "保修期已用 {n}%", "copySummary": "复制摘要", "openOn": "在 {brand} 官网打开", "summaryIn": "保修至", "summaryOut": "已过保，到期于", "built": "生产日期", "shipped": "发货日期", "shippedTo": "发往", "purchased": "购买日期", "supportEnds": "支持截止", "productNumber": "产品编号", "description": "描述", "modelFound": "已找到型号", "hpNote": "HP 的保修日期需要验证码才能查看。型号已确认，日期请在 HP 官网查看。", "seeHp": "在 HP 官网查看保修日期", "opened": "已打开 {brand}", "open": "打开 {brand}", "openAgain": "再次打开", "copySerial": "复制序列号", "dellMsg": "Dell 禁止直接查询，因此已在新标签页打开该服务标签的保修页面。", "appleMsg": "Apple 每次查询都需要验证码。序列号已复制：按 Ctrl+V 粘贴，然后完成验证码。", "asking": "正在查询 {brand}…", "whichBrand": "哪个品牌？", "whichBrandText": "请在序列号输入框上方选择笔记本的品牌标志。", "notFound": "未找到", "notFoundText": "{brand} 无法识别此序列号。请核对笔记本底部的标签。", "badSerial": "这看起来不像序列号。", "netTitle": "连接问题", "netText": "无法连接查询服务器。请检查网络后重试。", "reading": "正在读取本机序列号（可能需要输入密码）…", "unsupported": "暂不支持该品牌。", "noSerial": "无法读取序列号。请手动输入机身底部标签上的序列号。", "cantDetect": "无法检测", "cantDetectText": "无法读取本机信息。", "deviceInfo": "设备信息", "made": "生产时间", "serviceTag": "Service Tag", "expressCode": "快速服务代码", "dellNote": "Dell 只在自己的网站上显示保修日期。快速服务代码是 Dell 客服电话中会询问的代码。", "appleNote": "Apple 需要通过验证码才能显示保修状态。打开时会自动复制序列号：用 Ctrl+V 粘贴即可。", "appleRandom": "自 2021 年起 Apple 序列号为随机生成，无法从中读出型号。", "checkOn": "在 {brand} 查询保修", "unknownModel": "{brand} 设备", "checkSerial": "请检查序列号", "dlTitle": "打开下载的文件", "dlText": "从下载文件夹中打开“Warranty Check.cmd”。它会读取这台电脑的序列号，并带着结果回到这里。不会安装任何东西。如果 Windows 发出警告，请点击“更多信息”→“仍要运行”。", "helpMac": "Mac", "helpMacText": "苹果菜单 → 关于本机。"};
+const LANG = "zh", LANGS = ["en", "ar", "cs", "de", "es", "fr", "hi", "id", "it", "ja", "ko", "nl", "pl", "pt", "ro", "ru", "sv", "tr", "uk", "vi", "zh"], T = {"hintDefault": "选择品牌，或直接粘贴序列号。", "hintLenovo": "Lenovo 序列号为 8 位，例如 PF1AB2CD。", "hintHp": "HP 序列号为 10 位，例如 5CD1234ABC。按 Fn+Esc 可查看。", "hintDell": "Dell 使用 7 位服务标签，例如 7XJ8YZ2。", "hintApple": "Apple 序列号为 10 到 12 位。", "copy": "复制", "copied": "已复制", "recent": "最近", "clear": "清除", "inWarranty": "在保修期内", "endsSoon": "即将到期", "outWarranty": "已过保", "left": "剩余 {t}", "ago": "已于 {t}前到期", "coveredUntil": "保修至", "endedOn": "到期于", "coverage": "保修项目", "used": "保修期已用 {n}%", "copySummary": "复制摘要", "openOn": "在 {brand} 官网打开", "summaryIn": "保修至", "summaryOut": "已过保，到期于", "built": "生产日期", "shipped": "发货日期", "shippedTo": "发往", "purchased": "购买日期", "supportEnds": "支持截止", "productNumber": "产品编号", "description": "描述", "modelFound": "已找到型号", "hpNote": "HP 的保修日期需要验证码才能查看。型号已确认，日期请在 HP 官网查看。", "seeHp": "在 HP 官网查看保修日期", "opened": "已打开 {brand}", "open": "打开 {brand}", "openAgain": "再次打开", "copySerial": "复制序列号", "dellMsg": "Dell 禁止直接查询，因此已在新标签页打开该服务标签的保修页面。", "appleMsg": "Apple 每次查询都需要验证码。序列号已复制：按 Ctrl+V 粘贴，然后完成验证码。", "asking": "正在查询 {brand}…", "whichBrand": "哪个品牌？", "whichBrandText": "请在序列号输入框上方选择笔记本的品牌标志。", "notFound": "未找到", "notFoundText": "{brand} 无法识别此序列号。请核对笔记本底部的标签。", "badSerial": "这看起来不像序列号。", "netTitle": "连接问题", "netText": "无法连接查询服务器。请检查网络后重试。", "reading": "正在读取本机序列号（可能需要输入密码）…", "unsupported": "暂不支持该品牌。", "noSerial": "无法读取序列号。请手动输入机身底部标签上的序列号。", "cantDetect": "无法检测", "cantDetectText": "无法读取本机信息。", "deviceInfo": "设备信息", "made": "生产时间", "serviceTag": "Service Tag", "expressCode": "快速服务代码", "dellNote": "Dell 只在自己的网站上显示保修日期。快速服务代码是 Dell 客服电话中会询问的代码。", "appleNote": "Apple 需要通过验证码才能显示保修状态。打开时会自动复制序列号：用 Ctrl+V 粘贴即可。", "appleRandom": "自 2021 年起 Apple 序列号为随机生成，无法从中读出型号。", "checkOn": "在 {brand} 查询保修", "unknownModel": "{brand} 设备", "checkSerial": "请检查序列号", "dlTitle": "打开下载的文件", "dlText": "从下载文件夹中打开“Warranty Check.cmd”。它会读取这台电脑的序列号，并带着结果回到这里。不会安装任何东西。如果 Windows 发出警告，请点击“更多信息”→“仍要运行”。", "helpMac": "Mac", "helpMacText": "苹果菜单 → 关于本机。", "scanHint": "将相机对准标签上的 S/N 条形码", "scanUse": "点按序列号", "noCamera": "无法使用相机", "noCameraText": "请允许此网站访问相机，或手动输入序列号。"};
 const tr = (k, v = {}) => (T[k] || k).replace(/\{(\w+)\}/g, (_, x) => v[x] ?? "");
 const store = {
   get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
@@ -573,7 +624,7 @@ let local = false;
 if (OS === "win" || OS === "mac" || OS === "linux") $("#me").hidden = false;
 if (OS === "mac" && !store.get("brand", null)) pick("apple");
 fetch("/api/this").then(r => r.ok ? r.json() : null).then(info => {
-  if (info && "vendor" in info) { local = true; $("#me").hidden = false; }
+  if (info && "vendor" in info) { local = true; $("#me").hidden = OS === "phone"; }
 }).catch(() => {});
 
 function detected(vendor, model, serial) {
@@ -611,6 +662,141 @@ $("#me").onclick = async () => {
     $("#help").scrollIntoView({ behavior: "smooth", block: "nearest" });
   }
 };
+
+// Scan the serial's barcode with the camera. Browsers with a built-in barcode reader (Chrome on Android) use it;
+// the rest (Safari on iPhone, desktops) load the ZXing WebAssembly decoder the first time.
+const ZXING = "https://cdn.jsdelivr.net/npm/barcode-detector@3.2.3/dist/iife/ponyfill.js";
+const FORMATS = ["code_128", "code_39", "code_93", "codabar", "qr_code", "data_matrix", "pdf417"];
+const SERIAL_LEN = { lenovo: [8], dell: [7], hp: [10], apple: [10, 12] };
+let detector = null, stream = null, scanning = false;
+const seen = new Set();
+
+if (navigator.mediaDevices?.getUserMedia) {
+  $("#scan").hidden = false;
+  if (OS === "phone") $("#scanTop").hidden = false;
+}
+
+async function getDetector() {
+  if (detector) return detector;
+  if ("BarcodeDetector" in window) {
+    try {
+      const have = await BarcodeDetector.getSupportedFormats();
+      if (have.includes("code_128")) return detector = new BarcodeDetector({ formats: FORMATS.filter(f => have.includes(f)) });
+    } catch {}
+  }
+  if (!window.BarcodeDetectionAPI) await new Promise((ok, fail) => {
+    const s = document.createElement("script");
+    s.src = ZXING; s.onload = ok; s.onerror = fail;
+    document.head.append(s);
+  });
+  return detector = new BarcodeDetectionAPI.BarcodeDetector({ formats: FORMATS });
+}
+
+// Turn what a barcode says into a serial. `sure` means it's clearly the serial, so the check starts by itself;
+// other codes on the sticker (machine type, part numbers) are offered as buttons instead.
+function readCode(raw) {
+  let s = String(raw).trim(), b = null;
+  try { // QR codes often hold a support link with the serial in it
+    const u = new URL(s), q = [...u.searchParams].find(([k]) => /^(serial|serialnumber|sn|servicetag|tag)$/i.test(k));
+    const dell = u.pathname.match(/servicetag\/([a-z0-9]{7})(?:\/|$)/i);
+    if (dell) { s = dell[1]; b = "dell"; } else if (q) s = q[1];
+  } catch {}
+  const label = s.match(/(?:S\/?N|SERIAL(?: ?(?:NO|NUMBER))?|SERVICE ?TAG)\W{0,3}([A-Z0-9]{7,14})\b/i);
+  if (label) s = label[1];
+  s = s.toUpperCase().replace(/[\s-]+/g, "");
+  let m;
+  if ((m = s.match(/^1S[A-Z0-9]{4,10}([A-Z0-9]{8})$/))) return { serial: m[1], brand: "lenovo", sure: true }; // Lenovo: 1S + machine type + serial
+  if (/^S[A-Z0-9]{12}$/.test(s)) return { serial: s.slice(1), brand: "apple", sure: true }; // Apple boxes: (S) + serial
+  if (!/^[A-Z0-9]{7,14}$/.test(s)) return null;
+  if (b) return { serial: s, brand: b, sure: true };
+  if (brand === "apple" && /^S[A-Z0-9]{10}$/.test(s)) s = s.slice(1);
+  if (brand && SERIAL_LEN[brand].includes(s.length)) return { serial: s, brand, sure: true };
+  const g = guess(s);
+  return { serial: s, brand: g, sure: !!g };
+}
+
+async function openScanner() {
+  seen.clear();
+  $("#found").innerHTML = "";
+  $("#scanMsg").textContent = tr("scanHint");
+  $("#torch").hidden = true;
+  $("#torch").setAttribute("aria-pressed", false);
+  $("#scanner").hidden = false;
+  document.body.style.overflow = "hidden";
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({ audio: false,
+      video: { facingMode: { ideal: "environment" }, width: { ideal: 1920 }, height: { ideal: 1080 } } });
+    if ($("#scanner").hidden) return closeScanner();
+    const video = $("#cam");
+    video.srcObject = stream;
+    await video.play();
+    const track = stream.getVideoTracks()[0], caps = track.getCapabilities?.() || {};
+    if (caps.focusMode?.includes("continuous")) track.applyConstraints({ advanced: [{ focusMode: "continuous" }] }).catch(() => {});
+    $("#torch").hidden = !caps.torch;
+    await getDetector();
+    if (!stream) return;
+    scanning = true;
+    scanLoop();
+  } catch {
+    closeScanner();
+    message(tr("noCamera"), tr("noCameraText"));
+  }
+}
+
+function closeScanner() {
+  scanning = false;
+  stream?.getTracks().forEach(t => t.stop());
+  stream = null;
+  $("#cam").srcObject = null;
+  $("#scanner").hidden = true;
+  document.body.style.overflow = "";
+}
+
+async function scanLoop() {
+  const video = $("#cam");
+  while (scanning) {
+    if (video.readyState >= 2) {
+      let codes = [];
+      try { codes = await detector.detect(video); } catch {}
+      if (!scanning) return;
+      const reads = codes.map(c => readCode(c.rawValue)).filter(Boolean);
+      const hit = reads.find(r => r.sure);
+      if (hit) return useCode(hit);
+      reads.forEach(offer);
+    }
+    await new Promise(r => setTimeout(r, 120));
+  }
+}
+
+function offer(r) {
+  if (seen.has(r.serial) || seen.size >= 4) return;
+  seen.add(r.serial);
+  const b = document.createElement("button");
+  b.textContent = r.serial;
+  b.onclick = () => useCode(r);
+  $("#found").append(b);
+  $("#scanMsg").textContent = tr("scanUse");
+}
+
+function useCode(r) {
+  navigator.vibrate?.(60);
+  closeScanner();
+  if (r.brand) pick(r.brand);
+  input.value = r.serial;
+  check();
+}
+
+$("#scan").onclick = $("#scanTop").onclick = openScanner;
+$("#scanClose").onclick = closeScanner;
+$("#torch").onclick = async () => {
+  const on = $("#torch").getAttribute("aria-pressed") !== "true";
+  try {
+    await stream.getVideoTracks()[0].applyConstraints({ advanced: [{ torch: on }] });
+    $("#torch").setAttribute("aria-pressed", on);
+  } catch {}
+};
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("#scanner").hidden) closeScanner(); });
+addEventListener("pagehide", closeScanner);
 
 drawRecent();
 const params = new URLSearchParams(location.search);
